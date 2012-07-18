@@ -1,0 +1,321 @@
+/*
+Goldilocks Approach to Responsive Web Design Boilerplate
+
+Author: Design by Front - @designbyfront
+Version: 0.1
+URL: http://www.goldilocksapproach.com
+----------------------------------------------------------------------------------------
+
+CONTENTS - GLOBAL.CSS
+-----------------------------------------
+1. RESET
+2. ROOT
+3. CORE TYPOGRAPHY
+4. LINKS
+5. GLOBAL LAYOUT & GLOBAL CUSTOM TYPOGRAPHY
+6. CUSTOM LAYOUT & TYPOGRAPHY (Baby bear)
+7. BROWSER AND NON-SEMANTIC STYLING
+
+CONTENTS - LAYOUT.CSS
+-----------------------------------------
+8. CUSTOM LAYOUT & TYPOGRAPHY (Daddy bear)
+9. CUSTOM LAYOUT & TYPOGRAPHY (Mummy bear)
+
+*/
+
+
+/* 1. RESET
+----------------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size:100%;
+  font: inherit;
+  vertical-align: baseline;
+  }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+  }
+  
+  
+/* 2. ROOT
+----------------------------------------------------------------------------------------*/
+html { 
+  overflow-y: scroll;
+  background: #FFF;
+  }
+
+/* /ht Ethan Marcotte - http://front.ie/l8rJaA */
+img, embed, object, video { max-width: 100%; }
+.ie6 img.full, .ie6 object.full, .ie6 embed, .ie6 video { width: 100%; }
+
+
+/* 3. CORE TYPOGRAPHY
+----------------------------------------------------------------------------------------*/
+body {
+  font-family: "Times New Roman", serif;
+  font-size: 1em;
+  line-height: 1.618em;
+  color: #666;
+  }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.809em;
+  line-height: 1em;
+  }
+
+p, ul, ol, dl, blockquote {
+    font-size: 1em;
+    line-height: 1.618em;
+    margin-bottom: 1.618em; 
+    max-width: 30em; /* Optimal width for long-form text */
+  }
+    
+ul { list-style-type: none; margin-left: 1.618em; }
+ol { list-style-type: decimal; margin-left: 1.618em; }
+nav ul, nav ol { list-style: none; margin: 0; padding: 0;}
+
+b, strong { font-weight: bold; }
+i, em { font-style: italic; }
+small { font-size: 80%; }
+
+
+/* 4. LINKS
+----------------------------------------------------------------------------------------*/
+a, a:visited { outline: none; color: #439BBD; text-decoration: underline; }  
+a:hover { outline: none; text-decoration:none; }  
+a:active, a:focus { outline: none; }
+
+
+/* 5. GLOBAL LAYOUT & GLOBAL CUSTOM TYPOGRAPHY
+----------------------------------------------------------------------------------------*/
+
+html, body { background: url('../images/body_bg.png') 0 0 repeat-x #fff; }
+
+/* 5.1. HEADER
+----------------------------------------------------------------------------------------*/
+
+header aside { width: 14.75em; padding: 0 1em; float: left; }
+header nav { float: left; }
+header nav ul { max-width: 46em; margin: 0; padding: 0; }
+header nav li { float: left; }
+header nav li a { font-size: 1.1em; color: #333; margin: 0 1.4em 0 0; display: block; float: left; border-top: 4px solid #333; padding: 0.75em 0 0; }
+header nav li.active a { font-style: italic; text-decoration: none; }
+
+header nav li.home a { border-color: #774090; }
+header nav li.production a { border-color: #4f9e99; }
+header nav li.events a { border-color: #f6b0cf; }
+header nav li.company a { border-color: #c3d89e; }
+header nav li.where a { border-color: #ebd2af; }
+header nav li.tourism a { border-color: #9addf0; }
+header nav li.contacts a { border-color: #c4cbcd; }
+
+header nav li.home.active a { color: #774090; }
+header nav li.production.active a { color: #4f9e99; }
+header nav li.events.active a { color: #f6b0cf; }
+header nav li.company.active a { color: #c3d89e; }
+header nav li.where.active a { color: #ebd2af; }
+header nav li.tourism.active a { color: #9addf0; }
+header nav li.contacts.active a { color: #c4cbcd; }
+
+#translation ul { margin: 0 0 0 4.25em; padding: 0; }
+#translation li a { float: left; display: block; color: #333; }
+#translation li.ru a { background: url('../images/sprites.png') 0 0 no-repeat; width: 29px; height: 32px; text-indent: -9999px; margin-right: 1.5em; }
+
+#navigation { height: 5em; }
+#promo-section { }
+#logo { background: url('../images/sprites.png') 0 -42px no-repeat transparent; width: 87px; height: 189px; display: block; text-indent: -9999px; margin: 0 0 0 4em; }
+p.caption { text-transform: uppercase; font-size: 1.5em; line-height: 3.5em; text-align: center; margin: 1em 0 0; color: #1f1c1d; }
+.social { height: 86px; position: relative; }
+.social .spline { background: url('../images/spline.png') no-repeat; width: 219px; height: 3px; position: absolute; left: 0; }
+.social .spline.top { top: 0; }
+.social .spline.bottom { bottom: 0; }
+.social p { padding: 1em 0 0.4em; text-align: center; margin: 0; }
+.social ul { margin: 0; padding: 0 0 0 1.5em; }
+.social ul li a { display: block; float: left; color: #264e73; font-family: Arial, Helvetica, sans-serif; font-size: 0.6em; text-transform: uppercase; position: relative; padding-left: 2.5em; margin-right: 1.5em; }
+.social .vk, .social .fb { display: inline-block; background: url('../images/sprites.png') -34px 0 no-repeat transparent; width: 20px; height: 20px; position: absolute; left: 0; top: 0.4em; }
+.social .fb { background-position: -54px 0;}
+.promo-slide { border: 1px solid #ccc; padding: 0.5em; width: 42em; background: #fff; float: left; margin: -0.75em 0 0; /* width: 40em; height: 24.25em;  */ }
+.promo-inside { border: 1px solid #ccc; height: 23.7em; }
+
+.main-directions { margin: 2.5em 0 0; background: url('../images/book-top.png') center bottom no-repeat; padding-bottom: 7em; }
+.main-directions .column { float: left; width: 12em; margin: 0 3.1em; text-align: center; }
+.main-directions .column h2 { text-transform: uppercase; font-size: 1.5em; text-align: center; margin: 0.5em 0 0.7em; color: #1f1c1d; text-decoration: underline; }
+.main-directions .column p { color: #666; line-height: 1.25em; }
+.main-directions .column-sep { background: url('../images/sprites.png') -99px 0 no-repeat transparent; width: 42px; height: 42px; float: left; margin: 4.5em 0 0; }
+
+.book { background: url('../images/book-bottom.png') center top no-repeat; padding-bottom: 7em; }
+.book .column { float: left; width: 28em; margin: 0 0.75em; }
+.book .column h3 { text-transform: uppercase; font-size: 1.5em; text-align: center; margin: 0 0 1.25em; color: #a05f7c; }
+.book .column.first { margin-right: 1.75em; }
+.book .column.first h3 { color: #399; }
+.book .page { border: 1px solid #ccc; padding: 0.5em; background: #fff; } 
+.book .page-inside { border: 1px solid #ccc; height: 34.7em; }
+.book p { text-align: center; }
+.book p a { color: #221e1f; text-decoration: underline; padding: 0.05em 1em; background: #efefef; display: inline-block; border-radius: 20px; margin: 1.5em 0; }
+
+.news { background: url('../images/news-bottle.png') center top no-repeat; padding-top: 10.5em; margin-top: -7em; margin-bottom: 2em; }
+.news .column { float: left; width: 12em; margin: 0 1.5em; }
+.news .date { font: 0.75em Arial, Helvetica, sans-serif; color: #666; margin-bottom: 0.5em; }
+.news .column a { color: #221e1f; line-height: 0.7em; }
+.additional .news { background: none; padding-top: 7.5em; }
+.additional .news .column { margin: 0 2.25em 0 0.75em; }
+
+.tourism-promo { background: url('../images/tourism-promo.png') center top no-repeat; height: 23.75em; margin-bottom: 1em;}
+.tourism-promo h2 { text-transform: uppercase; font-size: 2.25em; color: #000; padding: 1.4em 1em 0.1em; }
+.tourism-promo p { line-height: 1.2em; color: #221e1f; padding-left: 2.25em; margin-bottom: 1em; }
+.tourism-promo a { display: inline-block; background: #78cccc; padding: 0.05em 1em 0.2em; border-radius: 20px; color: #221e1f; margin-left: 2.25em; }
+
+footer { background: url('../images/footer_bg.png') repeat-x; height: 16.375em; padding-top: 2em; }
+footer .social-widget { float: left; margin: 0 1.6em 0 0; background: #fff; height: 215px; width: 215px; }
+footer nav { float: left; margin-left: 0.5em; }
+footer nav ul { list-style: none; margin: 0; padding: 0; }
+footer nav li a { color: #333; font-size: 0.9em; }
+footer .copyright { float: right; }
+footer .copyright p { line-height: 1.25em; color: #999; font-size: 0.9em; margin-bottom: 1em; }
+footer .stats a { display: inline-block; margin: 0.5em 0.25em 1em 0;  }
+
+/* Catalog */
+article aside { padding: 0 1em; width: 13em; float: left; }
+.aside-logo { background: url('../images/sprites.png') -195px -42px no-repeat transparent; width: 87px; height: 189px; display: block; text-indent: -9999px; margin: 0 0 3em 4em; }
+.aside-logo.purple { background-position: 0 -42px; }
+.quote { text-align: center; background: url('../images/quote_bg.png') center bottom no-repeat; padding-bottom: 0.75em; margin-bottom: 1.75em; }
+.quote blockquote { color: #201c1d; font-style: italic; font-size: 1.2em; line-height: 1.1em; margin: 0.5em 0; }
+.quote .author { color: #666; font-family: Arial, Helvetica, sans-serif; font-size: 0.75em; line-height: 1em; padding-top: 0.3em; }
+article aside .spline { background: url('../images/spline.png') center center no-repeat; width: 219px; height: 3px; margin: 0.5em 0 0.5em -0.5em; }
+article aside .download { height: 1.375em; padding: 0 0.25em 0 3.25em; border: 1px solid #8ecac6; margin: 1.6em auto; color: #fff; display: block; width: 7.5em; text-decoration: underline; line-height: 3em; height: 3em;   
+	background: #49918d;
+	background: -moz-linear-gradient(top, #4f9e99 0%, #448783 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4f9e99), color-stop(100%,#448783)); 
+	background: -webkit-linear-gradient(top, #4f9e99 0%,#448783 100%); 
+	background: -o-linear-gradient(top, #4f9e99 0%,#448783 100%); 
+	background: -ms-linear-gradient(top, #4f9e99 0%,#448783 100%); 
+	background: linear-gradient(top, #4f9e99 0%,#448783 100%);
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+			border-radius: 3px;
+	position: relative;
+}
+article aside .download img { position: absolute; top: 0.35em; left: 0.5em; }
+article aside .text { color: #666; font-size: 0.75em; font-family: Arial, Helvetica, sans-serif; line-height: 1.75em; padding: 1em 0; }
+article aside .where-to-buy { text-align: center; padding: 1.5em 0; }
+article aside .where-to-buy h2 { color: #201c1d; font-size: 1.4em; font-style: italic; text-align: center; text-decoration: underline; margin: 0.25em 0; text-transform: none; }
+article aside .where-to-buy h2 a { color: #201c1d; }
+article aside .social-likes, .social-likes { margin: 1.5em 0 2em; text-align: center; }
+article aside p { margin-bottom: 1em; }
+article aside .social-likes .like, .social-likes .like, .event-likes .like { display: inline-block; margin: 0.25em 0.75em 0 0; }
+.social-likes p { margin-bottom: 1em; }
+article aside h2 { color: #399; font-size: 1.4em; text-align: center; text-decoration: underline; margin: 0.25em 0; text-transform: uppercase; }
+article aside h2.purple { color: #c0608a; }
+article aside h2 a { color: #399; }
+
+article #main { border: 1px solid #ccc; padding: 0.5em; width: 42em; background: #fff; float: left; margin: -0.6em 0 0; position: relative; }
+article #main .inside { border: 1px solid #ccc; min-height: 23.7em; padding-bottom: 2em;}
+article #main .wine-flag { background: url('../images/sprites.png') -286px 0; position: absolute; top: 0; right: 1.5em; width: 111px; height: 114px; text-align: center; line-height: 1.2em; }
+article #main .wine-flag a { color: #16748f; font-style: italic; font-size: 1em; display: inline-block; margin: 0.8em 0 0; }
+article #main .wine-flag.news-updates { color: #16748f; font-style: italic; font-size: 1.1em; display: inline-block; padding: 0.5em 0 0; line-height: 1.1em; }
+article #main .wine-flag.news-updates a { margin: 0.4em 0.1em 0 0; display: inline-block; }
+article #main .inside h1 { color: #201c1d; font-size: 2.5em; margin: 0.5em 0 0.65em; font-style: italic; text-align: center; }
+article #main .spline { background: url('../images/spline.png') repeat-x; width: auto; height: 3px; margin: 0.5em 1em; }
+.inside .categories { margin: 1em; padding: 0; max-width: 45em; text-align: center; }
+.inside .categories li { display: inline; }
+.inside .categories a { display: inline-block; color: #000; font-size: 1.1em; margin: 0.3em 2em 0.45em 0; position: relative; padding-left: 1.85em; }
+.inside .categories a .type { width: 26px; height: 26px; background: url('../images/sprites.png') 0 0 no-repeat transparent; position: absolute; top: 0; left: 0; display: inline-block; }
+.inside .categories a .type.white { background-position: -402px 0; }
+.inside .categories a .type.red { background-position: -402px -29px; }
+.inside .categories a .type.shampane { background-position: -402px -57px; }
+.inside .categories a .type.dinner { background-position: -402px -87px; }
+.inside .categories a .type.sort { background-position: -402px -117px; }
+.inside .categories a .type.brandy { background-position: -402px -147px; }
+
+.inside .categories-sep { margin: 2em 0 0; }
+.inside .categories-sep .left { margin: 1.5em 0; background: url('../images/left-border-series.png') right top no-repeat; height: 2.5em; width: 12em; float: left; } 
+.inside .categories-sep .center { text-align: center; margin: 1.2em 0; background: #fff; height: 1.9em; border-top: 1px solid #666; border-bottom: 1px solid #666; color: #201C1D;text-transform: uppercase; font-size: 1.25em; letter-spacing: 1px; line-height: 1.9em; width: 14.3em; float: left; }
+.inside .categories-sep .right { margin: 1.5em 0; background: url('../images/right-border-series.png') left top no-repeat; height: 2.5em; width: 12em; float: left; }
+.inside .items-list { text-align: center; }
+.inside .items-list .category-item { width: 13.75em; text-align: center; display: inline-block; height: 20em; margin: 2em 0 0; }
+.inside .items-list .category-item .category-name { font-family: Arial, Helvetica, sans-serif; font-size: 0.8em; color: #666; margin: 1.5em 0 0; }
+.inside .items-list .category-item .item-name { color: #221e1f; text-decoration: underline; font-size: 1.1em; margin-bottom: 0; }
+.inside .pagination { text-align: center; margin: 2em 0 0; }
+.inside .pagination a { color: #717171; display: inline-block; padding: 0.5em 0.75em; font-family: Arial, Helvetica, sans-serif; font-weight: bold; background: #f7f7f7; border: 1px solid #b9b9b9; line-height: 1em; font-size: 0.75em; text-decoration: none; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; box-shadow: 0 2px 10px #ccc; }
+.inside .pagination a.three-dots { border: 0 none; box-shadow: none; }
+.inside .pagination a.current { background: #8f9191; color: #fff; box-shadow: 0 0 10px #333 inset; }
+
+/* news */
+.news-paper { padding: 0 1.5em; }
+.news-paper h2 { color: #201c1d; font-size: 1.6em; text-decoration: underline; margin: 1em 0 0.35em; }
+.news-paper .date { color: #666; font-family: Arial, Helvetica, sans-serif; font-size: 0.75em; margin-bottom: 1em; }
+.news-paper p { font-size: 0.8em; color:#666; font-family: Arial, Helvetica, sans-serif; max-width: 45em; margin: 1em 0;  }
+.news-paper p a { color: #000; display: inline-block; margin-bottom: 1em; }
+
+article #main .inside .news-header { margin: 0 1.5em; }
+article #main .inside .news-body { margin: 0 1.5em; }
+article #main .inside .news-header h1 { text-align: left; margin: 0.55em 0 0.3em; }
+article #main .inside .news-header .date { color: #666; font-family: Arial, Helvetica, sans-serif; font-size: 0.75em; margin-bottom: 1.2em; }
+article #main .inside .news-body p { font-size: 0.8em; color:#666; font-family: Arial, Helvetica, sans-serif; max-width: 45em; margin: 1.5em 0;  }
+article #main .inside .event-likes { background: url('../images/social_bg.png'); padding: 1em 1.5em; }
+article #main .inside .event-likes p { color: #333; margin-bottom: 0.5em; }
+article aside .event { text-align: center; margin: 1.25em 0; }
+article aside .event .date { color: #666; font-family: Arial, Helvetica, sans-serif; font-size: 0.75em; }
+article aside .event .title { text-decoration: underline; text-transform: uppercase; }
+
+
+.additional { padding: 1.5em 0 0 15em; }
+.additional h3 { color: #201C1D; font-size: 1.6em; margin: 0 0 0.5em 0.5em; }
+
+.no-margin { margin-right: 0 !important; }
+.no-padding { padding: 0 !important; }
+
+/* product */
+article aside .news-item { text-align: center; margin: 1em 0 1.5em; background: url('../images/news-separator.png') center top no-repeat; padding: 2em 0 0; }
+article aside .news-list .date { font: 0.75em Arial, Helvetica, sans-serif; color: #666; margin-bottom: 0.5em; }
+article aside .news-list  a { color: #221e1f; line-height: 0.7em; }
+.news-list a.news-link { display: inline-block; background: #78cccc; padding: 0.05em 1em 0.2em; border-radius: 20px; color: #221e1f; margin: 0 0 1.5em 2.25em; padding: 0.35em 1em 0.5em; }
+article hr { margin: 0 1em; border: 1px solid #666; border-style: solid none none; }
+article #main .inside .product-info h1 { text-align: left; margin-bottom: 0.5em; }
+.product-info { padding-bottom: 2em; }
+.product-info .product-view { margin-bottom: 1em; }
+.product-info .column { float: left; width: 20em; position: relative; }
+.product-info .column.center { text-align: center; margin-top: -10em; z-index: 9999; }
+.product-info .column.left { text-align: left; }
+.product-info .where-to-buy-small { display: block; text-align: center; color: #201c1d; font-style: italic; font-size: 1.3em; line-height: 1.1em; margin: 0 0 1.5em; }
+.product-info .breadcrumb { padding: 0; margin: 1em 0 0; line-height: 1.4em; }
+.product-info .breadcrumb li { display: inline; }
+.product-info .breadcrumb li a { color: #666; font-style: italic; white-space: nowrap; }
+.product-info .breadcrumb .divider { color: #999; }
+article #main .column .spline { margin: 0.75em 0; }
+.product-info p { color: #666; font-family: Arial, Helvetica, sans-serif; font-size: 0.85em; margin-bottom: 0em;}
+.product-info p.medals img { margin: 0.5em 0.5em 0 0; } 
+/*.inside .items-list.product-view { margin-top: -5em; }*/
+
+/* 6. CUSTOM LAYOUT & TYPOGRAPHY (Baby bear)
+----------------------------------------------------------------------------------------*/
+.container {
+    padding: 0.809em;
+    max-width: 30em;
+    margin: auto;
+    padding-top: 0;
+  }
+
+/*aside { width: 100%; }*/
+
+
+/* 7. BROWSER AND NON-SEMANTIC STYLING
+----------------------------------------------------------------------------------------*/
+.cf:before, .cf:after { content: ""; display: block; }
+.cf:after { clear: both; }
+.ie6 .cf { zoom: 1 }

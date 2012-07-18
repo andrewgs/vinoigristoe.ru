@@ -15,6 +15,8 @@ class Admin_interface extends CI_Controller{
 		$this->load->model('mdunion');
 		$this->load->model('mdtypeevents');
 		$this->load->model('mdcategory');
+		$this->load->model('mdseries');
+		$this->load->model('mdproducts');
 		
 		$cookieuid = $this->session->userdata('logon');
 		if(isset($cookieuid) and !empty($cookieuid)):
@@ -228,11 +230,27 @@ class Admin_interface extends CI_Controller{
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
 			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
+			'series'		=> $this->mdseries->read_records($this->language.'_series'),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('title',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+			else:
+				$translit = $this->translite($_POST['title']);
+				$result = $this->mdseries->insert_record($_POST['title'],$translit,$_POST['cid'],$this->language.'_series');
+				if($result):
+					$this->session->set_userdata('msgs','Запись создана успешно.');
+				endif;
+				redirect($this->uri->uri_string());
+			endif;
+		endif;
 		
 		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
 		$this->load->view($pagevar['language']."/admin_interface/products/category",$pagevar);
@@ -240,7 +258,6 @@ class Admin_interface extends CI_Controller{
 	
 	public function control_add_category(){
 		
-		$from = intval($this->uri->segment(5));
 		$pagevar = array(
 			'title'			=> 'Панель администрирования | Добавдение категории',
 			'description'	=> 'Игристые вина',
@@ -268,8 +285,9 @@ class Admin_interface extends CI_Controller{
 					$_POST['icon'] = file_get_contents(base_url().'images/noimages/no_icon.jpg');
 				endif;
 				$translit = $this->translite($_POST['title']);
-				$result = $this->mdcategory->insert_record($_POST,$translit,$this->language.'_category');
-				if($result):
+				$cid = $this->mdcategory->insert_record($_POST,$translit,$this->language.'_category');
+				if($cid):
+					$this->mdseries->insert_record('Категория по умолчанию','default',$cid,$this->language.'_series');
 					$this->session->set_userdata('msgs','Запись создана успешно.');
 				endif;
 				redirect($this->uri->uri_string());
@@ -329,6 +347,8 @@ class Admin_interface extends CI_Controller{
 		if($cid):
 			$result = $this->mdcategory->delete_record($cid,$this->language.'_category');
 			if($result):
+				$this->mdseries->delete_records($cid,$this->language.'_series');
+				//удаление товаров
 				$this->session->set_userdata('msgs','Категория удалена успешно.');
 			else:
 				$this->session->set_userdata('msgr','Категория не удалена.');
@@ -337,6 +357,172 @@ class Admin_interface extends CI_Controller{
 		else:
 			show_404();
 		endif;
+	}
+	
+	public function control_edit_series(){
+		
+		$cid = $this->mdcategory->read_field_translit($this->uri->segment(4),'id',$this->language.'_category');
+		if(!$cid):
+			redirect($this->session->userdata('backpath'));
+		endif;
+		$sid = $this->mdseries->read_field_translit($this->uri->segment(5),'id',$this->language.'_series');
+		if(!$sid):
+			redirect($this->session->userdata('backpath'));
+		endif;
+		$pagevar = array(
+			'title'			=> 'Панель администрирования | Редактирование серии товара',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl'		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'series'		=> $this->mdseries->read_record($sid,$this->language.'_series'),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('title',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+				$this->control_add_events();
+			else:
+				if($this->uri->segment(5) == 'default'):
+					$translit = 'default';
+				else:
+					$translit = $this->translite($_POST['title']);
+				endif;
+				if(isset($_POST['delseries'])):
+					$result = $this->mdseries->delete_record($sid,$this->language.'_series');
+					if($result):
+						//удаление товаров
+						$this->session->set_userdata('msgs','Серия удалена успешно.');
+					endif;
+				else:
+					$result = $this->mdseries->update_record($sid,$_POST['title'],$translit,$this->language.'_series');
+					if($result):
+						$this->session->set_userdata('msgs','Серия сохранена успешно.');
+					endif;
+				endif;
+				redirect($this->session->userdata('backpath'));
+			endif;
+		endif;
+		
+		$this->load->view($pagevar['language']."/admin_interface/products/edit-series",$pagevar);
+	}
+	
+	public function control_products(){
+		
+		$from = intval($this->uri->segment(5));
+		$pagevar = array(
+			'title'			=> 'Панель администрирования | Продукты',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl'		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
+			'series'		=> $this->mdseries->read_records($this->language.'_series'),
+			'products'		=> $this->mdproducts->read_limit_records($this->language.'_products',7,$from),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		for($i=0;$i<count($pagevar['products']);$i++):
+			$pagevar['products'][$i]['content'] = strip_tags($pagevar['products'][$i]['content']);
+			if(mb_strlen($pagevar['products'][$i]['content'],'UTF-8') > 250):
+				$pagevar['products'][$i]['content'] = mb_substr($pagevar['products'][$i]['content'],0,250,'UTF-8');	
+				$pos = mb_strrpos($pagevar['products'][$i]['content'],' ',0,'UTF-8');
+				$pagevar['products'][$i]['content'] = mb_substr($pagevar['products'][$i]['content'],0,$pos,'UTF-8');
+				$pagevar['products'][$i]['content'] .= ' ... ';
+			endif;
+		endfor;
+		
+		$config['base_url'] 		= $pagevar['baseurl'].'admin-panel/actions/products/from/';
+		$config['uri_segment'] 		= 5;
+		$config['total_rows'] 		= $this->mdproducts->count_records($this->language.'_products');
+		$config['per_page'] 		= 7;
+		$config['num_links'] 		= 4;
+		$config['first_link']		= 'В начало';
+		$config['last_link'] 		= 'В конец';
+		$config['next_link'] 		= 'Далее &raquo;';
+		$config['prev_link'] 		= '&laquo; Назад';
+		$config['cur_tag_open']		= '<span class="actpage">';
+		$config['cur_tag_close'] 	= '</span>';
+		
+		$this->pagination->initialize($config);
+		$pagevar['pages'] = $this->pagination->create_links();
+		
+		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
+		$this->load->view($pagevar['language']."/admin_interface/products/products",$pagevar);
+	}
+	
+	public function control_delete_product(){
+		
+		$cid = $this->uri->segment(6);
+		if($cid):
+			$result = $this->mdcategory->delete_record($cid,$this->language.'_category');
+			if($result):
+				$this->mdseries->delete_records($cid,$this->language.'_series');
+				//удаление товаров
+				$this->session->set_userdata('msgs','Категория удалена успешно.');
+			else:
+				$this->session->set_userdata('msgr','Категория не удалена.');
+			endif;
+			redirect($this->session->userdata('backpath'));
+		else:
+			show_404();
+		endif;
+	}
+	
+	public function control_add_product(){
+		
+		$pagevar = array(
+			'title'			=> 'Панель администрирования | Добавдение продукта',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl'		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
+			'series'		=> $this->mdseries->read_records($this->language.'_series'),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('title',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+				$this->control_add_events();
+			else:
+				if($_FILES['icon']['error'] != 4):
+					$_POST['icon'] = file_get_contents($_FILES['image']['tmp_name']);
+				else:
+					$_POST['icon'] = file_get_contents(base_url().'images/noimages/no_icon.jpg');
+				endif;
+				$translit = $this->translite($_POST['title']);
+				$cid = $this->mdcategory->insert_record($_POST,$translit,$this->language.'_category');
+				if($cid):
+					$this->mdseries->insert_record('Категория по умолчанию','default',$cid,$this->language.'_series');
+					$this->session->set_userdata('msgs','Запись создана успешно.');
+				endif;
+				redirect($this->uri->uri_string());
+			endif;
+		endif;
+		
+		$this->load->view($pagevar['language']."/admin_interface/products/add-product",$pagevar);
 	}
 	
 	

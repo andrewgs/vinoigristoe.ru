@@ -1,33 +1,30 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Mdcategory extends CI_Model{
+class Mdseries extends CI_Model{
 
 	var $id			= 0;
 	var $title		= '';
+	var $category	= '';
 	var $translit	= '';
-	var $icon		= '';
 	
 	function __construct(){
 		parent::__construct();
 	}
 	
-	function insert_record($data,$translit,$table){
+	function insert_record($title,$translit,$category,$table){
 			
-		$this->title	= htmlspecialchars($data['title']);
+		$this->title	= htmlspecialchars($title);
 		$this->translit	= $translit;
-		$this->icon		= $data['icon'];
+		$this->category	= $category;
 		
 		$this->db->insert($table,$this);
 		return $this->db->insert_id();
 	}
 	
-	function update_record($id,$data,$translit,$table){
+	function update_record($id,$title,$translit,$table){
 		
-		$this->db->set('title',htmlspecialchars($data['title']));
+		$this->db->set('title',htmlspecialchars($title));
 		$this->db->set('translit',$translit);
-		if(isset($data['icon'])):
-			$this->db->set('icon',$data['icon']);
-		endif;
 		$this->db->where('id',$id);
 		$this->db->update($table);
 		return $this->db->affected_rows();
@@ -35,7 +32,6 @@ class Mdcategory extends CI_Model{
 	
 	function read_records($table){
 		
-		$this->db->select('id,title,translit');
 		$query = $this->db->get($table);
 		$data = $query->result_array();
 		if(count($data)) return $data;
@@ -49,7 +45,6 @@ class Mdcategory extends CI_Model{
 	
 	function read_record($id,$table){
 		
-		$this->db->select('id,title,translit');
 		$this->db->where('id',$id);
 		$query = $this->db->get($table,1);
 		$data = $query->result_array();
@@ -78,6 +73,13 @@ class Mdcategory extends CI_Model{
 	function delete_record($id,$table){
 	
 		$this->db->where('id',$id);
+		$this->db->delete($table);
+		return $this->db->affected_rows();
+	}
+	
+	function delete_records($category,$table){
+	
+		$this->db->where('category',$category);
 		$this->db->delete($table);
 		return $this->db->affected_rows();
 	}

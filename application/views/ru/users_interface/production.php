@@ -110,66 +110,8 @@
 				</div>
 			</article>
 		</div>
-		<footer>
-			<div class="container" class="cf">
-				<section class="cf">
-					<div class="social-widget">
-						<!--
-						<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?49"></script>
-						<div id="vk_groups"></div>
-						<script type="text/javascript">
-							VK.Widgets.Group("vk_groups", {
-								mode : 0,
-								width : "218",
-								height : "215"
-							}, 20003922);
-						</script>
-						-->
-					</div>
-					<div class="social-widget">
-						<!--
-						<div id="fb-root"></div>
-						<script>
-							( function(d, s, id) {
-								var js, fjs = d.getElementsByTagName(s)[0];
-								if(d.getElementById(id))
-									return;
-								js = d.createElement(s);
-								js.id = id;
-								js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1&appId=118650518205495";
-								fjs.parentNode.insertBefore(js, fjs);
-							}(document, 'script', 'facebook-jssdk'));
-						</script>
-						<div class="fb-like-box" data-href="http://www.facebook.com/platform" data-width="218" data-height="215" data-show-faces="true" data-stream="false" data-header="false"></div>
-						-->
-					</div>
-					<nav>
-						<ul>
-							<li><a href="#">Главная страница</a></li>
-							<li><a href="#">О компании</a></li>
-							<li><a href="#">Партнерам</a></li>
-							<li><a href="#">Выставки и события</a></li>
-							<li><a href="#">Продукция</a></li>
-							<li><a href="#">Контактные данные</a></li>
-						</ul>
-					</nav>
-					<div class="copyright">
-						<div class="stats">
-							<a href="#"><img src="images/logger.png" alt="" /></a>
-							<a href="#"><img src="images/rambler.png" alt="" /></a>
-						</div>
-						<p>
-							© 1995–2012<br/>
-							ОАО «ЦИМЛЯНСКИЕ ВИНА»	
-						</p>
-						<p>
-							При копировании материалов<br/>
-							сайта ссылка на источник<br/>
-							обязательна!
-						</p>
-					</div>
-				</section>
-			</div>
-		</footer>
-	</body>
+		<?php $this->load->view($language."/users_interface/includes/footer");?>
+	<?php $this->load->view($language."/users_interface/includes/scripts");?>
+	
+</body>
 </html>

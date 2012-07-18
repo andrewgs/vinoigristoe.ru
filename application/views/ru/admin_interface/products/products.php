@@ -8,7 +8,7 @@
 			<div class="span9">
 				<ul class="breadcrumb">
 					<li class="active">
-						<?=anchor($this->uri->uri_string(),"Категории и серии");?>
+						<?=anchor($this->uri->uri_string(),"Продукты");?>
 					</li>
 				</ul>
 				<?php $this->load->view($language."/alert_messages/alert-error");?>
@@ -17,12 +17,13 @@
 					<thead>
 						<tr>
 							<th class="w50"><center>Фото</center></th>
-							<th class="w600"><center>Название</center></th>
+							<th class="w100"><center>Название</center></th>
+							<th class="w400"><center>Описание</center></th>
 							<th class="w50">&nbsp;</th>
 						</tr>
 					</thead>
 					<tbody>
-					<?php for($i=0;$i<count($category);$i++):?>
+					<?php for($i=0;$i<count($products);$i++):?>
 						<tr class="align-center">
 							<td class="w50"><img src="<?=$baseurl;?>category/viewimage/<?=$category[$i]['id'];?>" alt="" /></td>
 							<td class="w500">
@@ -45,21 +46,19 @@
 					<?php endfor; ?>
 					</tbody>
 				</table>
-				<?=anchor('admin-panel/actions/category/add','<nobr><i class="icon-plus icon-white"></i> Добавить</nobr>',array('class'=>'btn btn-info'));?>
+				<?=anchor('admin-panel/actions/products/add','<nobr><i class="icon-plus icon-white"></i> Добавить</nobr>',array('class'=>'btn btn-info'));?>
 			</div>
 		<?php $this->load->view($language."/admin_interface/includes/rightbar");?>
-		<?php $this->load->view($language."/admin_interface/modal/add-series");?>
-		<?php $this->load->view($language."/admin_interface/modal/delete-category");?>
+		<?php $this->load->view($language."/admin_interface/modal/delete-product");?>
 		</div>
 	</div>
 	<?php $this->load->view($language."/admin_interface/includes/scripts");?>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			var cID = 0;
+			var pID = 0;
 			
-			$(".addSeries").click(function(){var Param = $(this).attr('data-param'); cID = $("div[id = params"+Param+"]").attr("data-cid"); $("#idCategory").val(cID)});
-			$(".deleteCategory").click(function(){var Param = $(this).attr('data-param'); cID = $("div[id = params"+Param+"]").attr("data-cid");});
-			$("#DelCategory").click(function(){location.href='<?=$baseurl;?>admin-panel/actions/category/delete/categoryid/'+cID;});
+			$(".deleteProduct").click(function(){var Param = $(this).attr('data-param'); pID = $("div[id = params"+Param+"]").attr("data-pid");});
+			$("#DelProduct").click(function(){location.href='<?=$baseurl;?>admin-panel/actions/product/delete/productid/'+pID;});
 		});
 	</script>
 </body>

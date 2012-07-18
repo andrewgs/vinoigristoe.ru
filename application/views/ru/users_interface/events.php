@@ -30,22 +30,7 @@
 					<h2><?=anchor('#','Туры на виноградники<br/> Цилянских вин!');?></h2>
 				</div>
 				<div class="spline"></div>
-				<div class="social-likes">
-					<p>Нравятся цимлянские вина?<br/>Расскажите о нем друзьям!</p>
-					<div class="like">
-						<img src="<?=$baseurl;?>images/vk.png" alt="" />
-					</div>	
-					<div class="like">
-						<img src="<?=$baseurl;?>images/gplus.png" alt="" />
-					</div>
-					<div class="like">
-						<img src="<?=$baseurl;?>images/tw.png" alt="" />
-					</div>
-					<div class="like">
-						<img src="<?=$baseurl;?>images/fb.png" alt="" />
-					</div>
-				</div>
-				<div class="spline"></div>
+				<?php $this->load->view($language."/users_interface/includes/social-likes");?>
 			</aside>
 			<div id="main" role="main" class="cf">
 				<div class="wine-flag news-updates">

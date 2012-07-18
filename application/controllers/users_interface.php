@@ -13,6 +13,7 @@ class Users_interface extends CI_Controller{
 		$this->load->model('mdadmins');
 		$this->load->model('mdevents');
 		$this->load->model('mdunion');
+		$this->load->model('mdcategory');
 		
 		$cookieuid = $this->session->userdata('logon');
 		if(isset($cookieuid) and !empty($cookieuid)):
@@ -139,6 +140,27 @@ class Users_interface extends CI_Controller{
 		$this->load->view($pagevar['language']."/users_interface/view_event",$pagevar);
 	}
 	
+	public function production(){
+		
+		$from = intval($this->uri->segment(3));
+		$pagevar = array(
+			'title'			=> 'Цимлянские вина | Нащи новости и события',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl' 		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		$this->load->view($pagevar['language']."/users_interface/production",$pagevar);
+	}
+	
 	public function admin_login(){
 	
 		$pagevar = array(
@@ -182,7 +204,8 @@ class Users_interface extends CI_Controller{
 		$section = $this->uri->segment(1);
 		$id = $this->uri->segment(3);
 		switch ($section):
-			case 'events' : $image = $this->mdevents->get_image($id,$this->language.'_events'); break;
+			case 'events' 	: $image = $this->mdevents->get_image($id,$this->language.'_events'); break;
+			case 'category' : $image = $this->mdcategory->get_image($id,$this->language.'_category'); break;
 		endswitch;
 		header('Content-type: image/gif');
 		echo $image;

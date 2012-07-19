@@ -14,6 +14,8 @@ class Users_interface extends CI_Controller{
 		$this->load->model('mdevents');
 		$this->load->model('mdunion');
 		$this->load->model('mdcategory');
+		$this->load->model('mdproducts');
+		$this->load->model('mdmedals');
 		
 		$cookieuid = $this->session->userdata('logon');
 		if(isset($cookieuid) and !empty($cookieuid)):
@@ -206,6 +208,8 @@ class Users_interface extends CI_Controller{
 		switch ($section):
 			case 'events' 	: $image = $this->mdevents->get_image($id,$this->language.'_events'); break;
 			case 'category' : $image = $this->mdcategory->get_image($id,$this->language.'_category'); break;
+			case 'product' 	: $image = $this->mdproducts->get_image($id,$this->language.'_products'); break;
+			case 'medals' 	: $image = $this->mdmedals->get_image($id,$this->language.'_medals'); break;
 		endswitch;
 		header('Content-type: image/gif');
 		echo $image;

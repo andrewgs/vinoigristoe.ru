@@ -1,15 +1,11 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Mdproducts extends CI_Model{
+class Mdmedals extends CI_Model{
 
 	var $id			= 0;
 	var $title		= '';
-	var $translit	= '';
-	var $content	= '';
 	var $image		= '';
-	var $type		= '';
-	var $alcohol	= '';
-	var $sugar		= '';
+	var $product	= 0;
 	var $category	= 0;
 	var $series		= 0;
 	
@@ -17,15 +13,11 @@ class Mdproducts extends CI_Model{
 		parent::__construct();
 	}
 	
-	function insert_record($data,$translit,$category,$series,$table){
+	function insert_record($data,$product,$category,$series,$table){
 			
 		$this->title	= htmlspecialchars($data['title']);
-		$this->content	= $data['content'];
 		$this->image	= $data['image'];
-		$this->type		= $data['type'];
-		$this->alcohol	= $data['alcohol'];
-		$this->sugar	= $data['sugar'];
-		$this->translit	= $translit;
+		$this->product	= $product;
 		$this->category	= $category;
 		$this->series	= $series;
 		
@@ -33,17 +25,13 @@ class Mdproducts extends CI_Model{
 		return $this->db->insert_id();
 	}
 	
-	function update_record($id,$data,$translit,$category,$series,$table){
+	function update_record($id,$data,$product,$category,$series,$table){
 		
 		$this->db->set('title',htmlspecialchars($data['title']));
-		$this->db->set('content',$data['content']);
 		if(isset($data['image'])):
 			$this->db->set('image',$data['image']);
 		endif;
-		$this->db->set('type',$data['type']);
-		$this->db->set('alcohol',$data['alcohol']);
-		$this->db->set('sugar',$data['sugar']);
-		$this->db->set('translit',$translit);
+		$this->db->set('product',$product);
 		$this->db->set('category',$category);
 		$this->db->set('series',$series);
 		$this->db->where('id',$id);
@@ -51,20 +39,9 @@ class Mdproducts extends CI_Model{
 		return $this->db->affected_rows();
 	}
 	
-	function read_records($table){
+	function read_records($product,$table){
 		
-		$query = $this->db->get($table);
-		$data = $query->result_array();
-		if(count($data)) return $data;
-		return NULL;
-	}
-	
-	function read_limit_records($table,$count,$from){
-		
-		$this->db->select('id,title,translit,content,type,alcohol,sugar,category,series');
-		$this->db->limit($count,$from);
-		$this->db->order_by('category');
-		$this->db->order_by('series');
+		$this->db->where('product',$product);
 		$query = $this->db->get($table);
 		$data = $query->result_array();
 		if(count($data)) return $data;
@@ -78,7 +55,7 @@ class Mdproducts extends CI_Model{
 	
 	function read_record($id,$table){
 		
-		$this->db->select('id,title,translit,content,type,alcohol,sugar,category,series');
+		$this->db->select('id,title');
 		$this->db->where('id',$id);
 		$query = $this->db->get($table,1);
 		$data = $query->result_array();

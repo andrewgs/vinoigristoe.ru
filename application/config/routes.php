@@ -19,6 +19,8 @@ $route['events/from/:num']= "users_interface/events";
 
 $route['events/viewimage/:num']		= "users_interface/viewimage";
 $route['category/viewimage/:num']	= "users_interface/viewimage";
+$route['product/viewimage/:num']	= "users_interface/viewimage";
+$route['medals/viewimage/:num']		= "users_interface/viewimage";
 
 $route['events/:any'] 	= "users_interface/view_events";
 
@@ -38,7 +40,12 @@ $route['admin-panel/actions/products/from/:num']= "admin_interface/control_produ
 
 $route['admin-panel/actions/products/add']	= "admin_interface/control_add_product";
 $route['admin-panel/actions/products/delete/productid/:num']= "admin_interface/control_delete_product";
+$route['admin-panel/actions/products/category/:num/series/:num/edit/:any']	= "admin_interface/control_edit_product";
 
+$route['admin-panel/actions/products/category/:num/series/:num/product/:num/medals']	= "admin_interface/control_medals_product";
+$route['admin-panel/actions/products/category/:num/series/:num/product/:num/whereby']	= "admin_interface/control_whereby_product";
+
+$route['admin-panel/actions/products/category/:num/series/:num/product/:num/medals/delete/medalid/:num']= "admin_interface/control_delete_medal";
 
 
 $route['admin-panel/actions/category']			= "admin_interface/control_category";

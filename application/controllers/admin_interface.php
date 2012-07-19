@@ -17,6 +17,10 @@ class Admin_interface extends CI_Controller{
 		$this->load->model('mdcategory');
 		$this->load->model('mdseries');
 		$this->load->model('mdproducts');
+		$this->load->model('mdmedals');
+		$this->load->model('mdmagazines');
+		$this->load->model('mdcity');
+		$this->load->model('mdcountry');
 		
 		$cookieuid = $this->session->userdata('logon');
 		if(isset($cookieuid) and !empty($cookieuid)):
@@ -503,20 +507,25 @@ class Admin_interface extends CI_Controller{
 		if($this->input->post('submit')):
 			unset($_POST['submit']);
 			$this->form_validation->set_rules('title',' ','required|trim');
+			$this->form_validation->set_rules('type',' ','required|trim');
+			$this->form_validation->set_rules('alcohol',' ','required|trim');
+			$this->form_validation->set_rules('sugar',' ','required|trim');
+			$this->form_validation->set_rules('content',' ','required|trim');
+			$this->form_validation->set_rules('series',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
 				$this->control_add_events();
 			else:
-				if($_FILES['icon']['error'] != 4):
-					$_POST['icon'] = file_get_contents($_FILES['image']['tmp_name']);
+				if($_FILES['image']['error'] != 4):
+					$_POST['image'] = file_get_contents($_FILES['image']['tmp_name']);
 				else:
-					$_POST['icon'] = file_get_contents(base_url().'images/noimages/no_icon.jpg');
+					$_POST['image'] = file_get_contents(base_url().'images/noimages/no_icon.jpg');
 				endif;
 				$translit = $this->translite($_POST['title']);
-				$cid = $this->mdcategory->insert_record($_POST,$translit,$this->language.'_category');
+				$category = $this->mdseries->read_field($_POST['series'],'category',$this->language.'_series');
+				$cid = $this->mdproducts->insert_record($_POST,$translit,$category,$_POST['series'],$this->language.'_products');
 				if($cid):
-					$this->mdseries->insert_record('Категория по умолчанию','default',$cid,$this->language.'_series');
-					$this->session->set_userdata('msgs','Запись создана успешно.');
+					$this->session->set_userdata('msgs','Продукт создан успешно.');
 				endif;
 				redirect($this->uri->uri_string());
 			endif;
@@ -525,6 +534,173 @@ class Admin_interface extends CI_Controller{
 		$this->load->view($pagevar['language']."/admin_interface/products/add-product",$pagevar);
 	}
 	
+	public function control_edit_product(){
+		
+		
+		$pid = $this->mdproducts->read_field_translit($this->uri->segment(5),$this->uri->segment(7),$this->uri->segment(9),'id',$this->language.'_products');
+		if(!$pid):
+			redirect($this->session->userdata('backpath'));
+		endif;
+		$pagevar = array(
+			'title'			=> 'Панель администрирования | Редактирование продукта',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl'		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'product'		=> $this->mdproducts->read_record($pid,$this->language.'_products'),
+			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
+			'series'		=> $this->mdseries->read_records($this->language.'_series'),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('title',' ','required|trim');
+			$this->form_validation->set_rules('type',' ','required|trim');
+			$this->form_validation->set_rules('alcohol',' ','required|trim');
+			$this->form_validation->set_rules('sugar',' ','required|trim');
+			$this->form_validation->set_rules('content',' ','required|trim');
+			$this->form_validation->set_rules('series',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+				$this->control_add_events();
+			else:
+				if($_FILES['image']['error'] != 4):
+					$_POST['image'] = file_get_contents($_FILES['image']['tmp_name']);
+				endif;
+				$translit = $this->translite($_POST['title']);
+				$category = $this->mdseries->read_field($_POST['series'],'category',$this->language.'_series');
+				$id = $this->mdproducts->update_record($pid,$_POST,$translit,$category,$_POST['series'],$this->language.'_products');
+				if($id):
+					$this->session->set_userdata('msgs','Продукт сохранен успешно.');
+				endif;
+				redirect($this->session->userdata('backpath'));
+			endif;
+		endif;
+		
+		$this->load->view($pagevar['language']."/admin_interface/products/edit-product",$pagevar);
+	}
+	
+	public function control_medals_product(){
+
+		$pid = $this->uri->segment(8);
+		$pagevar = array(
+			'title'			=> 'Панель администрирования | Награды',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl'		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'medals'		=> $this->mdmedals->read_records($pid,$this->language.'_medals'),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('title',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+				$this->control_add_events();
+			else:
+				if($_FILES['image']['error'] != 4):
+					$_POST['image'] = file_get_contents($_FILES['image']['tmp_name']);
+				else:
+					$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+					redirect($this->uri->uri_string());
+				endif;
+				$mid = $this->mdmedals->insert_record($_POST,$pid,$this->uri->segment(5),$this->uri->segment(7),$this->language.'_medals');
+				if($mid):
+					$this->session->set_userdata('msgs','Награда создана успешно.');
+				endif;
+				redirect($this->uri->uri_string());
+			endif;
+		endif;
+		
+		$this->load->view($pagevar['language']."/admin_interface/products/medals",$pagevar);
+	}
+	
+	public function control_delete_medal(){
+		
+		$mid = $this->uri->segment(13);
+		if($mid):
+			$result = $this->mdmedals->delete_record($mid,$this->language.'_medals');
+			if($result):
+				$this->session->set_userdata('msgs','Награда удалена успешно.');
+			else:
+				$this->session->set_userdata('msgr','Награда не удалена.');
+			endif;
+			redirect('admin-panel/actions/products/category/'.$this->uri->segment(5).'/series/'.$this->uri->segment(7).'/product/'.$this->uri->segment(9).'/medals');
+		else:
+			show_404();
+		endif;
+	}
+	
+	public function control_whereby_product(){
+
+		$pid = $this->uri->segment(8);
+		$pagevar = array(
+			'title'			=> 'Панель администрирования | Где купить',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl'		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'magazine'		=> $this->mdmagazines->read_records($pid,$this->language.'_magazines'),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('title',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+				$this->control_add_events();
+			else:
+				if($_FILES['image']['error'] != 4):
+					$_POST['image'] = file_get_contents($_FILES['image']['tmp_name']);
+				else:
+					$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+					redirect($this->uri->uri_string());
+				endif;
+				$mid = $this->mdmedals->insert_record($_POST,$pid,$this->uri->segment(5),$this->uri->segment(7),$this->language.'_medals');
+				if($mid):
+					$this->session->set_userdata('msgs','Награда создана успешно.');
+				endif;
+				redirect($this->uri->uri_string());
+			endif;
+		endif;
+		
+		$this->load->view($pagevar['language']."/admin_interface/products/medals",$pagevar);
+	}
+	
+	public function control_delete_whereby(){
+		
+		$mid = $this->uri->segment(13);
+		if($mid):
+			$result = $this->mdmedals->delete_record($mid,$this->language.'_medals');
+			if($result):
+				$this->session->set_userdata('msgs','Награда удалена успешно.');
+			else:
+				$this->session->set_userdata('msgr','Награда не удалена.');
+			endif;
+			redirect('admin-panel/actions/products/category/'.$this->uri->segment(5).'/series/'.$this->uri->segment(7).'/product/'.$this->uri->segment(9).'/medals');
+		else:
+			show_404();
+		endif;
+	}
 	
 	/******************************************************** functions ******************************************************/	
 	

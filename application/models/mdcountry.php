@@ -10,18 +10,18 @@ class Mdcountry extends CI_Model{
 		parent::__construct();
 	}
 	
-	function insert_record($data,$translit,$table){
+	function insert_record($title,$translit,$table){
 			
-		$this->title	= htmlspecialchars($data['title']);
+		$this->title	= htmlspecialchars($title);
 		$this->translit	= $translit;
 		
 		$this->db->insert($table,$this);
 		return $this->db->insert_id();
 	}
 	
-	function update_record($id,$data,$translit,$table){
+	function update_record($id,$title,$translit,$table){
 		
-		$this->db->set('title',htmlspecialchars($data['title']));
+		$this->db->set('title',htmlspecialchars($title));
 		$this->db->set('translit',$translit);
 		$this->db->where('id',$id);
 		$this->db->update($table);

@@ -47,6 +47,12 @@ $route['admin-panel/actions/products/category/:num/series/:num/product/:num/wher
 
 $route['admin-panel/actions/products/category/:num/series/:num/product/:num/medals/delete/medalid/:num']= "admin_interface/control_delete_medal";
 
+$route['admin-panel/actions/country']= "admin_interface/control_country";
+$route['admin-panel/actions/country/delete/countryid/:num']= "admin_interface/control_delete_country";
+
+$route['admin-panel/actions/shops']= "admin_interface/control_shops";
+$route['admin-panel/actions/shops/delete/shopsid/:num']= "admin_interface/control_delete_shops";
+
 
 $route['admin-panel/actions/category']			= "admin_interface/control_category";
 $route['admin-panel/actions/category/add']		= "admin_interface/control_add_category";

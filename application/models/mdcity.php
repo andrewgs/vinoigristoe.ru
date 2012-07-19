@@ -5,6 +5,7 @@ class Mdcity extends CI_Model{
 	var $id			= 0;
 	var $title		= '';
 	var $translit	= '';
+	var $country	= '';
 	
 	function __construct(){
 		parent::__construct();
@@ -72,6 +73,13 @@ class Mdcity extends CI_Model{
 	function delete_record($id,$table){
 	
 		$this->db->where('id',$id);
+		$this->db->delete($table);
+		return $this->db->affected_rows();
+	}
+
+	function delete_records_counry($country,$table){
+		
+		$this->db->where('country',$country);
 		$this->db->delete($table);
 		return $this->db->affected_rows();
 	}

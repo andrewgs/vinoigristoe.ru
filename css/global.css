@@ -96,7 +96,7 @@ small { font-size: 80%; }
 
 /* 4. LINKS
 ----------------------------------------------------------------------------------------*/
-a, a:visited { outline: none; color: #439BBD; text-decoration: underline; }  
+a, a:visited { outline: none; /*color: #439BBD;*/ text-decoration: underline; }  
 a:hover { outline: none; text-decoration:none; }  
 a:active, a:focus { outline: none; }
 
@@ -193,6 +193,7 @@ footer .stats a { display: inline-block; margin: 0.5em 0.25em 1em 0;  }
 article aside { padding: 0 1em; width: 13em; float: left; }
 .aside-logo { background: url('../images/sprites.png') -195px -42px no-repeat transparent; width: 87px; height: 189px; display: block; text-indent: -9999px; margin: 0 0 3em 4em; }
 .aside-logo.purple { background-position: 0 -42px; }
+.aside-logo.grey { background-position: -437px -42px; }
 .quote { text-align: center; background: url('../images/quote_bg.png') center bottom no-repeat; padding-bottom: 0.75em; margin-bottom: 1.75em; }
 .quote blockquote { color: #201c1d; font-style: italic; font-size: 1.2em; line-height: 1.1em; margin: 0.5em 0; }
 .quote .author { color: #666; font-family: Arial, Helvetica, sans-serif; font-size: 0.75em; line-height: 1em; padding-top: 0.3em; }
@@ -230,7 +231,7 @@ article #main .wine-flag a { color: #16748f; font-style: italic; font-size: 1em;
 article #main .wine-flag.news-updates { color: #16748f; font-style: italic; font-size: 1.1em; display: inline-block; padding: 0.5em 0 0; line-height: 1.1em; }
 article #main .wine-flag.news-updates a { margin: 0.4em 0.1em 0 0; display: inline-block; }
 article #main .inside h1 { color: #201c1d; font-size: 2.5em; margin: 0.5em 0 0.65em; font-style: italic; text-align: center; }
-article #main .spline { background: url('../images/spline.png') repeat-x; width: auto; height: 3px; margin: 0.5em 1em; }
+#main .spline { background: url('../images/spline.png') repeat-x; width: auto; height: 3px; margin: 0.5em 1em; }
 .inside .categories { margin: 1em; padding: 0; max-width: 45em; text-align: center; }
 .inside .categories li { display: inline; }
 .inside .categories a { display: inline-block; color: #000; font-size: 1.1em; margin: 0.3em 2em 0.45em 0; position: relative; padding-left: 1.85em; }
@@ -279,6 +280,7 @@ article aside .event .title { text-decoration: underline; text-transform: upperc
 
 .no-margin { margin-right: 0 !important; }
 .no-padding { padding: 0 !important; }
+.pt1em { padding-top: 3.4em !important; }
 
 /* product */
 article aside .news-item { text-align: center; margin: 1em 0 1.5em; background: url('../images/news-separator.png') center top no-repeat; padding: 2em 0 0; }
@@ -300,7 +302,51 @@ article #main .inside .product-info h1 { text-align: left; margin-bottom: 0.5em;
 article #main .column .spline { margin: 0.75em 0; }
 .product-info p { color: #666; font-family: Arial, Helvetica, sans-serif; font-size: 0.85em; margin-bottom: 0em;}
 .product-info p.medals img { margin: 0.5em 0.5em 0 0; } 
-/*.inside .items-list.product-view { margin-top: -5em; }*/
+
+/* company */
+#main .company-page h2 { color: #201c1d; font-size: 2.5em; margin: 1.5em 0 1.1em; font-style: italic; text-align: center; }
+#main .company-page .column { float: left; width: 30em; text-align: center; }
+#main .company-page .column h2 { color: #201c1d; font-size: 2em; margin: 1.5em 0 0.75em; font-style: italic; line-height: 1.2em; text-align: left; }
+#main .company-page p { font-size: 1.25em; margin-bottom: 1.2em; line-height: 1.25em; color: #333; text-align: center; }
+#main .company-page .column p { text-align: left; }
+#main .company-page p.purple-italic { color: #774090; font-style: italic; padding-bottom: 3.25em; }
+#main .company-page p.solid { font-size: 1.5em; font-style: italic; color: #000; }
+#main .ornament-sep { background: url('../images/ornament.png') center top no-repeat; width: 40px; height: 40px; margin: 0 auto; }
+#main .shampane-to-all .ornament-sep, #main .shampane-production .ornament-sep { margin-bottom: 2.75em; }
+#main .shampane-to-all p { margin-left: auto; margin-right: auto; color: #666; }
+#main .shampane-to-all p, #main .shampane-production p { font-size: 1.2em }
+#main .company-page .column img.bordered { border: 1px solid #ccc; padding: 0.5em;  }
+
+#main .art { background: url('../images/company_art_bg.png') center 26em no-repeat transparent; margin-bottom: 2em; }
+#main .shampane-to-all { background: url('../images/wine_art_bg.png') no-repeat; padding-top: 1em; margin-bottom: 4em; }
+#main .shampane-production { padding-bottom: 1em; }
+#main .shampane-production .column { width: 27em; margin: 1.5em; }
+#main .awards img { margin: 3.5em 0; }
+#main .awards p { max-width: 45em; margin-bottom: 2em; }
+#main .art-sample { padding-bottom: 2.25em; }
+
+/* where to buy */
+#main .inside .ya-map { margin: 2.5em 1em; }
+#main .inside .search-widget { margin-left: 5em; }
+#main .inside .search-widget label { color: #999; text-transform: uppercase; font-size: 0.75em; display: inline-block; font-weight: bold; font-family: Arial, Helvetica, sans-serif; margin-right: 0.35em; }
+#main .inside .search-widget select { border: 1px solid #e0e0e0; border-radius: 5px; padding: 0.35em; width: 12em; margin-right: 1em; text-transform: uppercase; font-size: 0.75em; display: inline-block; font-weight: bold; font-family: Arial, Helvetica, sans-serif; 
+	-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+#main .inside button { background: #c73c70; border: 1px solid #c73c70; color: #fff; text-transform: uppercase; padding: 0.35em 0.6em; margin-right: 0.75em; display: inline-block; font-weight: bold; font-family: Arial, Helvetica, sans-serif; font-size: 0.75em; 
+	-webkit-text-shadow: 0 -1px 0px #444; -moz-text-shadow: 0 -1px 0px #444; text-shadow: 0 -1px 0px #444;
+	-webkit-box-shadow: 0 1px 3px #999; -moz-box-shadow: 0 1px 3px #999; box-shadow: 0 1px 3px #999;
+	-webkit-border-radius: 3px;  -moz-border-radius: 3px; border-radius: 3px; }
+#main .inside .delivery img { float: left; margin: 0.5em 1.5em 0.5em 3em; }
+#main .inside .delivery h2, #main .inside .shops h3 { color: #201C1D; font-size: 1.5em; font-style: italic; padding: 1em 0 0; margin: 0.25em; }
+#main .inside .delivery .phone { color: #999; font-size: 1.2em; font-style: italic; padding: 1em 0 0; }
+#main .inside .shops .column { width: 16em; margin: 1em 3em 1em 1em; float: left; }
+#main .inside .shops h3 { font-style: normal; padding: 0 0 0.5em; margin: 0; }
+#main .inside .shops .title { color: #201C1D; font-style: italic; text-decoration: underline; line-height: 2.1em; }
+#main .inside .shops .phone, #main .inside .shops .address { font: 0.75em Arial, Helvetica, sans-serif; color: #666; line-height: 1.1em; }
+#main .inside .shops .address { text-decoration: none; border-bottom: 1px dotted; display: inline; }
+#main .inside .shop-item { background: url('../images/shop.png') left center no-repeat; padding-left: 2em; margin-bottom: 0.75em; }
+#main .inside .shops .show-all { display: inline-block; background: #ccc; padding: 0.05em 1em 0.2em; border-radius: 20px; color: #333; margin: 1em 0 0 1.5em; padding: 0.05em 1em 0.15em; }
+
+
 
 /* 6. CUSTOM LAYOUT & TYPOGRAPHY (Baby bear)
 ----------------------------------------------------------------------------------------*/

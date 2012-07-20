@@ -67,6 +67,46 @@ class Users_interface extends CI_Controller{
 		$this->load->view($pagevar['language']."/users_interface/index",$pagevar);
 	}
 	
+	public function company(){
+		
+		$pagevar = array(
+			'title'			=> 'Цимлянские вина | О компании',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl' 		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
+		$this->load->view($pagevar['language']."/users_interface/company",$pagevar);
+	}
+	
+	public function where(){
+		
+		$pagevar = array(
+			'title'			=> 'Цимлянские вина | Где купить',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl' 		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
+		$this->load->view($pagevar['language']."/users_interface/where",$pagevar);
+	}
+	
 	public function events(){
 		
 		$from = intval($this->uri->segment(3));

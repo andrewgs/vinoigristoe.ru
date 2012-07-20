@@ -80,11 +80,13 @@ class Mdunion extends CI_Model{
 	
 	function magazines_product($product,$prefix){
 		
-		$magazine = $prefix.'_magazines';
+		$whereby = $prefix.'_whereby';
 		$country = $prefix.'_country';
 		$city = $prefix.'_city';
+		$products = $prefix.'_products';
+		$magazines = $prefix.'_magazines';
 		
-		$query = "SELECT $magazine.id,$magazine.title,$magazine.translit,$magazine.address,$magazine.phones,$magazine.country AS countryid,$magazine.city AS cityid,$country.title AS country,$city.title AS city FROM $magazine INNER JOIN $country ON $magazine.country = $country.id INNER JOIN $city ON $magazine.city = $city.id ORDER BY $magazine.title ASC,$country.title, $city.title";
+		$query = "SELECT $whereby.id,$country.title AS country,$city.title AS city,$magazines.title,$magazines.translit,$magazines.address,$magazines.phones FROM $whereby INNER JOIN $country ON $whereby.country = $country.id INNER JOIN $city ON $whereby.city = $city.id INNER JOIN $products ON $whereby.product = $products.id INNER JOIN $magazines ON $whereby.magazine = $magazines.id WHERE $whereby.product = $product ORDER BY $magazines.title, $country.title, $city.title";
 		$query = $this->db->query($query);
 		$data = $query->result_array();
 		if(count($data)) return $data;

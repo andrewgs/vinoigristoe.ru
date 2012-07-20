@@ -46,6 +46,7 @@ $route['admin-panel/actions/products/category/:num/series/:num/product/:num/meda
 $route['admin-panel/actions/products/category/:num/series/:num/product/:num/whereby']	= "admin_interface/control_whereby_product";
 
 $route['admin-panel/actions/products/category/:num/series/:num/product/:num/medals/delete/medalid/:num']= "admin_interface/control_delete_medal";
+$route['admin-panel/actions/products/category/:num/series/:num/product/:num/whereby/delete/wherebyid/:num']= "admin_interface/control_delete_whereby";
 
 $route['admin-panel/actions/country']= "admin_interface/control_country";
 $route['admin-panel/actions/country/edit/:any']= "admin_interface/control_edit_country";

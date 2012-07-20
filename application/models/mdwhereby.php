@@ -1,0 +1,70 @@
+<?php if(!defined('BASEPATH')) exit('No direct script access allowed');
+
+class Mdwhereby extends CI_Model{
+
+	var $id			= 0;
+	var $category	= 0;
+	var $series		= 0;
+	var $product	= 0;
+	var $country	= 0;
+	var $magazine	= 0;
+	var $city		= 0;
+	
+	function __construct(){
+		parent::__construct();
+	}
+	
+	function insert_record($category,$series,$product,$country,$magazine,$city,$table){
+			
+		$this->category = $category;
+		$this->series	= $series;
+		$this->product	= $product;
+		$this->country	= $country;
+		$this->magazine = $magazine;
+		$this->city		= $city;
+		
+		$this->db->insert($table,$this);
+		return $this->db->insert_id();
+	}
+	
+	function update_record($country,$magazine,$city,$table){
+		
+		$this->db->set('country',$country);
+		$this->db->set('magazine',$magazine);
+		$this->db->set('city',$city);
+		$this->db->where('id',$id);
+		$this->db->update($table);
+		return $this->db->affected_rows();
+	}
+	
+	function count_records($table){
+		
+		return $this->db->count_all($table);;
+	}
+	
+	function read_record($id,$table){
+		
+		$this->db->select('id,title');
+		$this->db->where('id',$id);
+		$query = $this->db->get($table,1);
+		$data = $query->result_array();
+		if(isset($data[0])) return $data[0];
+		return NULL;
+	}
+	
+	function read_field($id,$field,$table){
+			
+		$this->db->where('id',$id);
+		$query = $this->db->get($table,1);
+		$data = $query->result_array();
+		if(isset($data[0])) return $data[0][$field];
+		return FALSE;
+	}
+	
+	function delete_record($id,$table){
+	
+		$this->db->where('id',$id);
+		$this->db->delete($table);
+		return $this->db->affected_rows();
+	}
+}

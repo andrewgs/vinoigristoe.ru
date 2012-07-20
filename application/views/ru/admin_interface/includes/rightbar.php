@@ -8,7 +8,6 @@
 			<li num="country"><?=anchor('admin-panel/actions/country','Страны и города');?></li>
 			<li num="shops"><?=anchor('admin-panel/actions/shops','Магазины');?></li>
 			<li class="nav-header">Действия</li>
-			<li num="profile"><?=anchor('admin-panel/actions/profile','Профиль');?></li>
 			<li><?=anchor('admin-panel/actions/logoff','Завершить сеанс');?></li>
 		</ul>
 	</div>

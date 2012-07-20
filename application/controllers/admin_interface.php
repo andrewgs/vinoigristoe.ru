@@ -21,6 +21,7 @@ class Admin_interface extends CI_Controller{
 		$this->load->model('mdmagazines');
 		$this->load->model('mdcity');
 		$this->load->model('mdcountry');
+		$this->load->model('mdwhereby');
 		
 		$cookieuid = $this->session->userdata('logon');
 		if(isset($cookieuid) and !empty($cookieuid)):
@@ -144,6 +145,7 @@ class Admin_interface extends CI_Controller{
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
 				$this->control_add_events();
+				return FALSE;
 			else:
 				if($_FILES['image']['error'] != 4):
 					$_POST['image'] = file_get_contents($_FILES['image']['tmp_name']);
@@ -189,7 +191,8 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('content',' ','trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
-				$this->control_add_events();
+				$this->control_edit_events();
+				return FALSE;
 			else:
 				if($_FILES['image']['error'] != 4):
 					$_POST['image'] = file_get_contents($_FILES['image']['tmp_name']);
@@ -245,6 +248,7 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('title',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+				redirect($this->uri->uri_string());
 			else:
 				$translit = $this->translite($_POST['title']);
 				$result = $this->mdseries->insert_record($_POST['title'],$translit,$_POST['cid'],$this->language.'_series');
@@ -280,7 +284,8 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('title',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
-				$this->control_add_events();
+				$this->control_add_category();
+				return FALSE;
 			else:
 				if($_FILES['icon']['error'] != 4):
 					$_POST['icon'] = file_get_contents($_FILES['image']['tmp_name']);
@@ -327,7 +332,8 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('content',' ','trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
-				$this->control_add_events();
+				$this->control_edit_category();
+				return FALSE;
 			else:
 				if($_FILES['icon']['error'] != 4):
 					$_POST['icon'] = file_get_contents($_FILES['image']['tmp_name']);
@@ -392,7 +398,8 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('title',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
-				$this->control_add_events();
+				$this->control_edit_series();
+				return FALSE;
 			else:
 				if($this->uri->segment(5) == 'default'):
 					$translit = 'default';
@@ -513,7 +520,8 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('series',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
-				$this->control_add_events();
+				$this->control_add_product();
+				return FALSE;
 			else:
 				if($_FILES['image']['error'] != 4):
 					$_POST['image'] = file_get_contents($_FILES['image']['tmp_name']);
@@ -567,7 +575,8 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('series',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
-				$this->control_add_events();
+				$this->control_edit_product();
+				return FALSE;
 			else:
 				if($_FILES['image']['error'] != 4):
 					$_POST['image'] = file_get_contents($_FILES['image']['tmp_name']);
@@ -608,7 +617,8 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('title',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
-				$this->control_add_events();
+				$this->control_medals_product();
+				return FALSE;
 			else:
 				if($_FILES['image']['error'] != 4):
 					$_POST['image'] = file_get_contents($_FILES['image']['tmp_name']);
@@ -645,7 +655,7 @@ class Admin_interface extends CI_Controller{
 	
 	public function control_whereby_product(){
 
-		$pid = $this->uri->segment(8);
+		$pid = $this->uri->segment(9);
 		$pagevar = array(
 			'title'			=> 'Панель администрирования | Где купить',
 			'description'	=> 'Игристые вина',
@@ -654,23 +664,26 @@ class Admin_interface extends CI_Controller{
 			'loginstatus'	=> $this->loginstatus,
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
-			'magazines'		=> $this->mdunion->magazines_product($pid,$this->language),
+			'whereby'		=> $this->mdunion->magazines_product($pid,$this->language),
+			'city'			=> $this->mdcity->read_records($this->language.'_city'),
+			'magazines'		=> $this->mdmagazines->read_records($this->language.'_magazines'),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
-		
+	
 		if($this->input->post('submit')):
 			unset($_POST['submit']);
-			$this->form_validation->set_rules('title',' ','required|trim');
 			$this->form_validation->set_rules('magazine',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
-				$this->control_add_events();
+				redirect($this->uri->uri_string());
 			else:
-				$mid = $this->mdmedals->insert_record($_POST,$pid,$this->uri->segment(5),$this->uri->segment(7),$this->language.'_medals');
-				if($mid):
+				$country = $this->mdmagazines->read_field($_POST['magazine'],'country',$this->language.'_magazines');
+				$city = $this->mdmagazines->read_field($_POST['magazine'],'city',$this->language.'_magazines');
+				$wbid = $this->mdwhereby->insert_record($this->uri->segment(5),$this->uri->segment(7),$this->uri->segment(9),$country,$_POST['magazine'],$city,$this->language.'_whereby');
+				if($wbid):
 					$this->session->set_userdata('msgs','Запись создана успешно.');
 				endif;
 				redirect($this->uri->uri_string());
@@ -682,15 +695,15 @@ class Admin_interface extends CI_Controller{
 	
 	public function control_delete_whereby(){
 		
-		$mid = $this->uri->segment(13);
-		if($mid):
-			$result = $this->mdmedals->delete_record($mid,$this->language.'_medals');
+		$wbid = $this->uri->segment(13);
+		if($wbid):
+			$result = $this->mdwhereby->delete_record($wbid,$this->language.'_whereby');
 			if($result):
-				$this->session->set_userdata('msgs','Награда удалена успешно.');
+				$this->session->set_userdata('msgs','Запись удалена успешно.');
 			else:
-				$this->session->set_userdata('msgr','Награда не удалена.');
+				$this->session->set_userdata('msgr','Запись не удалена.');
 			endif;
-			redirect('admin-panel/actions/products/category/'.$this->uri->segment(5).'/series/'.$this->uri->segment(7).'/product/'.$this->uri->segment(9).'/medals');
+			redirect('admin-panel/actions/products/category/'.$this->uri->segment(5).'/series/'.$this->uri->segment(7).'/product/'.$this->uri->segment(9).'/whereby');
 		else:
 			show_404();
 		endif;
@@ -719,6 +732,7 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('title',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+				redirect($this->uri->uri_string());
 			else:
 				$translit = $this->translite($_POST['title']);
 				$result = $this->mdcountry->insert_record($_POST['title'],$translit,$this->language.'_country');
@@ -759,6 +773,7 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('title',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+				redirect($this->uri->uri_string());
 			else:
 				$translit = $this->translite($_POST['title']);
 				$result = $this->mdcountry->update_record($cid,$_POST['title'],$translit,$this->language.'_country');
@@ -811,6 +826,7 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('title',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+				redirect($this->uri->uri_string());
 			else:
 				$translit = $this->translite($_POST['title']);
 				$result = $this->mdcity->insert_record($_POST['title'],$translit,$this->uri->segment(5),$this->language.'_city');
@@ -850,8 +866,8 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('title',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+				redirect($this->uri->uri_string());
 			else:
-				
 				if(isset($_POST['delcity'])):
 					$result = $this->mdcity->delete_record($cid,$this->language.'_city');
 					if($result):
@@ -913,7 +929,7 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('title',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
-				$this->control_add_events();
+				redirect($this->uri->uri_string());
 			else:
 				if($_FILES['image']['error'] != 4):
 					$_POST['image'] = file_get_contents($_FILES['image']['tmp_name']);
@@ -973,6 +989,7 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('city',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+				redirect($this->uri->uri_string());
 			else:
 				$translit = $this->translite($_POST['title']);
 				$country = $this->mdcity->read_field($_POST['city'],'country',$this->language.'_city');
@@ -1018,6 +1035,7 @@ class Admin_interface extends CI_Controller{
 			$this->form_validation->set_rules('city',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+				redirect($this->uri->uri_string());
 			else:
 				$translit = $this->translite($_POST['title']);
 				$country = $this->mdcity->read_field($_POST['city'],'country',$this->language.'_city');

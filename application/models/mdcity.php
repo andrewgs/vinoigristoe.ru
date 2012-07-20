@@ -11,18 +11,19 @@ class Mdcity extends CI_Model{
 		parent::__construct();
 	}
 	
-	function insert_record($data,$translit,$table){
+	function insert_record($title,$translit,$country,$table){
 			
-		$this->title	= htmlspecialchars($data['title']);
+		$this->title	= htmlspecialchars($title);
 		$this->translit	= $translit;
+		$this->country	= $country;
 		
 		$this->db->insert($table,$this);
 		return $this->db->insert_id();
 	}
 	
-	function update_record($id,$data,$translit,$table){
+	function update_record($id,$title,$translit,$table){
 		
-		$this->db->set('title',htmlspecialchars($data['title']));
+		$this->db->set('title',htmlspecialchars($title));
 		$this->db->set('translit',$translit);
 		$this->db->where('id',$id);
 		$this->db->update($table);
@@ -44,7 +45,7 @@ class Mdcity extends CI_Model{
 	
 	function read_record($id,$table){
 		
-		$this->db->select('id,title');
+		$this->db->select('id,title,translit');
 		$this->db->where('id',$id);
 		$query = $this->db->get($table,1);
 		$data = $query->result_array();

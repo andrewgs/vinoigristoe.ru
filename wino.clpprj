@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="S:\home\wino\www\wino.clpprj">
-	<settings><PM_URL><![CDATA[http://wino/]]></PM_URL><PM_HOME_URL><![CDATA[http://wino/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";S:\home\wino\www\application\views\rus\users_interface\includes\yandex.php;S:\home\wino\www\application\views\rus\users_interface\login.php;S:\home\wino\www\license.txt;S:\home\wino\www\user_guide;S:\home\wino\www\user_guide\changelog.html;S:\home\wino\www\user_guide\database;S:\home\wino\www\user_guide\database\active_record.html;S:\home\wino\www\user_guide\database\caching.html;S:\home\wino\www\user_guide\database\call_function.html;S:\home\wino\www\user_guide\database\configuration.html;S:\home\wino\www\user_guide\database\connecting.html;S:\home\wino\www\user_guide\database\examples.html;S:\home\wino\www\user_guide\database\fields.html;S:\home\wino\www\user_guide\database\forge.html;S:\home\wino\www\user_guide\database\helpers.html;S:\home\wino\www\user_guide\database\index.html;S:\home\wino\www\user_guide\database\queries.html;S:\home\wino\www\user_guide\database\results.html;S:\home\wino\www\user_guide\database\table_data.html;S:\home\wino\www\user_guide\database\transactions.html;S:\home\wino\www\user_guide\database\utilities.html;S:\home\wino\www\user_guide\doc_style;S:\home\wino\www\user_guide\doc_style\index.html;S:\home\wino\www\user_guide\doc_style\template.html;S:\home\wino\www\user_guide\general;S:\home\wino\www\user_guide\general\alternative_php.html;S:\home\wino\www\user_guide\general\ancillary_classes.html;S:\home\wino\www\user_guide\general\autoloader.html;S:\home\wino\www\user_guide\general\caching.html;S:\home\wino\www\user_guide\general\cli.html;S:\home\wino\www\user_guide\general\common_functions.html;S:\home\wino\www\user_guide\general\controllers.html;S:\home\wino\www\user_guide\general\core_classes.html;S:\home\wino\www\user_guide\general\creating_drivers.html;S:\home\wino\www\user_guide\general\creating_libraries.html;S:\home\wino\www\user_guide\general\credits.html;S:\home\wino\www\user_guide\general\drivers.html;S:\home\wino\www\user_guide\general\environments.html;S:\home\wino\www\user_guide\general\errors.html;S:\home\wino\www\user_guide\general\helpers.html;S:\home\wino\www\user_guide\general\hooks.html;S:\home\wino\www\user_guide\general\libraries.html;S:\home\wino\www\user_guide\general\managing_apps.html;S:\home\wino\www\user_guide\general\models.html;S:\home\wino\www\user_guide\general\profiling.html;S:\home\wino\www\user_guide\general\quick_reference.html;S:\home\wino\www\user_guide\general\requirements.html;S:\home\wino\www\user_guide\general\reserved_names.html;S:\home\wino\www\user_guide\general\routing.html;S:\home\wino\www\user_guide\general\security.html;S:\home\wino\www\user_guide\general\styleguide.html;S:\home\wino\www\user_guide\general\urls.html;S:\home\wino\www\user_guide\general\views.html;S:\home\wino\www\user_guide\helpers;S:\home\wino\www\user_guide\helpers\array_helper.html;S:\home\wino\www\user_guide\helpers\captcha_helper.html;S:\home\wino\www\user_guide\helpers\cookie_helper.html;S:\home\wino\www\user_guide\helpers\date_helper.html;S:\home\wino\www\user_guide\helpers\directory_helper.html;S:\home\wino\www\user_guide\helpers\download_helper.html;S:\home\wino\www\user_guide\helpers\email_helper.html;S:\home\wino\www\user_guide\helpers\file_helper.html;S:\home\wino\www\user_guide\helpers\form_helper.html;S:\home\wino\www\user_guide\helpers\html_helper.html;S:\home\wino\www\user_guide\helpers\inflector_helper.html;S:\home\wino\www\user_guide\helpers\language_helper.html;S:\home\wino\www\user_guide\helpers\number_helper.html;S:\home\wino\www\user_guide\helpers\path_helper.html;S:\home\wino\www\user_guide\helpers\security_helper.html;S:\home\wino\www\user_guide\helpers\smiley_helper.html;S:\home\wino\www\user_guide\helpers\string_helper.html;S:\home\wino\www\user_guide\helpers\text_helper.html;S:\home\wino\www\user_guide\helpers\typography_helper.html;S:\home\wino\www\user_guide\helpers\url_helper.html;S:\home\wino\www\user_guide\helpers\xml_helper.html;S:\home\wino\www\user_guide\images;S:\home\wino\www\user_guide\index.html;S:\home\wino\www\user_guide\installation;S:\home\wino\www\user_guide\installation\downloads.html;S:\home\wino\www\user_guide\installation\index.html;S:\home\wino\www\user_guide\installation\troubleshooting.html;S:\home\wino\www\user_guide\installation\upgrade_120.html;S:\home\wino\www\user_guide\installation\upgrade_130.html;S:\home\wino\www\user_guide\installation\upgrade_131.html;S:\home\wino\www\user_guide\installation\upgrade_132.html;S:\home\wino\www\user_guide\installation\upgrade_133.html;S:\home\wino\www\user_guide\installation\upgrade_140.html;S:\home\wino\www\user_guide\installation\upgrade_141.html;S:\home\wino\www\user_guide\installation\upgrade_150.html;S:\home\wino\www\user_guide\installation\upgrade_152.html;S:\home\wino\www\user_guide\installation\upgrade_153.html;S:\home\wino\www\user_guide\installation\upgrade_154.html;S:\home\wino\www\user_guide\installation\upgrade_160.html;S:\home\wino\www\user_guide\installation\upgrade_161.html;S:\home\wino\www\user_guide\installation\upgrade_162.html;S:\home\wino\www\user_guide\installation\upgrade_163.html;S:\home\wino\www\user_guide\installation\upgrade_170.html;S:\home\wino\www\user_guide\installation\upgrade_171.html;S:\home\wino\www\user_guide\installation\upgrade_172.html;S:\home\wino\www\user_guide\installation\upgrade_200.html;S:\home\wino\www\user_guide\installation\upgrade_201.html;S:\home\wino\www\user_guide\installation\upgrade_202.html;S:\home\wino\www\user_guide\installation\upgrade_203.html;S:\home\wino\www\user_guide\installation\upgrade_210.html;S:\home\wino\www\user_guide\installation\upgrade_211.html;S:\home\wino\www\user_guide\installation\upgrade_b11.html;S:\home\wino\www\user_guide\installation\upgrading.html;S:\home\wino\www\user_guide\libraries;S:\home\wino\www\user_guide\libraries\benchmark.html;S:\home\wino\www\user_guide\libraries\caching.html;S:\home\wino\www\user_guide\libraries\calendar.html;S:\home\wino\www\user_guide\libraries\cart.html;S:\home\wino\www\user_guide\libraries\config.html;S:\home\wino\www\user_guide\libraries\email.html;S:\home\wino\www\user_guide\libraries\encryption.html;S:\home\wino\www\user_guide\libraries\file_uploading.html;S:\home\wino\www\user_guide\libraries\form_validation.html;S:\home\wino\www\user_guide\libraries\ftp.html;S:\home\wino\www\user_guide\libraries\image_lib.html;S:\home\wino\www\user_guide\libraries\input.html;S:\home\wino\www\user_guide\libraries\javascript.html;S:\home\wino\www\user_guide\libraries\language.html;S:\home\wino\www\user_guide\libraries\loader.html;S:\home\wino\www\user_guide\libraries\migration.html;S:\home\wino\www\user_guide\libraries\output.html;S:\home\wino\www\user_guide\libraries\pagination.html;S:\home\wino\www\user_guide\libraries\parser.html;S:\home\wino\www\user_guide\libraries\security.html;S:\home\wino\www\user_guide\libraries\sessions.html;S:\home\wino\www\user_guide\libraries\table.html;S:\home\wino\www\user_guide\libraries\trackback.html;S:\home\wino\www\user_guide\libraries\typography.html;S:\home\wino\www\user_guide\libraries\unit_testing.html;S:\home\wino\www\user_guide\libraries\uri.html;S:\home\wino\www\user_guide\libraries\user_agent.html;S:\home\wino\www\user_guide\libraries\xmlrpc.html;S:\home\wino\www\user_guide\libraries\zip.html;S:\home\wino\www\user_guide\license.html;S:\home\wino\www\user_guide\nav;S:\home\wino\www\user_guide\nav\hacks.txt;S:\home\wino\www\user_guide\nav\moo.fx.js;S:\home\wino\www\user_guide\nav\nav.js;S:\home\wino\www\user_guide\nav\prototype.lite.js;S:\home\wino\www\user_guide\nav\user_guide_menu.js;S:\home\wino\www\user_guide\overview;S:\home\wino\www\user_guide\overview\appflow.html;S:\home\wino\www\user_guide\overview\at_a_glance.html;S:\home\wino\www\user_guide\overview\cheatsheets.html;S:\home\wino\www\user_guide\overview\features.html;S:\home\wino\www\user_guide\overview\getting_started.html;S:\home\wino\www\user_guide\overview\goals.html;S:\home\wino\www\user_guide\overview\index.html;S:\home\wino\www\user_guide\overview\mvc.html;S:\home\wino\www\user_guide\toc.html;S:\home\wino\www\user_guide\tutorial;S:\home\wino\www\user_guide\tutorial\conclusion.html;S:\home\wino\www\user_guide\tutorial\create_news_items.html;S:\home\wino\www\user_guide\tutorial\hard_coded_pages.html;S:\home\wino\www\user_guide\tutorial\index.html;S:\home\wino\www\user_guide\tutorial\news_section.html;S:\home\wino\www\user_guide\tutorial\static_pages.html;S:\home\wino\www\user_guide\userguide.css;"/><added value=""/><codestructure>
-		<csfile name="S:\home\wino\www\wino.clpprj" crc="1230238442">
+	<settings><PM_URL><![CDATA[http://wino/]]></PM_URL><PM_HOME_URL><![CDATA[http://wino/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";S:\home\wino\www\application\views\ru\admin_interface\modal\Codelobster0.js;S:\home\wino\www\application\views\rus\users_interface\includes\yandex.php;S:\home\wino\www\application\views\rus\users_interface\login.php;S:\home\wino\www\license.txt;S:\home\wino\www\user_guide;S:\home\wino\www\user_guide\changelog.html;S:\home\wino\www\user_guide\database;S:\home\wino\www\user_guide\database\active_record.html;S:\home\wino\www\user_guide\database\caching.html;S:\home\wino\www\user_guide\database\call_function.html;S:\home\wino\www\user_guide\database\configuration.html;S:\home\wino\www\user_guide\database\connecting.html;S:\home\wino\www\user_guide\database\examples.html;S:\home\wino\www\user_guide\database\fields.html;S:\home\wino\www\user_guide\database\forge.html;S:\home\wino\www\user_guide\database\helpers.html;S:\home\wino\www\user_guide\database\index.html;S:\home\wino\www\user_guide\database\queries.html;S:\home\wino\www\user_guide\database\results.html;S:\home\wino\www\user_guide\database\table_data.html;S:\home\wino\www\user_guide\database\transactions.html;S:\home\wino\www\user_guide\database\utilities.html;S:\home\wino\www\user_guide\doc_style;S:\home\wino\www\user_guide\doc_style\index.html;S:\home\wino\www\user_guide\doc_style\template.html;S:\home\wino\www\user_guide\general;S:\home\wino\www\user_guide\general\alternative_php.html;S:\home\wino\www\user_guide\general\ancillary_classes.html;S:\home\wino\www\user_guide\general\autoloader.html;S:\home\wino\www\user_guide\general\caching.html;S:\home\wino\www\user_guide\general\cli.html;S:\home\wino\www\user_guide\general\common_functions.html;S:\home\wino\www\user_guide\general\controllers.html;S:\home\wino\www\user_guide\general\core_classes.html;S:\home\wino\www\user_guide\general\creating_drivers.html;S:\home\wino\www\user_guide\general\creating_libraries.html;S:\home\wino\www\user_guide\general\credits.html;S:\home\wino\www\user_guide\general\drivers.html;S:\home\wino\www\user_guide\general\environments.html;S:\home\wino\www\user_guide\general\errors.html;S:\home\wino\www\user_guide\general\helpers.html;S:\home\wino\www\user_guide\general\hooks.html;S:\home\wino\www\user_guide\general\libraries.html;S:\home\wino\www\user_guide\general\managing_apps.html;S:\home\wino\www\user_guide\general\models.html;S:\home\wino\www\user_guide\general\profiling.html;S:\home\wino\www\user_guide\general\quick_reference.html;S:\home\wino\www\user_guide\general\requirements.html;S:\home\wino\www\user_guide\general\reserved_names.html;S:\home\wino\www\user_guide\general\routing.html;S:\home\wino\www\user_guide\general\security.html;S:\home\wino\www\user_guide\general\styleguide.html;S:\home\wino\www\user_guide\general\urls.html;S:\home\wino\www\user_guide\general\views.html;S:\home\wino\www\user_guide\helpers;S:\home\wino\www\user_guide\helpers\array_helper.html;S:\home\wino\www\user_guide\helpers\captcha_helper.html;S:\home\wino\www\user_guide\helpers\cookie_helper.html;S:\home\wino\www\user_guide\helpers\date_helper.html;S:\home\wino\www\user_guide\helpers\directory_helper.html;S:\home\wino\www\user_guide\helpers\download_helper.html;S:\home\wino\www\user_guide\helpers\email_helper.html;S:\home\wino\www\user_guide\helpers\file_helper.html;S:\home\wino\www\user_guide\helpers\form_helper.html;S:\home\wino\www\user_guide\helpers\html_helper.html;S:\home\wino\www\user_guide\helpers\inflector_helper.html;S:\home\wino\www\user_guide\helpers\language_helper.html;S:\home\wino\www\user_guide\helpers\number_helper.html;S:\home\wino\www\user_guide\helpers\path_helper.html;S:\home\wino\www\user_guide\helpers\security_helper.html;S:\home\wino\www\user_guide\helpers\smiley_helper.html;S:\home\wino\www\user_guide\helpers\string_helper.html;S:\home\wino\www\user_guide\helpers\text_helper.html;S:\home\wino\www\user_guide\helpers\typography_helper.html;S:\home\wino\www\user_guide\helpers\url_helper.html;S:\home\wino\www\user_guide\helpers\xml_helper.html;S:\home\wino\www\user_guide\images;S:\home\wino\www\user_guide\index.html;S:\home\wino\www\user_guide\installation;S:\home\wino\www\user_guide\installation\downloads.html;S:\home\wino\www\user_guide\installation\index.html;S:\home\wino\www\user_guide\installation\troubleshooting.html;S:\home\wino\www\user_guide\installation\upgrade_120.html;S:\home\wino\www\user_guide\installation\upgrade_130.html;S:\home\wino\www\user_guide\installation\upgrade_131.html;S:\home\wino\www\user_guide\installation\upgrade_132.html;S:\home\wino\www\user_guide\installation\upgrade_133.html;S:\home\wino\www\user_guide\installation\upgrade_140.html;S:\home\wino\www\user_guide\installation\upgrade_141.html;S:\home\wino\www\user_guide\installation\upgrade_150.html;S:\home\wino\www\user_guide\installation\upgrade_152.html;S:\home\wino\www\user_guide\installation\upgrade_153.html;S:\home\wino\www\user_guide\installation\upgrade_154.html;S:\home\wino\www\user_guide\installation\upgrade_160.html;S:\home\wino\www\user_guide\installation\upgrade_161.html;S:\home\wino\www\user_guide\installation\upgrade_162.html;S:\home\wino\www\user_guide\installation\upgrade_163.html;S:\home\wino\www\user_guide\installation\upgrade_170.html;S:\home\wino\www\user_guide\installation\upgrade_171.html;S:\home\wino\www\user_guide\installation\upgrade_172.html;S:\home\wino\www\user_guide\installation\upgrade_200.html;S:\home\wino\www\user_guide\installation\upgrade_201.html;S:\home\wino\www\user_guide\installation\upgrade_202.html;S:\home\wino\www\user_guide\installation\upgrade_203.html;S:\home\wino\www\user_guide\installation\upgrade_210.html;S:\home\wino\www\user_guide\installation\upgrade_211.html;S:\home\wino\www\user_guide\installation\upgrade_b11.html;S:\home\wino\www\user_guide\installation\upgrading.html;S:\home\wino\www\user_guide\libraries;S:\home\wino\www\user_guide\libraries\benchmark.html;S:\home\wino\www\user_guide\libraries\caching.html;S:\home\wino\www\user_guide\libraries\calendar.html;S:\home\wino\www\user_guide\libraries\cart.html;S:\home\wino\www\user_guide\libraries\config.html;S:\home\wino\www\user_guide\libraries\email.html;S:\home\wino\www\user_guide\libraries\encryption.html;S:\home\wino\www\user_guide\libraries\file_uploading.html;S:\home\wino\www\user_guide\libraries\form_validation.html;S:\home\wino\www\user_guide\libraries\ftp.html;S:\home\wino\www\user_guide\libraries\image_lib.html;S:\home\wino\www\user_guide\libraries\input.html;S:\home\wino\www\user_guide\libraries\javascript.html;S:\home\wino\www\user_guide\libraries\language.html;S:\home\wino\www\user_guide\libraries\loader.html;S:\home\wino\www\user_guide\libraries\migration.html;S:\home\wino\www\user_guide\libraries\output.html;S:\home\wino\www\user_guide\libraries\pagination.html;S:\home\wino\www\user_guide\libraries\parser.html;S:\home\wino\www\user_guide\libraries\security.html;S:\home\wino\www\user_guide\libraries\sessions.html;S:\home\wino\www\user_guide\libraries\table.html;S:\home\wino\www\user_guide\libraries\trackback.html;S:\home\wino\www\user_guide\libraries\typography.html;S:\home\wino\www\user_guide\libraries\unit_testing.html;S:\home\wino\www\user_guide\libraries\uri.html;S:\home\wino\www\user_guide\libraries\user_agent.html;S:\home\wino\www\user_guide\libraries\xmlrpc.html;S:\home\wino\www\user_guide\libraries\zip.html;S:\home\wino\www\user_guide\license.html;S:\home\wino\www\user_guide\nav;S:\home\wino\www\user_guide\nav\hacks.txt;S:\home\wino\www\user_guide\nav\moo.fx.js;S:\home\wino\www\user_guide\nav\nav.js;S:\home\wino\www\user_guide\nav\prototype.lite.js;S:\home\wino\www\user_guide\nav\user_guide_menu.js;S:\home\wino\www\user_guide\overview;S:\home\wino\www\user_guide\overview\appflow.html;S:\home\wino\www\user_guide\overview\at_a_glance.html;S:\home\wino\www\user_guide\overview\cheatsheets.html;S:\home\wino\www\user_guide\overview\features.html;S:\home\wino\www\user_guide\overview\getting_started.html;S:\home\wino\www\user_guide\overview\goals.html;S:\home\wino\www\user_guide\overview\index.html;S:\home\wino\www\user_guide\overview\mvc.html;S:\home\wino\www\user_guide\toc.html;S:\home\wino\www\user_guide\tutorial;S:\home\wino\www\user_guide\tutorial\conclusion.html;S:\home\wino\www\user_guide\tutorial\create_news_items.html;S:\home\wino\www\user_guide\tutorial\hard_coded_pages.html;S:\home\wino\www\user_guide\tutorial\index.html;S:\home\wino\www\user_guide\tutorial\news_section.html;S:\home\wino\www\user_guide\tutorial\static_pages.html;S:\home\wino\www\user_guide\userguide.css;"/><added value=""/><codestructure>
+		<csfile name="S:\home\wino\www\wino.clpprj" crc="-620920449">
 		</csfile><csfile name="S:\home\wino\www\system\libraries\javascript\Jquery.php" crc="1251186840">
 			<phptree>
 				<treenode node="CI_Jquery;Php:Class Name;0;26;1;1067;34;;;vCI_Javascript;;c;;r;;d38,26;;b0,0;;m">
@@ -4888,6 +4888,21 @@
 				<treenode node="this;Php:Var Name;23;0;28;0;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 			</phptree>
+		</csfile><csfile name="S:\home\wino\www\application\views\ru\forms\frmeditproduct.php" crc="-413562072">
+			<phptree>
+				<treenode node="category;Php:Var Name;28;51;37;51;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="i;Php:Var Name;14;51;16;51;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="j;Php:Var Name;15;53;17;53;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="product;Php:Var Name;72;6;80;6;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="series;Php:Var Name;29;53;36;53;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;23;0;28;0;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
 		</csfile><csfile name="S:\home\wino\www\application\views\ru\forms\frmeditevent.php" crc="-1228970233">
 			<phptree>
 				<treenode node="event;Php:Var Name;72;6;78;6;34;;;v;;r;;d-1,-1;;b0,0;;m">
@@ -4939,33 +4954,52 @@
 				<treenode node="msgr;Php:Var Name;9;0;14;0;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 			</phptree>
-		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\products\products.php" crc="-261472699">
+		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\products\products.php" crc="2129029034">
 			<phptree>
-				<treenode node="baseurl;Php:Var Name;36;27;44;27;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="baseurl;Php:Var Name;36;31;44;31;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="category;Php:Var Name;69;27;78;27;34;;;v;;r;;d-1,-1;;b0,0;;m">
-				</treenode>
-				<treenode node="i;Php:Var Name;15;25;17;25;34;;;v;;r;;d-1,-1;;b0,0;;m">
-				</treenode>
-				<treenode node="j;Php:Var Name;17;31;19;31;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="i;Php:Var Name;15;29;17;29;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 				<treenode node="language;Php:Var Name;24;2;33;2;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="products;Php:Var Name;29;25;38;25;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="pages;Php:Var Name;13;15;19;15;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="series;Php:Var Name;31;31;38;31;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="products;Php:Var Name;29;29;38;29;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 				<treenode node="this;Php:Var Name;6;2;11;2;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 			</phptree>
 			<jstree>
-				<treenode node="document;JS:JS Var Name;4;56;12;56;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="document;JS:JS Var Name;4;64;12;64;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="location;JS:JS Var Name;37;60;45;60;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="location;JS:JS Var Name;37;68;45;68;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="Param;JS:JS Var Name;44;59;49;59;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="Param;JS:JS Var Name;44;67;49;67;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="pID;JS:JS Var Name;7;57;10;57;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="pID;JS:JS Var Name;7;65;10;65;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</jstree>
+		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\products\medals.php" crc="-1873268055">
+			<phptree>
+				<treenode node="baseurl;Php:Var Name;36;29;44;29;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="i;Php:Var Name;15;27;17;27;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="language;Php:Var Name;24;2;33;2;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="medals;Php:Var Name;29;27;36;27;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;6;2;11;2;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+			<jstree>
+				<treenode node="document;JS:JS Var Name;4;50;12;50;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="location;JS:JS Var Name;35;54;43;54;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="mID;JS:JS Var Name;7;51;10;51;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="Param;JS:JS Var Name;42;53;47;53;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 			</jstree>
 		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\products\edit-series.php" crc="-531072066">
@@ -4975,6 +5009,23 @@
 				<treenode node="this;Php:Var Name;6;2;11;2;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 			</phptree>
+		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\products\edit-product.php" crc="195871680">
+			<phptree>
+				<treenode node="baseurl;Php:Var Name;17;24;25;24;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="language;Php:Var Name;24;2;33;2;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;6;2;11;2;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+			<jstree>
+				<treenode node="document;JS:JS Var Name;4;26;12;26;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="lang;JS:JS Var Name;46;27;50;27;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="toolbar;JS:JS Var Name;28;27;35;27;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</jstree>
 		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\products\edit-category.php" crc="414598582">
 			<phptree>
 				<treenode node="language;Php:Var Name;24;2;33;2;34;;;v;;r;;d-1,-1;;b0,0;;m">
@@ -5035,12 +5086,55 @@
 			</phptree>
 		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\modal\delete-product.php" crc="412852475">
 		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\modal\delete-news.php" crc="-1585335975">
+		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\modal\delete-medal.php" crc="-1193658914">
+		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\modal\delete-country.php" crc="-828293038">
 		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\modal\delete-category.php" crc="-883070844">
-		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\modal\add-series.php" crc="-826728991">
+		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\modal\add-series.php" crc="1323476252">
+			<phptree>
+				<treenode node="this;Php:Var Name;13;0;18;0;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\modal\add-medal.php" crc="1463905037">
 			<phptree>
 				<treenode node="this;Php:Var Name;23;0;28;0;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 			</phptree>
+		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\modal\add-country.php" crc="1408809580">
+			<phptree>
+				<treenode node="this;Php:Var Name;13;0;18;0;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\magazines\magazines.php" crc="1604745361">
+		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\magazines\country.php" crc="-1371659711">
+			<phptree>
+				<treenode node="category;Php:Var Name;44;30;53;30;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="city;Php:Var Name;31;29;36;29;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="country;Php:Var Name;29;24;37;24;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="i;Php:Var Name;15;24;17;24;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="j;Php:Var Name;17;29;19;29;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="language;Php:Var Name;24;2;33;2;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="series;Php:Var Name;17;30;24;30;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="this;Php:Var Name;6;2;11;2;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</phptree>
+			<jstree>
+				<treenode node="cID;JS:JS Var Name;7;56;10;56;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="document;JS:JS Var Name;4;55;12;55;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="location;JS:JS Var Name;37;60;45;60;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="Param;JS:JS Var Name;40;58;45;58;34;;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</jstree>
+		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\magazines\city.php" crc="1604745361">
 		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\includes\scripts.php" crc="-1763703294">
 			<phptree>
 				<treenode node="baseurl;Php:Var Name;16;2;24;2;34;;;v;;r;;d-1,-1;;b0,0;;m">
@@ -5052,7 +5146,7 @@
 				<treenode node="window;JS:JS Var Name;8;1;14;1;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 			</jstree>
-		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\includes\rightbar.php" crc="-653855010">
+		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\includes\rightbar.php" crc="770611079">
 		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\includes\header.php" crc="-1352275536">
 		</csfile><csfile name="S:\home\wino\www\application\views\ru\admin_interface\includes\head.php" crc="445415978">
 			<phptree>
@@ -5176,27 +5270,27 @@
 		</csfile><csfile name="S:\home\wino\www\application\models\mdseries.php" crc="-912876445">
 			<phptree>
 				<treenode node="Mdseries;Php:Class Name;0;2;1;94;34;;;vCI_Model;;c;;r;;d31,2;;b0,0;;m">
-					<treenode node="__construct;Php:Function Name;1;9;2;11;34;;;v;;r;;d23,14;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;1;9;2;11;34;;;v;;r;;d23,9;;b0,0;;m">
 					</treenode>
-					<treenode node="count_records;Php:Function Name;1;40;2;43;34;;;v;;r;;d31,56;;b0,0;;mtable;;p">
+					<treenode node="count_records;Php:Function Name;1;40;2;43;34;;;v;;r;;d31,40;;b0,0;;mtable;;p">
 					</treenode>
-					<treenode node="delete_record;Php:Function Name;1;72;2;77;34;;;v;;r;;d35,88;;b0,0;;mid;;ptable;;p">
+					<treenode node="delete_record;Php:Function Name;1;72;2;77;34;;;v;;r;;d35,72;;b0,0;;mid;;ptable;;p">
 					</treenode>
-					<treenode node="delete_records;Php:Function Name;1;79;2;84;34;;;v;;r;;d42,95;;b0,0;;mcategory;;ptable;;p">
+					<treenode node="delete_records;Php:Function Name;1;79;2;84;34;;;v;;r;;d42,79;;b0,0;;mcategory;;ptable;;p">
 					</treenode>
-					<treenode node="get_image;Php:Function Name;1;86;2;93;34;;;v;;r;;d32,102;;b0,0;;mmid;;ptable;;p">
+					<treenode node="get_image;Php:Function Name;1;86;2;93;34;;;v;;r;;d32,86;;b0,0;;mmid;;ptable;;p">
 					</treenode>
-					<treenode node="insert_record;Php:Function Name;1;13;2;21;34;;;v;;r;;d65,18;;b0,0;;mdata;;ptranslit;;pcategory;;pseries;;ptable;;p">
+					<treenode node="insert_record;Php:Function Name;1;13;2;21;34;;;v;;r;;d58,13;;b0,0;;mtitle;;ptranslit;;pcategory;;ptable;;p">
 					</treenode>
-					<treenode node="read_field;Php:Function Name;1;54;2;61;34;;;v;;r;;d39,70;;b0,0;;mid;;pfield;;ptable;;p">
+					<treenode node="read_field;Php:Function Name;1;54;2;61;34;;;v;;r;;d39,54;;b0,0;;mid;;pfield;;ptable;;p">
 					</treenode>
-					<treenode node="read_field_translit;Php:Function Name;1;63;2;70;34;;;v;;r;;d54,79;;b0,0;;mtranslit;;pfield;;ptable;;p">
+					<treenode node="read_field_translit;Php:Function Name;1;63;2;70;34;;;v;;r;;d54,63;;b0,0;;mtranslit;;pfield;;ptable;;p">
 					</treenode>
-					<treenode node="read_record;Php:Function Name;1;45;2;52;34;;;v;;r;;d33,61;;b0,0;;mid;;ptable;;p">
+					<treenode node="read_record;Php:Function Name;1;45;2;52;34;;;v;;r;;d33,45;;b0,0;;mid;;ptable;;p">
 					</treenode>
-					<treenode node="read_records;Php:Function Name;1;32;2;38;34;;;v;;r;;d30,48;;b0,0;;mtable;;p">
+					<treenode node="read_records;Php:Function Name;1;32;2;38;34;;;v;;r;;d30,32;;b0,0;;mtable;;p">
 					</treenode>
-					<treenode node="update_record;Php:Function Name;1;23;2;30;34;;;v;;r;;d51,34;;b0,0;;mid;;pdata;;ptranslit;;ptable;;p">
+					<treenode node="update_record;Php:Function Name;1;23;2;30;34;;;v;;r;;d52,23;;b0,0;;mid;;ptitle;;ptranslit;;ptable;;p">
 					</treenode>
 					<treenode node="category;Php:Var Name;5;6;14;6;34;;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
@@ -5208,52 +5302,132 @@
 					</treenode>
 				</treenode>
 			</phptree>
-		</csfile><csfile name="S:\home\wino\www\application\models\mdproducts.php" crc="-1686012584">
+		</csfile><csfile name="S:\home\wino\www\application\models\mdproducts.php" crc="1613681986">
 			<phptree>
-				<treenode node="Mdproducts;Php:Class Name;0;2;1;129;34;;;vCI_Model;;c;;r;;d33,2;;b0,0;;m">
-					<treenode node="__construct;Php:Function Name;1;14;2;16;34;;;v;;r;;d23,14;;b0,0;;m">
+				<treenode node="Mdproducts;Php:Class Name;0;2;1;137;34;;;vCI_Model;;c;;r;;d33,2;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;1;15;2;17;34;;;v;;r;;d23,15;;b0,0;;m">
 					</treenode>
-					<treenode node="count_records;Php:Function Name;1;68;2;71;34;;;v;;r;;d31,68;;b0,0;;mtable;;p">
+					<treenode node="count_records;Php:Function Name;1;73;2;76;34;;;v;;r;;d31,73;;b0,0;;mtable;;p">
 					</treenode>
-					<treenode node="delete_record;Php:Function Name;1;100;2;105;34;;;v;;r;;d35,100;;b0,0;;mid;;ptable;;p">
+					<treenode node="delete_record;Php:Function Name;1;108;2;113;34;;;v;;r;;d35,108;;b0,0;;mid;;ptable;;p">
 					</treenode>
-					<treenode node="delete_records_category;Php:Function Name;1;107;2;112;34;;;v;;r;;d51,107;;b0,0;;mcategory;;ptable;;p">
+					<treenode node="delete_records_category;Php:Function Name;1;115;2;120;34;;;v;;r;;d51,115;;b0,0;;mcategory;;ptable;;p">
 					</treenode>
-					<treenode node="delete_records_series;Php:Function Name;1;114;2;119;34;;;v;;r;;d47,114;;b0,0;;mseries;;ptable;;p">
+					<treenode node="delete_records_series;Php:Function Name;1;122;2;127;34;;;v;;r;;d47,122;;b0,0;;mseries;;ptable;;p">
 					</treenode>
-					<treenode node="get_image;Php:Function Name;1;121;2;128;34;;;v;;r;;d32,121;;b0,0;;mpid;;ptable;;p">
+					<treenode node="get_image;Php:Function Name;1;129;2;136;34;;;v;;r;;d32,129;;b0,0;;mpid;;ptable;;p">
 					</treenode>
-					<treenode node="insert_record;Php:Function Name;1;18;2;32;34;;;v;;r;;d65,18;;b0,0;;mdata;;ptranslit;;pcategory;;pseries;;ptable;;p">
+					<treenode node="insert_record;Php:Function Name;1;19;2;33;34;;;v;;r;;d65,19;;b0,0;;mdata;;ptranslit;;pcategory;;pseries;;ptable;;p">
 					</treenode>
-					<treenode node="read_field;Php:Function Name;1;82;2;89;34;;;v;;r;;d39,82;;b0,0;;mid;;pfield;;ptable;;p">
+					<treenode node="read_field;Php:Function Name;1;88;2;95;34;;;v;;r;;d39,88;;b0,0;;mid;;pfield;;ptable;;p">
 					</treenode>
-					<treenode node="read_field_translit;Php:Function Name;1;91;2;98;34;;;v;;r;;d54,91;;b0,0;;mtranslit;;pfield;;ptable;;p">
+					<treenode node="read_field_translit;Php:Function Name;1;97;2;106;34;;;v;;r;;d72,97;;b0,0;;mcategory;;pseries;;ptranslit;;pfield;;ptable;;p">
 					</treenode>
-					<treenode node="read_limit_records;Php:Function Name;1;56;2;66;34;;;v;;r;;d49,56;;b0,0;;mtable;;pcount;;pfrom;;p">
+					<treenode node="read_limit_records;Php:Function Name;1;61;2;71;34;;;v;;r;;d49,61;;b0,0;;mtable;;pcount;;pfrom;;p">
 					</treenode>
-					<treenode node="read_record;Php:Function Name;1;73;2;80;34;;;v;;r;;d33,73;;b0,0;;mid;;ptable;;p">
+					<treenode node="read_record;Php:Function Name;1;78;2;86;34;;;v;;r;;d33,78;;b0,0;;mid;;ptable;;p">
 					</treenode>
-					<treenode node="read_records;Php:Function Name;1;48;2;54;34;;;v;;r;;d30,48;;b0,0;;mtable;;p">
+					<treenode node="read_records;Php:Function Name;1;53;2;59;34;;;v;;r;;d30,53;;b0,0;;mtable;;p">
 					</treenode>
-					<treenode node="update_record;Php:Function Name;1;34;2;46;34;;;v;;r;;d51,34;;b0,0;;mid;;pdata;;ptranslit;;ptable;;p">
+					<treenode node="update_record;Php:Function Name;1;35;2;51;34;;;v;;r;;d69,35;;b0,0;;mid;;pdata;;ptranslit;;pcategory;;pseries;;ptable;;p">
 					</treenode>
-					<treenode node="alcohol;Php:Var Name;5;9;13;9;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="alcohol;Php:Var Name;5;10;13;10;34;;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="category;Php:Var Name;5;11;14;11;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="category;Php:Var Name;5;12;14;12;34;;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="content;Php:Var Name;5;6;13;6;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="content;Php:Var Name;5;7;13;7;34;;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 					<treenode node="id;Php:Var Name;5;4;8;4;34;;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="image;Php:Var Name;5;7;11;7;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="image;Php:Var Name;5;8;11;8;34;;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="series;Php:Var Name;5;12;12;12;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="series;Php:Var Name;5;13;12;13;34;;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="sugar;Php:Var Name;5;10;11;10;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="sugar;Php:Var Name;5;11;11;11;34;;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 					<treenode node="title;Php:Var Name;5;5;11;5;34;;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="type;Php:Var Name;5;8;10;8;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="translit;Php:Var Name;5;6;14;6;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="type;Php:Var Name;5;9;10;9;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="S:\home\wino\www\application\models\mdmedals.php" crc="-430261561">
+			<phptree>
+				<treenode node="Mdmedals;Php:Class Name;0;2;1;114;34;;;vCI_Model;;c;;r;;d31,2;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;1;11;2;13;34;;;v;;r;;d23,11;;b0,0;;m">
+					</treenode>
+					<treenode node="count_records;Php:Function Name;1;50;2;53;34;;;v;;r;;d31,50;;b0,0;;mtable;;p">
+					</treenode>
+					<treenode node="delete_record;Php:Function Name;1;85;2;90;34;;;v;;r;;d35,85;;b0,0;;mid;;ptable;;p">
+					</treenode>
+					<treenode node="delete_records_category;Php:Function Name;1;92;2;97;34;;;v;;r;;d51,92;;b0,0;;mcategory;;ptable;;p">
+					</treenode>
+					<treenode node="delete_records_series;Php:Function Name;1;99;2;104;34;;;v;;r;;d47,99;;b0,0;;mseries;;ptable;;p">
+					</treenode>
+					<treenode node="get_image;Php:Function Name;1;106;2;113;34;;;v;;r;;d32,106;;b0,0;;mpid;;ptable;;p">
+					</treenode>
+					<treenode node="insert_record;Php:Function Name;1;15;2;25;34;;;v;;r;;d64,15;;b0,0;;mdata;;pproduct;;pcategory;;pseries;;ptable;;p">
+					</treenode>
+					<treenode node="read_field;Php:Function Name;1;65;2;72;34;;;v;;r;;d39,65;;b0,0;;mid;;pfield;;ptable;;p">
+					</treenode>
+					<treenode node="read_field_translit;Php:Function Name;1;74;2;83;34;;;v;;r;;d72,74;;b0,0;;mcategory;;pseries;;ptranslit;;pfield;;ptable;;p">
+					</treenode>
+					<treenode node="read_record;Php:Function Name;1;55;2;63;34;;;v;;r;;d33,55;;b0,0;;mid;;ptable;;p">
+					</treenode>
+					<treenode node="read_records;Php:Function Name;1;41;2;48;34;;;v;;r;;d39,41;;b0,0;;mproduct;;ptable;;p">
+					</treenode>
+					<treenode node="update_record;Php:Function Name;1;27;2;39;34;;;v;;r;;d68,27;;b0,0;;mid;;pdata;;pproduct;;pcategory;;pseries;;ptable;;p">
+					</treenode>
+					<treenode node="category;Php:Var Name;5;8;14;8;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="id;Php:Var Name;5;4;8;4;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="image;Php:Var Name;5;6;11;6;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="product;Php:Var Name;5;7;13;7;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="series;Php:Var Name;5;9;12;9;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="title;Php:Var Name;5;5;11;5;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="S:\home\wino\www\application\models\mdmagazines.php" crc="818744541">
+			<phptree>
+				<treenode node="Mdmagazines;Php:Class Name;0;2;1;91;34;;;vCI_Model;;c;;r;;d34,2;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;1;12;2;14;34;;;v;;r;;d23,8;;b0,0;;m">
+					</treenode>
+					<treenode node="count_records;Php:Function Name;1;50;2;53;34;;;v;;r;;d31,38;;b0,0;;mtable;;p">
+					</treenode>
+					<treenode node="delete_record;Php:Function Name;1;85;2;90;34;;;v;;r;;d35,71;;b0,0;;mid;;ptable;;p">
+					</treenode>
+					<treenode node="insert_record;Php:Function Name;1;16;2;27;34;;;v;;r;;d47,12;;b0,0;;mdata;;ptranslit;;ptable;;p">
+					</treenode>
+					<treenode node="read_field;Php:Function Name;1;65;2;72;34;;;v;;r;;d39,53;;b0,0;;mid;;pfield;;ptable;;p">
+					</treenode>
+					<treenode node="read_field_translit;Php:Function Name;1;74;2;83;34;;;v;;r;;d54,62;;b0,0;;mtranslit;;pfield;;ptable;;p">
+					</treenode>
+					<treenode node="read_record;Php:Function Name;1;55;2;63;34;;;v;;r;;d33,43;;b0,0;;mid;;ptable;;p">
+					</treenode>
+					<treenode node="read_records;Php:Function Name;1;42;2;48;34;;;v;;r;;d30,30;;b0,0;;mtable;;p">
+					</treenode>
+					<treenode node="update_record;Php:Function Name;1;29;2;40;34;;;v;;r;;d51,21;;b0,0;;mid;;pdata;;ptranslit;;ptable;;p">
+					</treenode>
+					<treenode node="address;Php:Var Name;5;7;13;7;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="city;Php:Var Name;5;10;10;10;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="country;Php:Var Name;5;9;13;9;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="id;Php:Var Name;5;4;8;4;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="phones;Php:Var Name;5;8;12;8;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="title;Php:Var Name;5;5;11;5;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="translit;Php:Var Name;5;6;14;6;34;;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
 			</phptree>
@@ -5295,6 +5469,68 @@
 					<treenode node="translit;Php:Var Name;5;7;14;7;34;;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 					<treenode node="type_event;Php:Var Name;5;6;16;6;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="S:\home\wino\www\application\models\mdcountry.php" crc="823328906">
+			<phptree>
+				<treenode node="Mdcountry;Php:Class Name;0;2;1;77;34;;;vCI_Model;;c;;r;;d32,2;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;1;8;2;10;34;;;v;;r;;d23,8;;b0,0;;m">
+					</treenode>
+					<treenode node="count_records;Php:Function Name;1;38;2;41;34;;;v;;r;;d31,38;;b0,0;;mtable;;p">
+					</treenode>
+					<treenode node="delete_record;Php:Function Name;1;71;2;76;34;;;v;;r;;d35,71;;b0,0;;mid;;ptable;;p">
+					</treenode>
+					<treenode node="insert_record;Php:Function Name;1;12;2;19;34;;;v;;r;;d48,12;;b0,0;;mtitle;;ptranslit;;ptable;;p">
+					</treenode>
+					<treenode node="read_field;Php:Function Name;1;53;2;60;34;;;v;;r;;d39,53;;b0,0;;mid;;pfield;;ptable;;p">
+					</treenode>
+					<treenode node="read_field_translit;Php:Function Name;1;62;2;69;34;;;v;;r;;d54,62;;b0,0;;mtranslit;;pfield;;ptable;;p">
+					</treenode>
+					<treenode node="read_record;Php:Function Name;1;43;2;51;34;;;v;;r;;d33,43;;b0,0;;mid;;ptable;;p">
+					</treenode>
+					<treenode node="read_records;Php:Function Name;1;30;2;36;34;;;v;;r;;d30,30;;b0,0;;mtable;;p">
+					</treenode>
+					<treenode node="update_record;Php:Function Name;1;21;2;28;34;;;v;;r;;d52,21;;b0,0;;mid;;ptitle;;ptranslit;;ptable;;p">
+					</treenode>
+					<treenode node="id;Php:Var Name;5;4;8;4;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="title;Php:Var Name;5;5;11;5;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="translit;Php:Var Name;5;6;14;6;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+			</phptree>
+		</csfile><csfile name="S:\home\wino\www\application\models\mdcity.php" crc="-745079922">
+			<phptree>
+				<treenode node="Mdcity;Php:Class Name;0;2;1;85;34;;;vCI_Model;;c;;r;;d29,2;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;1;9;2;11;34;;;v;;r;;d23,9;;b0,0;;m">
+					</treenode>
+					<treenode node="count_records;Php:Function Name;1;39;2;42;34;;;v;;r;;d31,39;;b0,0;;mtable;;p">
+					</treenode>
+					<treenode node="delete_record;Php:Function Name;1;72;2;77;34;;;v;;r;;d35,72;;b0,0;;mid;;ptable;;p">
+					</treenode>
+					<treenode node="delete_records_counry;Php:Function Name;1;79;2;84;34;;;v;;r;;d48,79;;b0,0;;mcountry;;ptable;;p">
+					</treenode>
+					<treenode node="insert_record;Php:Function Name;1;13;2;20;34;;;v;;r;;d47,13;;b0,0;;mdata;;ptranslit;;ptable;;p">
+					</treenode>
+					<treenode node="read_field;Php:Function Name;1;54;2;61;34;;;v;;r;;d39,54;;b0,0;;mid;;pfield;;ptable;;p">
+					</treenode>
+					<treenode node="read_field_translit;Php:Function Name;1;63;2;70;34;;;v;;r;;d54,63;;b0,0;;mtranslit;;pfield;;ptable;;p">
+					</treenode>
+					<treenode node="read_record;Php:Function Name;1;44;2;52;34;;;v;;r;;d33,44;;b0,0;;mid;;ptable;;p">
+					</treenode>
+					<treenode node="read_records;Php:Function Name;1;31;2;37;34;;;v;;r;;d30,31;;b0,0;;mtable;;p">
+					</treenode>
+					<treenode node="update_record;Php:Function Name;1;22;2;29;34;;;v;;r;;d51,22;;b0,0;;mid;;pdata;;ptranslit;;ptable;;p">
+					</treenode>
+					<treenode node="country;Php:Var Name;5;7;13;7;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="id;Php:Var Name;5;4;8;4;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="title;Php:Var Name;5;5;11;5;34;;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="translit;Php:Var Name;5;6;14;6;34;;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
 			</phptree>
@@ -5461,28 +5697,28 @@
 				</treenode>
 			</jstree>
 		</csfile><csfile name="S:\home\wino\www\application\core\index.html" crc="-1574479902">
-		</csfile><csfile name="S:\home\wino\www\application\controllers\users_interface.php" crc="-766863397">
+		</csfile><csfile name="S:\home\wino\www\application\controllers\users_interface.php" crc="-1585395661">
 			<phptree>
-				<treenode node="Users_interface;Php:Class Name;0;2;1;238;34;;;vCI_Controller;;c;;r;;d43,2;;b0,0;;m">
-					<treenode node="__construct;Php:Function Name;1;9;2;34;34;;;v;;r;;d23,9;;b0,0;;m">
+				<treenode node="Users_interface;Php:Class Name;0;2;1;242;34;;;vCI_Controller;;c;;r;;d43,2;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;1;9;2;36;34;;;v;;r;;d23,9;;b0,0;;m">
 					</treenode>
-					<treenode node="admin_login;Php:Function Name;8;163;2;197;34;;;v;;r;;d30,163;;b1,0;;m">
+					<treenode node="admin_login;Php:Function Name;8;165;2;199;34;;;v;;r;;d30,165;;b1,0;;m">
 					</treenode>
-					<treenode node="events;Php:Function Name;8;61;2;106;34;;;v;;r;;d25,61;;b1,0;;m">
+					<treenode node="events;Php:Function Name;8;63;2;108;34;;;v;;r;;d25,63;;b1,0;;m">
 					</treenode>
-					<treenode node="index;Php:Function Name;8;36;2;59;34;;;v;;r;;d24,36;;b1,0;;m">
+					<treenode node="index;Php:Function Name;8;38;2;61;34;;;v;;r;;d24,38;;b1,0;;m">
 					</treenode>
-					<treenode node="operation_date;Php:Function Name;8;213;2;220;34;;;v;;r;;d39,213;;b1,0;;mfield;;p">
+					<treenode node="operation_date;Php:Function Name;8;217;2;224;34;;;v;;r;;d39,217;;b1,0;;mfield;;p">
 					</treenode>
-					<treenode node="operation_dot_date;Php:Function Name;8;222;2;228;34;;;v;;r;;d43,222;;b1,0;;mfield;;p">
+					<treenode node="operation_dot_date;Php:Function Name;8;226;2;232;34;;;v;;r;;d43,226;;b1,0;;mfield;;p">
 					</treenode>
-					<treenode node="operation_no_year;Php:Function Name;8;230;2;236;34;;;v;;r;;d42,230;;b1,0;;mfield;;p">
+					<treenode node="operation_no_year;Php:Function Name;8;234;2;240;34;;;v;;r;;d42,234;;b1,0;;mfield;;p">
 					</treenode>
-					<treenode node="production;Php:Function Name;8;142;2;161;34;;;v;;r;;d29,142;;b1,0;;m">
+					<treenode node="production;Php:Function Name;8;144;2;163;34;;;v;;r;;d29,144;;b1,0;;m">
 					</treenode>
-					<treenode node="view_events;Php:Function Name;8;108;2;140;34;;;v;;r;;d30,108;;b1,0;;m">
+					<treenode node="view_events;Php:Function Name;8;110;2;142;34;;;v;;r;;d30,110;;b1,0;;m">
 					</treenode>
-					<treenode node="viewimage;Php:Function Name;8;201;2;211;34;;;v;;r;;d28,201;;b1,0;;m">
+					<treenode node="viewimage;Php:Function Name;8;203;2;215;34;;;v;;r;;d28,203;;b1,0;;m">
 					</treenode>
 					<treenode node="language;Php:Var Name;5;4;14;4;34;;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
@@ -5495,44 +5731,62 @@
 				</treenode>
 			</phptree>
 		</csfile><csfile name="S:\home\wino\www\application\controllers\index.html" crc="-1574479902">
-		</csfile><csfile name="S:\home\wino\www\application\controllers\admin_interface.php" crc="-111057250">
+		</csfile><csfile name="S:\home\wino\www\application\controllers\admin_interface.php" crc="440198139">
 			<phptree>
-				<treenode node="Admin_interface;Php:Class Name;0;2;1;563;34;;;vCI_Controller;;c;;r;;d43,2;;b0,0;;m">
-					<treenode node="__construct;Php:Function Name;1;9;2;41;34;;;v;;r;;d23,9;;b0,0;;m">
+				<treenode node="Admin_interface;Php:Class Name;0;2;1;846;34;;;vCI_Controller;;c;;r;;d43,2;;b0,0;;m">
+					<treenode node="__construct;Php:Function Name;1;9;2;45;34;;;v;;r;;d23,9;;b0,0;;m">
 					</treenode>
-					<treenode node="admin_logoff;Php:Function Name;8;62;2;66;34;;;v;;r;;d31,62;;b1,0;;m">
+					<treenode node="admin_logoff;Php:Function Name;8;66;2;70;34;;;v;;r;;d31,66;;b1,0;;m">
 					</treenode>
-					<treenode node="admin_panel;Php:Function Name;8;43;2;60;34;;;v;;r;;d30,43;;b1,0;;m">
+					<treenode node="admin_panel;Php:Function Name;8;47;2;64;34;;;v;;r;;d30,47;;b1,0;;m">
 					</treenode>
-					<treenode node="control_add_category;Php:Function Name;8;258;2;297;34;;;v;;r;;d39,258;;b1,0;;m">
+					<treenode node="control_add_category;Php:Function Name;8;261;2;300;34;;;v;;r;;d39,261;;b1,0;;m">
 					</treenode>
-					<treenode node="control_add_events;Php:Function Name;8;117;2;158;34;;;v;;r;;d37,117;;b1,0;;m">
+					<treenode node="control_add_events;Php:Function Name;8;121;2;162;34;;;v;;r;;d37,121;;b1,0;;m">
 					</treenode>
-					<treenode node="control_add_product;Php:Function Name;8;484;2;530;34;;;v;;r;;d38,484;;b1,0;;m">
+					<treenode node="control_add_product;Php:Function Name;8;487;2;533;34;;;v;;r;;d38,487;;b1,0;;m">
 					</treenode>
-					<treenode node="control_category;Php:Function Name;8;220;2;256;34;;;v;;r;;d35,220;;b1,0;;m">
+					<treenode node="control_category;Php:Function Name;8;224;2;259;34;;;v;;r;;d35,224;;b1,0;;m">
 					</treenode>
-					<treenode node="control_delete_category;Php:Function Name;8;343;2;359;34;;;v;;r;;d42,343;;b1,0;;m">
+					<treenode node="control_country;Php:Function Name;8;703;2;738;34;;;v;;r;;d34,703;;b1,0;;m">
 					</treenode>
-					<treenode node="control_delete_events;Php:Function Name;8;204;2;218;34;;;v;;r;;d40,204;;b1,0;;m">
+					<treenode node="control_delete_category;Php:Function Name;8;346;2;362;34;;;v;;r;;d42,346;;b1,0;;m">
 					</treenode>
-					<treenode node="control_delete_product;Php:Function Name;8;466;2;482;34;;;v;;r;;d41,466;;b1,0;;m">
+					<treenode node="control_delete_country;Php:Function Name;8;740;2;756;34;;;v;;r;;d41,740;;b1,0;;m">
 					</treenode>
-					<treenode node="control_edit_category;Php:Function Name;8;299;2;341;34;;;v;;r;;d40,299;;b1,0;;m">
+					<treenode node="control_delete_events;Php:Function Name;8;208;2;222;34;;;v;;r;;d40,208;;b1,0;;m">
 					</treenode>
-					<treenode node="control_edit_events;Php:Function Name;8;160;2;202;34;;;v;;r;;d38,160;;b1,0;;m">
+					<treenode node="control_delete_medal;Php:Function Name;8;629;2;643;34;;;v;;r;;d39,629;;b1,0;;m">
 					</treenode>
-					<treenode node="control_edit_series;Php:Function Name;8;361;2;415;34;;;v;;r;;d38,361;;b1,0;;m">
+					<treenode node="control_delete_product;Php:Function Name;8;469;2;485;34;;;v;;r;;d41,469;;b1,0;;m">
 					</treenode>
-					<treenode node="control_events;Php:Function Name;8;68;2;115;34;;;v;;r;;d33,68;;b1,0;;m">
+					<treenode node="control_delete_shops;Php:Function Name;8;800;2;814;34;;;v;;r;;d39,800;;b1,0;;m">
 					</treenode>
-					<treenode node="control_products;Php:Function Name;8;417;2;464;34;;;v;;r;;d35,417;;b1,0;;m">
+					<treenode node="control_delete_whereby;Php:Function Name;8;687;2;701;34;;;v;;r;;d41,687;;b1,0;;m">
 					</treenode>
-					<treenode node="operation_date;Php:Function Name;8;547;2;554;34;;;v;;r;;d39,547;;b1,0;;mfield;;p">
+					<treenode node="control_edit_category;Php:Function Name;8;302;2;344;34;;;v;;r;;d40,302;;b1,0;;m">
 					</treenode>
-					<treenode node="operation_dot_date;Php:Function Name;8;556;2;562;34;;;v;;r;;d43,556;;b1,0;;mfield;;p">
+					<treenode node="control_edit_events;Php:Function Name;8;164;2;206;34;;;v;;r;;d38,164;;b1,0;;m">
 					</treenode>
-					<treenode node="translite;Php:Function Name;8;535;2;545;34;;;v;;r;;d35,535;;b1,0;;mstring;;p">
+					<treenode node="control_edit_product;Php:Function Name;8;535;2;585;34;;;v;;r;;d39,535;;b1,0;;m">
+					</treenode>
+					<treenode node="control_edit_series;Php:Function Name;8;364;2;418;34;;;v;;r;;d38,364;;b1,0;;m">
+					</treenode>
+					<treenode node="control_events;Php:Function Name;8;72;2;119;34;;;v;;r;;d33,72;;b1,0;;m">
+					</treenode>
+					<treenode node="control_medals_product;Php:Function Name;8;587;2;627;34;;;v;;r;;d41,587;;b1,0;;m">
+					</treenode>
+					<treenode node="control_products;Php:Function Name;8;420;2;467;34;;;v;;r;;d35,420;;b1,0;;m">
+					</treenode>
+					<treenode node="control_shops;Php:Function Name;8;758;2;798;34;;;v;;r;;d32,758;;b1,0;;m">
+					</treenode>
+					<treenode node="control_whereby_product;Php:Function Name;8;645;2;685;34;;;v;;r;;d42,645;;b1,0;;m">
+					</treenode>
+					<treenode node="operation_date;Php:Function Name;8;830;2;837;34;;;v;;r;;d39,830;;b1,0;;mfield;;p">
+					</treenode>
+					<treenode node="operation_dot_date;Php:Function Name;8;839;2;845;34;;;v;;r;;d43,839;;b1,0;;mfield;;p">
+					</treenode>
+					<treenode node="translite;Php:Function Name;8;818;2;828;34;;;v;;r;;d35,818;;b1,0;;mstring;;p">
 					</treenode>
 					<treenode node="language;Php:Var Name;5;4;14;4;34;;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
@@ -5560,7 +5814,7 @@
 				<treenode node="smileys;Php:Var Name;0;14;8;14;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 			</phptree>
-		</csfile><csfile name="S:\home\wino\www\application\config\routes.php" crc="1681599215">
+		</csfile><csfile name="S:\home\wino\www\application\config\routes.php" crc="-278039489">
 			<phptree>
 				<treenode node="route;Php:Var Name;0;2;6;2;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>

@@ -43,7 +43,7 @@ class Mdcountry extends CI_Model{
 	
 	function read_record($id,$table){
 		
-		$this->db->select('id,title');
+		$this->db->select('id,title,translit');
 		$this->db->where('id',$id);
 		$query = $this->db->get($table,1);
 		$data = $query->result_array();

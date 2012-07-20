@@ -51,4 +51,43 @@ class Mdunion extends CI_Model{
 		if(count($data)) return $data;
 		return NULL;
 	}
+
+	function magazines_limit($prefix,$count,$from){
+		
+		$magazine = $prefix.'_magazines';
+		$country = $prefix.'_country';
+		$city = $prefix.'_city';
+		
+		$query = "SELECT $magazine.id,$magazine.title,$magazine.translit,$magazine.address,$magazine.phones,$magazine.country AS countryid,$magazine.city AS cityid,$country.title AS country,$city.title AS city FROM $magazine INNER JOIN $country ON $magazine.country = $country.id INNER JOIN $city ON $magazine.city = $city.id ORDER BY $magazine.title ASC,$country.title, $city.title LIMIT $from,$count";
+		$query = $this->db->query($query);
+		$data = $query->result_array();
+		if(count($data)) return $data;
+		return NULL;
+	}
+	
+	function magazines_all($prefix){
+		
+		$magazine = $prefix.'_magazines';
+		$country = $prefix.'_country';
+		$city = $prefix.'_city';
+		
+		$query = "SELECT $magazine.id,$magazine.title,$magazine.translit,$magazine.address,$magazine.phones,$magazine.country AS countryid,$magazine.city AS cityid,$country.title AS country,$city.title AS city FROM $magazine INNER JOIN $country ON $magazine.country = $country.id INNER JOIN $city ON $magazine.city = $city.id ORDER BY $magazine.title ASC,$country.title, $city.title";
+		$query = $this->db->query($query);
+		$data = $query->result_array();
+		if(count($data)) return $data;
+		return NULL;
+	}
+	
+	function magazines_product($product,$prefix){
+		
+		$magazine = $prefix.'_magazines';
+		$country = $prefix.'_country';
+		$city = $prefix.'_city';
+		
+		$query = "SELECT $magazine.id,$magazine.title,$magazine.translit,$magazine.address,$magazine.phones,$magazine.country AS countryid,$magazine.city AS cityid,$country.title AS country,$city.title AS city FROM $magazine INNER JOIN $country ON $magazine.country = $country.id INNER JOIN $city ON $magazine.city = $city.id ORDER BY $magazine.title ASC,$country.title, $city.title";
+		$query = $this->db->query($query);
+		$data = $query->result_array();
+		if(count($data)) return $data;
+		return NULL;
+	}
 }

@@ -654,7 +654,7 @@ class Admin_interface extends CI_Controller{
 			'loginstatus'	=> $this->loginstatus,
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
-			'magazine'		=> $this->mdmagazines->read_records($pid,$this->language.'_magazines'),
+			'magazines'		=> $this->mdunion->magazines_product($pid,$this->language),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);
@@ -664,25 +664,20 @@ class Admin_interface extends CI_Controller{
 		if($this->input->post('submit')):
 			unset($_POST['submit']);
 			$this->form_validation->set_rules('title',' ','required|trim');
+			$this->form_validation->set_rules('magazine',' ','required|trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
 				$this->control_add_events();
 			else:
-				if($_FILES['image']['error'] != 4):
-					$_POST['image'] = file_get_contents($_FILES['image']['tmp_name']);
-				else:
-					$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
-					redirect($this->uri->uri_string());
-				endif;
 				$mid = $this->mdmedals->insert_record($_POST,$pid,$this->uri->segment(5),$this->uri->segment(7),$this->language.'_medals');
 				if($mid):
-					$this->session->set_userdata('msgs','Награда создана успешно.');
+					$this->session->set_userdata('msgs','Запись создана успешно.');
 				endif;
 				redirect($this->uri->uri_string());
 			endif;
 		endif;
 		
-		$this->load->view($pagevar['language']."/admin_interface/products/medals",$pagevar);
+		$this->load->view($pagevar['language']."/admin_interface/products/whereby",$pagevar);
 	}
 	
 	public function control_delete_whereby(){
@@ -738,6 +733,45 @@ class Admin_interface extends CI_Controller{
 		$this->load->view($pagevar['language']."/admin_interface/magazines/country",$pagevar);
 	}
 	
+	public function control_edit_country(){
+		
+		$cid = $this->mdcountry->read_field_translit($this->uri->segment(5),'id',$this->language.'_country');
+		if(!$cid):
+			redirect($this->session->userdata('backpath'));
+		endif;
+		$pagevar = array(
+			'title'			=> 'Панель администрирования | Редактирование страны',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl'		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'country'		=> $this->mdcountry->read_record($cid,$this->language.'_country'),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('title',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+			else:
+				$translit = $this->translite($_POST['title']);
+				$result = $this->mdcountry->update_record($cid,$_POST['title'],$translit,$this->language.'_country');
+				if($result):
+					$this->session->set_userdata('msgs','Страна сохранена успешно.');
+				endif;
+				redirect($this->session->userdata('backpath'));
+			endif;
+		endif;
+		
+		$this->load->view($pagevar['language']."/admin_interface/magazines/edit-country",$pagevar);
+	}
+	
 	public function control_delete_country(){
 		
 		$cid = $this->uri->segment(6);
@@ -746,9 +780,109 @@ class Admin_interface extends CI_Controller{
 			if($result):
 				$this->mdcity->delete_records_counry($cid,$this->language.'_city');
 				//удаление магазинов и продукции
-				$this->session->set_userdata('msgs','Награда удалена успешно.');
+				$this->session->set_userdata('msgs','Страна удалена успешно.');
 			else:
-				$this->session->set_userdata('msgr','Награда не удалена.');
+				$this->session->set_userdata('msgr','Страна не удалена.');
+			endif;
+			redirect($this->session->userdata('backpath'));
+		else:
+			show_404();
+		endif;
+	}
+	
+	public function control_add_city(){
+		
+		$pagevar = array(
+			'title'			=> 'Панель администрирования | Добавление города',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl'		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('title',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+			else:
+				$translit = $this->translite($_POST['title']);
+				$result = $this->mdcity->insert_record($_POST['title'],$translit,$this->uri->segment(5),$this->language.'_city');
+				if($result):
+					$this->session->set_userdata('msgs','Запись создана успешно.');
+				endif;
+				redirect($this->uri->uri_string());
+			endif;
+		endif;
+		
+		$this->load->view($pagevar['language']."/admin_interface/magazines/add-city",$pagevar);
+	}
+	
+	public function control_edit_city(){
+		
+		$cid = $this->mdcity->read_field_translit($this->uri->segment(7),'id',$this->language.'_city');
+		if(!$cid):
+			redirect($this->session->userdata('backpath'));
+		endif;
+		$pagevar = array(
+			'title'			=> 'Панель администрирования | Редактирование города',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl'		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'city'			=> $this->mdcity->read_record($cid,$this->language.'_city'),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('title',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+			else:
+				
+				if(isset($_POST['delcity'])):
+					$result = $this->mdcity->delete_record($cid,$this->language.'_city');
+					if($result):
+						//удаление товаров
+						$this->session->set_userdata('msgs','Город удален успешно.');
+					endif;
+				else:
+					$translit = $this->translite($_POST['title']);
+					$result = $this->mdcity->update_record($cid,$_POST['title'],$translit,$this->language.'_city');
+					if($result):
+						$this->session->set_userdata('msgs','Город сохранен успешно.');
+					endif;
+				endif;
+				redirect($this->session->userdata('backpath'));
+			endif;
+		endif;
+		
+		$this->load->view($pagevar['language']."/admin_interface/magazines/edit-city",$pagevar);
+	}
+	
+	public function control_delete_city(){
+		
+		$cid = $this->uri->segment(6);
+		if($cid):
+			$result = $this->mdcountry->delete_record($cid,$this->language.'_country');
+			if($result):
+				$this->mdcity->delete_records_counry($cid,$this->language.'_city');
+				//удаление магазинов и продукции
+				$this->session->set_userdata('msgs','Страна удалена успешно.');
+			else:
+				$this->session->set_userdata('msgr','Страна не удалена.');
 			endif;
 			redirect($this->session->userdata('backpath'));
 		else:
@@ -757,17 +891,17 @@ class Admin_interface extends CI_Controller{
 	}
 	
 	public function control_shops(){
-
-		$pid = $this->uri->segment(8);
+	
+		$from = intval($this->uri->segment(5));
 		$pagevar = array(
-			'title'			=> 'Панель администрирования | Где купить',
+			'title'			=> 'Панель администрирования | Магазины',
 			'description'	=> 'Игристые вина',
 			'author'		=> '',
 			'baseurl'		=> base_url(),
 			'loginstatus'	=> $this->loginstatus,
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
-			'magazine'		=> $this->mdmagazines->read_records($pid,$this->language.'_magazines'),
+			'magazines'		=> $this->mdunion->magazines_limit($this->language,7,$from),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);
@@ -795,20 +929,120 @@ class Admin_interface extends CI_Controller{
 			endif;
 		endif;
 		
-		$this->load->view($pagevar['language']."/admin_interface/products/medals",$pagevar);
+		$config['base_url'] 		= $pagevar['baseurl'].'admin-panel/actions/shops/from/';
+		$config['uri_segment'] 		= 5;
+		$config['total_rows'] 		= $this->mdevents->count_records($this->language.'_events');
+		$config['per_page'] 		= 7;
+		$config['num_links'] 		= 4;
+		$config['first_link']		= 'В начало';
+		$config['last_link'] 		= 'В конец';
+		$config['next_link'] 		= 'Далее &raquo;';
+		$config['prev_link'] 		= '&laquo; Назад';
+		$config['cur_tag_open']		= '<span class="actpage">';
+		$config['cur_tag_close'] 	= '</span>';
+		
+		$this->pagination->initialize($config);
+		$pagevar['pages'] = $this->pagination->create_links();
+		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
+		$this->load->view($pagevar['language']."/admin_interface/magazines/magazines",$pagevar);
 	}
 	
-	public function control_delete_shops(){
+	public function control_add_shops(){
 		
-		$mid = $this->uri->segment(13);
-		if($mid):
-			$result = $this->mdmedals->delete_record($mid,$this->language.'_medals');
-			if($result):
-				$this->session->set_userdata('msgs','Награда удалена успешно.');
+		$pagevar = array(
+			'title'			=> 'Панель администрирования | Добавление магазина',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl'		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'country'		=> $this->mdcountry->read_records($this->language.'_country'),
+			'city'			=> $this->mdcity->read_records($this->language.'_city'),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('title',' ','required|trim');
+			$this->form_validation->set_rules('address',' ','required|trim');
+			$this->form_validation->set_rules('phones',' ','required|trim');
+			$this->form_validation->set_rules('city',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
 			else:
-				$this->session->set_userdata('msgr','Награда не удалена.');
+				$translit = $this->translite($_POST['title']);
+				$country = $this->mdcity->read_field($_POST['city'],'country',$this->language.'_city');
+				$result = $this->mdmagazines->insert_record($_POST,$translit,$country,$_POST['city'],$this->language.'_magazines');
+				if($result):
+					$this->session->set_userdata('msgs','Магазин создан успешно.');
+				endif;
+				redirect($this->uri->uri_string());
 			endif;
-			redirect('admin-panel/actions/products/category/'.$this->uri->segment(5).'/series/'.$this->uri->segment(7).'/product/'.$this->uri->segment(9).'/medals');
+		endif;
+		
+		$this->load->view($pagevar['language']."/admin_interface/magazines/add-magazine",$pagevar);
+	}
+	
+	public function control_edit_shops(){
+		
+		$cid = $this->mdmagazines->read_field_translit($this->uri->segment(5),$this->uri->segment(7),$this->uri->segment(9),'id',$this->language.'_magazines');
+		if(!$cid):
+			redirect($this->session->userdata('backpath'));
+		endif;
+		$pagevar = array(
+			'title'			=> 'Панель администрирования | Редактирование магазина',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl'		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'country'		=> $this->mdcountry->read_records($this->language.'_country'),
+			'city'			=> $this->mdcity->read_records($this->language.'_city'),
+			'shop'			=> $this->mdmagazines->read_record($cid,$this->language.'_magazines'),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('title',' ','required|trim');
+			$this->form_validation->set_rules('address',' ','required|trim');
+			$this->form_validation->set_rules('phones',' ','required|trim');
+			$this->form_validation->set_rules('city',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+			else:
+				$translit = $this->translite($_POST['title']);
+				$country = $this->mdcity->read_field($_POST['city'],'country',$this->language.'_city');
+				$result = $this->mdmagazines->update_record($cid,$_POST,$translit,$country,$_POST['city'],$this->language.'_magazines');
+				if($result):
+					$this->session->set_userdata('msgs','Магазин сохранен успешно.');
+				endif;
+				redirect($this->uri->uri_string());
+			endif;
+		endif;
+		
+		$this->load->view($pagevar['language']."/admin_interface/magazines/edit-magazine",$pagevar);
+	}
+	
+	public function control_delete_shop(){
+		
+		$mid = $this->uri->segment(6);
+		if($mid):
+			$result = $this->mdmagazines->delete_record($mid,$this->language.'_magazines');
+			if($result):
+				$this->session->set_userdata('msgs','Магазин удален успешно.');
+			else:
+				$this->session->set_userdata('msgr','Магазин не удален.');
+			endif;
+			redirect($this->session->userdata('backpath'));
 		else:
 			show_404();
 		endif;

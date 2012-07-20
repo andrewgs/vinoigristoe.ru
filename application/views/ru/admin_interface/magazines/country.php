@@ -28,15 +28,15 @@
 							<td>
 								<ol>
 							<?php for($j=0;$j<count($city);$j++):?>
-								<?php if($series[$j]['category'] == $category[$i]['id']):?>
-									<li><?=$series[$j]['title'];?> (<?=anchor('admin-panel/actions/series/'.$category[$i]['translit'].'/'.$series[$j]['translit'],'<i class="icon-edit"></i>');?>)</li>
+								<?php if($city[$j]['country'] == $country[$i]['id']):?>
+									<li><?=$city[$j]['title'];?> (<?=anchor('admin-panel/actions/country/countryid/'.$country[$i]['id'].'/edit/'.$city[$j]['translit'],'<i class="icon-edit"></i>');?>)</li>
 								<?php endif;?>
 							<?php endfor;?>
 								</ol>
 							</td>
 							<td class="w50">
 								<div id="params<?=$i;?>" style="display:none" data-cid="<?=$country[$i]['id'];?>"></div>
-								<?=anchor('admin-panel/actions/country/countryid/edit/'.$country[$i]['translit'],'<nobr>&nbsp;&nbsp;<i class="icon-edit icon-white"></i>&nbsp;&nbsp;</nobr>',array('class'=>'btn btn-success','title'=>'Редактировать'));?>
+								<?=anchor('admin-panel/actions/country/edit/'.$country[$i]['translit'],'<nobr>&nbsp;&nbsp;<i class="icon-edit icon-white"></i>&nbsp;&nbsp;</nobr>',array('class'=>'btn btn-success','title'=>'Редактировать'));?>
 								<?=anchor('admin-panel/actions/country/countryid/'.$country[$i]['id'].'/add-city','<nobr>&nbsp;&nbsp;<i class="icon-plus icon-white"></i>&nbsp;&nbsp;</nobr>',array('class'=>'btn btn-info','title'=>'Добавить город'));?>
 								<a class="btn btn-danger deleteCountry" data-param="<?=$i;?>" data-toggle="modal" href="#deleteCountry" title="Удалить"><nobr>&nbsp;&nbsp;<i class="icon-trash icon-white"></i>&nbsp;&nbsp;</nobr></a>
 							</td>

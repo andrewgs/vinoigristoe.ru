@@ -30,7 +30,7 @@
 								<ol>
 							<?php for($j=0;$j<count($series);$j++):?>
 								<?php if($series[$j]['category'] == $category[$i]['id']):?>
-									<li><?=$series[$j]['title'];?> (<?=anchor('admin-panel/actions/series/'.$category[$i]['translit'].'/'.$series[$j]['translit'],'<i class="icon-edit"></i>');?>)</li>
+									<li><?=$series[$j]['title'];?> (<?=anchor('admin-panel/actions/category/categoryid/'.$category[$i]['id'].'/seriesid/'.$series[$j]['id'].'/edit','<i class="icon-edit"></i>');?>)</li>
 								<?php endif;?>
 							<?php endfor;?>
 								</ol>

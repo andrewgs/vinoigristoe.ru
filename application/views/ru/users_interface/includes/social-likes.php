@@ -5,7 +5,7 @@
 	</div>	
 	<div class="like">
 		<img src="<?=$baseurl;?>images/gplus.png" alt="" />
-	</div>
+	</div><br />
 	<div class="like">
 		<img src="<?=$baseurl;?>images/tw.png" alt="" />
 	</div>
@@ -13,4 +13,3 @@
 		<img src="<?=$baseurl;?>images/fb.png" alt="" />
 	</div>
 </div>
-<div class="spline"></div>

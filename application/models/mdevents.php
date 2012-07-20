@@ -63,9 +63,15 @@ class Mdevents extends CI_Model{
 		return NULL;
 	}
 	
-	function count_records($table){
+	function count_records($types,$table){
 		
-		return $this->db->count_all($table);;
+		$this->db->select('COUNT(*) AS cnt');
+		$this->db->where_in('type_event',$types);
+		$this->db->order_by('date','DESC');
+		$query = $this->db->get($table);
+		$data = $query->result_array();
+		if(isset($data[0]['cnt'])) return $data[0]['cnt'];
+		return 0;
 	}
 	
 	function read_record($id,$table){

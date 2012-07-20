@@ -31,6 +31,7 @@
 				</div>
 				<div class="spline"></div>
 				<?php $this->load->view($language."/users_interface/includes/social-likes");?>
+				<div class="spline"></div>
 			</aside>
 			<div id="main" role="main" class="cf">
 				<div class="wine-flag news-updates">
@@ -52,7 +53,6 @@
 					</div>
 				<?php endfor;?>
 					<div class="spline"></div>
-					
 					<?php if($pages): ?>
 					<div class="pagination">
 						<?=$pages;?>

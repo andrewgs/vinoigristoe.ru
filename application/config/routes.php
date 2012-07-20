@@ -6,7 +6,6 @@ $route['404_override'] = '';
 /***************************************************	USERS INTRERFACE	***********************************************/
 $route[''] 			= "users_interface/index";
 $route['admin'] 	= "users_interface/admin_login";
-$route['production']= "users_interface/production";
 $route['company']	= "users_interface/company";
 $route['where']		= "users_interface/where";
 $route['tourism']	= "users_interface/tourism";
@@ -16,6 +15,16 @@ $route['news']		= "users_interface/events";
 $route['events']	= "users_interface/events";
 $route['events/from']	= "users_interface/events";
 $route['events/from/:num']= "users_interface/events";
+
+$route['production']	= "users_interface/production";
+$route['production/from']	= "users_interface/production";
+$route['production/from/:num']= "users_interface/production";
+
+$route['production/category/:any/series/:any/product/:any']= "users_interface/product";
+
+$route['production/category/:any/from/:num']= "users_interface/products_by_category";
+$route['production/category/:any/from']= "users_interface/products_by_category";
+$route['production/category/:any']= "users_interface/products_by_category";
 
 $route['events/viewimage/:num']		= "users_interface/viewimage";
 $route['category/viewimage/:num']	= "users_interface/viewimage";
@@ -54,7 +63,7 @@ $route['admin-panel/actions/country/delete/countryid/:num']= "admin_interface/co
 
 $route['admin-panel/actions/country/countryid/:num/add-city']= "admin_interface/control_add_city";
 $route['admin-panel/actions/country/countryid/:num/edit/:any']= "admin_interface/control_edit_city";
-$route['admin-panel/actions/country/delete/countryid/:num']= "admin_interface/control_delete_city";
+$route['admin-panel/actions/country/delete/cityid/:num']= "admin_interface/control_delete_city";
 
 $route['admin-panel/actions/shops']= "admin_interface/control_shops";
 $route['admin-panel/actions/shops/from']= "admin_interface/control_shops";
@@ -73,6 +82,6 @@ $route['admin-panel/actions/events/add']	= "admin_interface/control_add_events";
 $route['admin-panel/actions/events/edit/:any']= "admin_interface/control_edit_events";
 $route['admin-panel/actions/events/delete/eventsid/:num']= "admin_interface/control_delete_events";
 
-$route['admin-panel/actions/series/:any/:any']	= "admin_interface/control_edit_series";
+$route['admin-panel/actions/category/categoryid/:num/seriesid/:num/edit'] = "admin_interface/control_edit_series";
 
 $route['admin-panel/actions/cabinet']	= "admin_interface/admin_cabinet";

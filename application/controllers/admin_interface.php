@@ -378,14 +378,8 @@ class Admin_interface extends CI_Controller{
 	
 	public function control_edit_series(){
 		
-		$cid = $this->mdcategory->read_field_translit($this->uri->segment(4),'id',$this->language.'_category');
-		if(!$cid):
-			redirect($this->session->userdata('backpath'));
-		endif;
-		$sid = $this->mdseries->read_field_translit($this->uri->segment(5),'id',$this->language.'_series');
-		if(!$sid):
-			redirect($this->session->userdata('backpath'));
-		endif;
+		$cid = $this->uri->segment(5);
+		$sid = $this->uri->segment(7);
 		$pagevar = array(
 			'title'			=> 'Панель администрирования | Редактирование серии товара',
 			'description'	=> 'Игристые вина',
@@ -451,6 +445,7 @@ class Admin_interface extends CI_Controller{
 			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
 			'series'		=> $this->mdseries->read_records($this->language.'_series'),
 			'products'		=> $this->mdproducts->read_limit_records($this->language.'_products',7,$from),
+			'pages'			=> array(),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);
@@ -610,7 +605,7 @@ class Admin_interface extends CI_Controller{
 	
 	public function control_medals_product(){
 
-		$pid = $this->uri->segment(8);
+		$pid = $this->uri->segment(9);
 		$pagevar = array(
 			'title'			=> 'Панель администрирования | Награды',
 			'description'	=> 'Игристые вина',
@@ -941,6 +936,7 @@ class Admin_interface extends CI_Controller{
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
 			'magazines'		=> $this->mdunion->magazines_limit($this->language,7,$from),
+			'pages'			=> array(),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);

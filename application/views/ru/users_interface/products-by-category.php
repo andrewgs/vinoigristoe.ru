@@ -39,7 +39,7 @@
 				</aside>
 				<div id="main" role="main" class="cf">
 					<div class="wine-flag">
-						<?=anchor('#','Хотите <br />в винный <br />тур?');?>
+						<a href="#">Хотите <br />в винный <br />тур?</a>
 					</div>
 					<div class="inside">
 						<img src="<?=$baseurl;?>images/caralog_promo.png" alt="Каталог продукции" />
@@ -54,24 +54,18 @@
 							<li><?=anchor('production/category/'.$category[5]['translit'],'<span class="type brandy"></span>'.$category[5]['title']);?></li>
 						</ul>
 						<div class="spline"></div>
-					<?php for($i=0;$i<count($series);$i++):?>
-						<div class="categories-sep cf">
-							<div class="left"></div>
-							<div class="center"><?=$series[$i]['title'];?></div>
-							<div class="right"></div>
-						</div>
 						<div class="items-list">
-					<?php for($j=0;$j<count($products);$j++):?>
-						<?php if($series[$i]['id'] == $products[$j]['series']):?>
+						<?php for($i=0;$i<count($products);$i++):?>
 							<div class="category-item">
-								<img src="<?=$baseurl;?>product/viewimage/<?=$products[$j]['id'];?>" alt="<?=$products[$j]['title'];?>" title="<?=$products[$j]['title'];?>" style="" />
-								<p class="category-name"><?=$products[$j]['ctitle'];?></p>
-								<p class="item-name"><?=anchor('production/category/'.$products[$j]['ctranslit'].'/series/'.$products[$j]['stranslit'].'/product/'.$products[$j]['translit'],$products[$j]['title']);?>	</p>
+								<img src="<?=$baseurl;?>product/viewimage/<?=$products[$i]['id'];?>" alt="<?=$products[$i]['title'];?>" title="<?=$products[$i]['title'];?>" style="" />
+								<p class="category-name"><?=$products[$i]['ctitle'];?></p>
+								<p class="item-name"><?=anchor('production/category/'.$products[$i]['ctranslit'].'/series/'.$products[$i]['stranslit'].'/product/'.$products[$i]['translit'],$products[$i]['title']);?></p>
 							</div>
+						<?php endfor;?>
+						<?php if(!count($products)):?>
+							<p class="item-name">Извините но список пуст :(</p>
 						<?php endif;?>
-					<?php endfor;?>
 						</div>
-					<?php endfor;?>
 						<div class="spline"></div>
 						<?php if($pages): ?>
 						<div class="pagination">

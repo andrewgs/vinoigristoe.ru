@@ -13,9 +13,15 @@ class Users_interface extends CI_Controller{
 		$this->load->model('mdadmins');
 		$this->load->model('mdevents');
 		$this->load->model('mdunion');
+		$this->load->model('mdtypeevents');
 		$this->load->model('mdcategory');
+		$this->load->model('mdseries');
 		$this->load->model('mdproducts');
 		$this->load->model('mdmedals');
+		$this->load->model('mdmagazines');
+		$this->load->model('mdcity');
+		$this->load->model('mdcountry');
+		$this->load->model('mdwhereby');
 		
 		$cookieuid = $this->session->userdata('logon');
 		if(isset($cookieuid) and !empty($cookieuid)):
@@ -65,13 +71,14 @@ class Users_interface extends CI_Controller{
 		
 		$from = intval($this->uri->segment(3));
 		$pagevar = array(
-			'title'			=> 'Цимлянские вина | Нащи новости и события',
+			'title'			=> 'Цимлянские вина | Наши новости и события',
 			'description'	=> 'Игристые вина',
 			'author'		=> '',
 			'baseurl' 		=> base_url(),
 			'loginstatus'	=> $this->loginstatus,
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
+			'pages'			=> array(),
 			'events'		=> $this->mdevents->read_records_limit(array(1),$this->language.'_events',3,$from),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
@@ -92,9 +99,9 @@ class Users_interface extends CI_Controller{
 		
 		$config['base_url'] 		= $pagevar['baseurl'].'events/from/';
 		$config['uri_segment'] 		= 3;
-		$config['total_rows'] 		= $this->mdevents->count_records($this->language.'_events');
+		$config['total_rows'] 		= $this->mdevents->count_records(array(1),$this->language.'_events');
 		$config['per_page'] 		= 3;
-		$config['num_links'] 		= 6;
+		$config['num_links'] 		= 12;
 		$config['first_link']		= '<img src="'.$pagevar['baseurl'].'images/arrow-left.png">';
 		$config['last_link'] 		= '<img src="'.$pagevar['baseurl'].'images/arrow-right.png">';
 		$config['next_link'] 		= '<img src="'.$pagevar['baseurl'].'images/arrow-right.png">';
@@ -111,7 +118,6 @@ class Users_interface extends CI_Controller{
 	public function view_events(){
 	
 		$eid = $this->mdevents->read_field_translit($this->uri->segment(2),'id',$this->language.'_events');
-//		print_r($eid);exit;
 		if(!$eid):
 			redirect($_SERVER['HTTP_REFERER']);
 		endif;
@@ -146,7 +152,7 @@ class Users_interface extends CI_Controller{
 		
 		$from = intval($this->uri->segment(3));
 		$pagevar = array(
-			'title'			=> 'Цимлянские вина | Нащи новости и события',
+			'title'			=> 'Цимлянские вина | Продукция',
 			'description'	=> 'Игристые вина',
 			'author'		=> '',
 			'baseurl' 		=> base_url(),
@@ -154,13 +160,124 @@ class Users_interface extends CI_Controller{
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
 			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
+			'series'		=> $this->mdunion->groupby_series($this->language),
+			'products'		=> $this->mdunion->products_catalog_limit($this->language,8,$from),
+			'pages'			=> array(),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
+		$config['base_url'] 		= $pagevar['baseurl'].'production/from/';
+		$config['uri_segment'] 		= 3;
+		$config['total_rows'] 		= $this->mdproducts->count_records($this->language.'_products');
+		$config['per_page'] 		= 8;
+		$config['num_links'] 		= 12;
+		$config['first_link']		= '<img src="'.$pagevar['baseurl'].'images/arrow-left.png">';
+		$config['last_link'] 		= '<img src="'.$pagevar['baseurl'].'images/arrow-right.png">';
+		$config['next_link'] 		= '<img src="'.$pagevar['baseurl'].'images/arrow-right.png">';
+		$config['prev_link'] 		= '<img src="'.$pagevar['baseurl'].'images/arrow-left.png">';
+		$config['cur_tag_open']		= '<a class="current none" href="#">';
+		$config['cur_tag_close'] 	= '</a>';
+		
+		$this->pagination->initialize($config);
+		$pagevar['pages'] = $this->pagination->create_links();
+		for($i=0;$i<count($pagevar['series']);$i++):
+			$found = FALSE;
+			for($j=0;$j<count($pagevar['products']);$j++):
+				if($pagevar['series'][$i]['id'] == $pagevar['products'][$j]['series']):
+					$found = TRUE;
+					break;
+				endif;
+			endfor;
+			if(!$found):
+				unset($pagevar['series'][$i]);
+			endif;
+		endfor;
+		if(isset($pagevar['series'])):
+			$pagevar['series'] = array_values($pagevar['series']);
+		else:
+			$pagevar['series'] = array();
+		endif;
+		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
 		$this->load->view($pagevar['language']."/users_interface/production",$pagevar);
+	}
+	
+	public function products_by_category(){
+		
+		$category = $this->mdcategory->read_field_translit($this->uri->segment(3),'id',$this->language.'_category');
+		if(!$category):
+			redirect($this->session->userdata('backpath'));
+		endif;
+		$from = intval($this->uri->segment(3));
+		$pagevar = array(
+			'title'			=> 'Цимлянские вина | '.$this->mdcategory->read_field($category,'title',$this->language.'_category'),
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl' 		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
+			'products'		=> $this->mdunion->products_filtr_limit($category,'category',$this->language,8,$from),
+			'pages'			=> array(),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		$config['base_url'] 		= $pagevar['baseurl'].'production/from/';
+		$config['uri_segment'] 		= 3;
+		$config['total_rows'] 		= $this->mdproducts->count_records($this->language.'_products');
+		$config['per_page'] 		= 8;
+		$config['num_links'] 		= 12;
+		$config['first_link']		= '<img src="'.$pagevar['baseurl'].'images/arrow-left.png">';
+		$config['last_link'] 		= '<img src="'.$pagevar['baseurl'].'images/arrow-right.png">';
+		$config['next_link'] 		= '<img src="'.$pagevar['baseurl'].'images/arrow-right.png">';
+		$config['prev_link'] 		= '<img src="'.$pagevar['baseurl'].'images/arrow-left.png">';
+		$config['cur_tag_open']		= '<a class="current none" href="#">';
+		$config['cur_tag_close'] 	= '</a>';
+		
+		$this->pagination->initialize($config);
+		$pagevar['pages'] = $this->pagination->create_links();
+		
+		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
+		$this->load->view($pagevar['language']."/users_interface/products-by-category",$pagevar);
+	}
+	
+	public function product(){
+		
+		$category = $this->mdcategory->read_field_translit($this->uri->segment(3),'id',$this->language.'_category');
+		$series = $this->mdseries->read_field_translit($this->uri->segment(5),'id',$this->language.'_series');
+		$product = $this->mdproducts->read_field_translit($category,$series,$this->uri->segment(7),'id',$this->language.'_products');
+		if(!$product):
+			redirect($this->session->userdata('backpath'));
+		endif;
+		$pagevar = array(
+			'title'			=> 'Цимлянские вина | '.$this->mdcategory->read_field($category,'title',$this->language.'_category'),
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl' 		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'product'		=> $this->mdunion->product_catalog($product,$this->language),
+			'news'			=> $this->mdevents->read_records_limit(array('1'),$this->language.'_events',5,0),
+			'medals'		=> $this->mdmedals->read_records($product,$this->language.'_medals'),
+			'readproducts'	=> $this->mdunion->products_random_without_limit($product,$this->language,3),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		for($i=0;$i<count($pagevar['news']);$i++):
+			$pagevar['news'][$i]['date'] = $this->operation_dot_date($pagevar['news'][$i]['date']);
+		endfor;
+		
+		$this->load->view($pagevar['language']."/users_interface/product",$pagevar);
 	}
 	
 	public function admin_login(){

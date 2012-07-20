@@ -13,6 +13,10 @@
 				</ul>
 				<?php $this->load->view($language."/alert_messages/alert-error");?>
 				<?php $this->load->view($language."/alert_messages/alert-success");?>
+				<?php if($pages): ?>
+					<?=$pages;?>
+				<?php endif;?>
+				<hr/>
 				<table class="table table-striped table-bordered">
 					<thead>
 						<tr>
@@ -37,6 +41,10 @@
 					<?php endfor; ?>
 					</tbody>
 				</table>
+				<?php if($pages): ?>
+					<?=$pages;?>
+				<?php endif;?>
+				<hr/>
 				<?=anchor('admin-panel/actions/shops/add','<nobr><i class="icon-plus icon-white"></i> Добавить</nobr>',array('class'=>'btn btn-info'));?>
 			</div>
 		<?php $this->load->view($language."/admin_interface/includes/rightbar");?>

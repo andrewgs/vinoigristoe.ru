@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php $this->load->view($language."/admin_interface/includes/head");?>
+
 <body>
 	<?php $this->load->view($language."/admin_interface/includes/header");?>
+	
 	<div class="container">
 		<div class="row">
 			<div class="span9">
@@ -66,7 +68,7 @@
 			var pID = 0;
 			
 			$(".deleteProduct").click(function(){var Param = $(this).attr('data-param'); pID = $("div[id = params"+Param+"]").attr("data-pid");});
-			$("#DelProduct").click(function(){location.href='<?=$baseurl;?>admin-panel/actions/product/delete/productid/'+pID;});
+			$("#DelProduct").click(function(){location.href='<?=$baseurl;?>admin-panel/actions/products/delete/productid/'+pID;});
 		});
 	</script>
 </body>

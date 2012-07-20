@@ -92,4 +92,69 @@ class Mdunion extends CI_Model{
 		if(count($data)) return $data;
 		return NULL;
 	}
+
+	function products_catalog_limit($prefix,$count,$from){
+		
+		$products = $prefix.'_products';
+		$category = $prefix.'_category';
+		$series = $prefix.'_series';
+		
+		$query = "SELECT $products.id,$products.title,$products.translit,$products.type,$products.category,$products.series,$category.title AS ctitle,$category.translit AS ctranslit,$series.title AS stitle,$series.translit AS stranslit FROM $products INNER JOIN $category ON $products.category = $category.id INNER JOIN $series ON $products.series = $series.id ORDER BY $products.category,$products.series,$products.title LIMIT $from,$count";
+		$query = $this->db->query($query);
+		$data = $query->result_array();
+		if(count($data)) return $data;
+		return NULL;
+	}
+	
+	function products_random_without_limit($product,$prefix,$count){
+		
+		$products = $prefix.'_products';
+		$category = $prefix.'_category';
+		$series = $prefix.'_series';
+		
+		$query = "SELECT $products.id,$products.title,$products.translit,$products.type,$products.category,$products.series,$category.title AS ctitle,$category.translit AS ctranslit,$series.title AS stitle,$series.translit AS stranslit FROM $products INNER JOIN $category ON $products.category = $category.id INNER JOIN $series ON $products.series = $series.id WHERE $products.id != $product ORDER BY RAND() LIMIT $count";
+		$query = $this->db->query($query);
+		$data = $query->result_array();
+		if(count($data)) return $data;
+		return NULL;
+	}
+	
+	function product_catalog($product,$prefix){
+		
+		$products = $prefix.'_products';
+		$category = $prefix.'_category';
+		$series = $prefix.'_series';
+		
+		$query = "SELECT $products.id,$products.title,$products.translit,$products.content,$products.type,$products.category,$products.series,$products.alcohol,$products.sugar,$category.title AS ctitle,$category.translit AS ctranslit,$series.title AS stitle,$series.translit AS stranslit FROM $products INNER JOIN $category ON $products.category = $category.id INNER JOIN $series ON $products.series = $series.id WHERE $products.id = $product ";
+		$query = $this->db->query($query);
+		$data = $query->result_array();
+		if(isset($data[0])) return $data[0];
+		return NULL;
+	}
+
+	function groupby_series($prefix){
+		
+		$products = $prefix.'_products';
+		$series = $prefix.'_series';
+		
+		$query = "SELECT $series.id,$series.title FROM $products INNER JOIN $series ON $products.series = $series.id GROUP BY $series.id ORDER BY $series.id,$series.title";
+		$query = $this->db->query($query);
+		$data = $query->result_array();
+		if(count($data)) return $data;
+		return NULL;
+	}
+
+	function products_filtr_limit($filtr,$filtr_field,$prefix,$count,$from){
+		
+		$products = $prefix.'_products';
+		$category = $prefix.'_category';
+		$series = $prefix.'_series';
+		
+		$query = "SELECT $products.id,$products.title,$products.translit,$products.type,$products.category,$products.series,$category.title AS ctitle,$category.translit AS ctranslit,$series.title AS stitle,$series.translit AS stranslit FROM $products INNER JOIN $category ON $products.category = $category.id INNER JOIN $series ON $products.series = $series.id WHERE $products.$filtr_field = $filtr ORDER BY $products.category,$products.series,$products.title LIMIT $from,$count";
+		$query = $this->db->query($query);
+		$data = $query->result_array();
+		if(count($data)) return $data;
+		return NULL;
+	}
+
 }

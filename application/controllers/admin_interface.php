@@ -105,7 +105,7 @@ class Admin_interface extends CI_Controller{
 		
 		$config['base_url'] 		= $pagevar['baseurl'].'admin-panel/actions/events/from/';
 		$config['uri_segment'] 		= 5;
-		$config['total_rows'] 		= $this->mdevents->count_records($this->language.'_events');
+		$config['total_rows'] 		= $this->mdevents->count_records(array(1,2,3,4),$this->language.'_events');
 		$config['per_page'] 		= 7;
 		$config['num_links'] 		= 4;
 		$config['first_link']		= 'В начало';

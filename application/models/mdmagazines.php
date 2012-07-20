@@ -88,4 +88,18 @@ class Mdmagazines extends CI_Model{
 		$this->db->delete($table);
 		return $this->db->affected_rows();
 	}
+
+	function delete_records_country($country,$table){
+	
+		$this->db->where('country',$country);
+		$this->db->delete($table);
+		return $this->db->affected_rows();
+	}
+	
+	function delete_records_city($city,$table){
+	
+		$this->db->where('city',$city);
+		$this->db->delete($table);
+		return $this->db->affected_rows();
+	}
 }

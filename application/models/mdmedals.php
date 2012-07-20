@@ -90,6 +90,13 @@ class Mdmedals extends CI_Model{
 		return $this->db->affected_rows();
 	}
 	
+	function delete_records_products($product,$table){
+	
+		$this->db->where('product',$product);
+		$this->db->delete($table);
+		return $this->db->affected_rows();
+	}
+	
 	function delete_records_category($category,$table){
 	
 		$this->db->where('category',$category);

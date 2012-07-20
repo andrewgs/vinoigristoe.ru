@@ -71,6 +71,8 @@ class Admin_interface extends CI_Controller{
 			redirect('');
 	}
 	
+	/******************************************************* events ************************************************************/
+	
 	public function control_events(){
 		
 		$from = intval($this->uri->segment(5));
@@ -225,6 +227,8 @@ class Admin_interface extends CI_Controller{
 		endif;
 	}
 	
+	/******************************************************* category ************************************************************/
+	
 	public function control_category(){
 		
 		$pagevar = array(
@@ -357,7 +361,9 @@ class Admin_interface extends CI_Controller{
 			$result = $this->mdcategory->delete_record($cid,$this->language.'_category');
 			if($result):
 				$this->mdseries->delete_records($cid,$this->language.'_series');
-				//удаление товаров
+				$this->mdproducts->delete_records_category($cid,$this->language.'_products');
+				$this->mdmedals->delete_records_category($cid,$this->language.'_medals');
+				$this->mdwhereby->delete_records_category($cid,$this->language.'_whereby');
 				$this->session->set_userdata('msgs','Категория удалена успешно.');
 			else:
 				$this->session->set_userdata('msgr','Категория не удалена.');
@@ -367,6 +373,8 @@ class Admin_interface extends CI_Controller{
 			show_404();
 		endif;
 	}
+	
+	/******************************************************* series ************************************************************/
 	
 	public function control_edit_series(){
 		
@@ -409,7 +417,9 @@ class Admin_interface extends CI_Controller{
 				if(isset($_POST['delseries'])):
 					$result = $this->mdseries->delete_record($sid,$this->language.'_series');
 					if($result):
-						//удаление товаров
+						$this->mdproducts->delete_records_series($sid,$this->language.'_products');
+						$this->mdmedals->delete_records_series($sid,$this->language.'_medals');
+						$this->mdwhereby->delete_records_series($sid,$this->language.'_whereby');
 						$this->session->set_userdata('msgs','Серия удалена успешно.');
 					endif;
 				else:
@@ -424,6 +434,8 @@ class Admin_interface extends CI_Controller{
 		
 		$this->load->view($pagevar['language']."/admin_interface/products/edit-series",$pagevar);
 	}
+	
+	/******************************************************* products ************************************************************/
 	
 	public function control_products(){
 		
@@ -472,24 +484,6 @@ class Admin_interface extends CI_Controller{
 		
 		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
 		$this->load->view($pagevar['language']."/admin_interface/products/products",$pagevar);
-	}
-	
-	public function control_delete_product(){
-		
-		$cid = $this->uri->segment(6);
-		if($cid):
-			$result = $this->mdcategory->delete_record($cid,$this->language.'_category');
-			if($result):
-				$this->mdseries->delete_records($cid,$this->language.'_series');
-				//удаление товаров
-				$this->session->set_userdata('msgs','Категория удалена успешно.');
-			else:
-				$this->session->set_userdata('msgr','Категория не удалена.');
-			endif;
-			redirect($this->session->userdata('backpath'));
-		else:
-			show_404();
-		endif;
 	}
 	
 	public function control_add_product(){
@@ -594,6 +588,26 @@ class Admin_interface extends CI_Controller{
 		$this->load->view($pagevar['language']."/admin_interface/products/edit-product",$pagevar);
 	}
 	
+	public function control_delete_product(){
+		
+		$pid = $this->uri->segment(6);
+		if($pid):
+			$result = $this->mdproducts->delete_record($pid,$this->language.'_products');
+			if($result):
+				$this->mdmedals->delete_records_products($pid,$this->language.'_medals');
+				$this->mdwhereby->delete_records_products($pid,$this->language.'_whereby');
+				$this->session->set_userdata('msgs','Товар удален успешно.');
+			else:
+				$this->session->set_userdata('msgr','Товар не удалена.');
+			endif;
+			redirect($this->session->userdata('backpath'));
+		else:
+			show_404();
+		endif;
+	}
+	
+	/******************************************************* medals ************************************************************/
+	
 	public function control_medals_product(){
 
 		$pid = $this->uri->segment(8);
@@ -653,6 +667,8 @@ class Admin_interface extends CI_Controller{
 		endif;
 	}
 	
+	/******************************************************* whereby ************************************************************/
+	
 	public function control_whereby_product(){
 
 		$pid = $this->uri->segment(9);
@@ -708,6 +724,8 @@ class Admin_interface extends CI_Controller{
 			show_404();
 		endif;
 	}
+	
+	/******************************************************* country ************************************************************/
 	
 	public function control_country(){
 		
@@ -793,8 +811,9 @@ class Admin_interface extends CI_Controller{
 		if($cid):
 			$result = $this->mdcountry->delete_record($cid,$this->language.'_country');
 			if($result):
-				$this->mdcity->delete_records_counry($cid,$this->language.'_city');
-				//удаление магазинов и продукции
+				$this->mdcity->delete_records_country($cid,$this->language.'_city');
+				$this->mdmagazines->delete_records_country($cid,$this->language.'_magazines');
+				$this->mdwhereby->delete_records_country($cid,$this->language.'_whereby');
 				$this->session->set_userdata('msgs','Страна удалена успешно.');
 			else:
 				$this->session->set_userdata('msgr','Страна не удалена.');
@@ -804,6 +823,8 @@ class Admin_interface extends CI_Controller{
 			show_404();
 		endif;
 	}
+	
+	/******************************************************* city ************************************************************/
 	
 	public function control_add_city(){
 		
@@ -892,19 +913,21 @@ class Admin_interface extends CI_Controller{
 		
 		$cid = $this->uri->segment(6);
 		if($cid):
-			$result = $this->mdcountry->delete_record($cid,$this->language.'_country');
+			$result = $this->mdcity->delete_record($cid,$this->language.'_city');
 			if($result):
-				$this->mdcity->delete_records_counry($cid,$this->language.'_city');
-				//удаление магазинов и продукции
-				$this->session->set_userdata('msgs','Страна удалена успешно.');
+				$this->mdmagazines->delete_records_city($cid,$this->language.'_magazines');
+				$this->mdwhereby->delete_records_city($cid,$this->language.'_whereby');
+				$this->session->set_userdata('msgs','Город удален успешно.');
 			else:
-				$this->session->set_userdata('msgr','Страна не удалена.');
+				$this->session->set_userdata('msgr','Город не удалена.');
 			endif;
 			redirect($this->session->userdata('backpath'));
 		else:
 			show_404();
 		endif;
 	}
+	
+	/******************************************************* shops ************************************************************/
 	
 	public function control_shops(){
 	
@@ -1056,6 +1079,7 @@ class Admin_interface extends CI_Controller{
 		if($mid):
 			$result = $this->mdmagazines->delete_record($mid,$this->language.'_magazines');
 			if($result):
+				$this->mdwhereby->delete_records_shop($mid,$this->language.'_whereby');
 				$this->session->set_userdata('msgs','Магазин удален успешно.');
 			else:
 				$this->session->set_userdata('msgr','Магазин не удален.');

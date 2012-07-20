@@ -78,7 +78,7 @@ class Mdcity extends CI_Model{
 		return $this->db->affected_rows();
 	}
 
-	function delete_records_counry($country,$table){
+	function delete_records_country($country,$table){
 		
 		$this->db->where('country',$country);
 		$this->db->delete($table);

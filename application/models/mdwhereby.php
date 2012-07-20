@@ -67,4 +67,46 @@ class Mdwhereby extends CI_Model{
 		$this->db->delete($table);
 		return $this->db->affected_rows();
 	}
+
+	function delete_records_products($product,$table){
+	
+		$this->db->where('product',$product);
+		$this->db->delete($table);
+		return $this->db->affected_rows();
+	}
+
+	function delete_records_category($category,$table){
+	
+		$this->db->where('category',$category);
+		$this->db->delete($table);
+		return $this->db->affected_rows();
+	}
+	
+	function delete_records_country($country,$table){
+	
+		$this->db->where('country',$country);
+		$this->db->delete($table);
+		return $this->db->affected_rows();
+	}
+	
+	function delete_records_city($city,$table){
+	
+		$this->db->where('city',$city);
+		$this->db->delete($table);
+		return $this->db->affected_rows();
+	}
+	
+	function delete_records_series($series,$table){
+	
+		$this->db->where('series',$series);
+		$this->db->delete($table);
+		return $this->db->affected_rows();
+	}
+
+	function delete_records_shop($magazine,$table){
+	
+		$this->db->where('magazine',$magazine);
+		$this->db->delete($table);
+		return $this->db->affected_rows();
+	}
 }

@@ -251,6 +251,7 @@ article #main .inside h1 { color: #201c1d; font-size: 2.5em; margin: 0.5em 0 0.6
 .inside .items-list .category-item { width: 13.75em; text-align: center; display: inline-block; height: 20em; margin: 2em 0 0; }
 .inside .items-list .category-item .category-name { font-family: Arial, Helvetica, sans-serif; font-size: 0.8em; color: #666; margin: 1.5em 0 0; }
 .inside .items-list .category-item .item-name { color: #221e1f; text-decoration: underline; font-size: 1.1em; margin-bottom: 0; }
+.inside .items-list .category-item .item-name a { color: #221E1F; }
 .inside .pagination { text-align: center; margin: 2em 0 0; }
 .inside .pagination a { color: #717171; display: inline-block; padding: 0.5em 0.75em; font-family: Arial, Helvetica, sans-serif; font-weight: bold; background: #f7f7f7; border: 1px solid #b9b9b9; line-height: 1em; font-size: 0.75em; text-decoration: none; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; box-shadow: 0 2px 10px #ccc; }
 .inside .pagination a.three-dots { border: 0 none; box-shadow: none; }

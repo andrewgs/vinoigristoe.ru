@@ -25,6 +25,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#SetCity [value='<?=$shop['city'];?>']").attr("selected", "selected");
+			$("#ShopType [value='<?=$shop['type'];?>']").attr("selected", "selected");
 		});
 	</script>
 </body>

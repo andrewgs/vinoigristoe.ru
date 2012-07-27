@@ -8,6 +8,9 @@ $route[''] 			= "users_interface/index";
 $route['admin'] 	= "users_interface/admin_login";
 $route['company']	= "users_interface/company";
 $route['where']		= "users_interface/where";
+
+$route['where/:any/:any']	= "users_interface/where_filtr";
+
 $route['tourism']	= "users_interface/tourism";
 $route['contacts']	= "users_interface/contacts";
 $route['news']		= "users_interface/events";

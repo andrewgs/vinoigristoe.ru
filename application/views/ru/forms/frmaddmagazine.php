@@ -38,6 +38,15 @@
 				<span class="help-inline" style="display:none;">&nbsp;</span>
 			</div>
 		</div>
+		<div class="control-group">
+			<label for="content" class="control-label">Тип: </label>
+			<div class="controls">
+				<select class="span4" name="type" id="ShopType">
+					<option value="1" <?=set_select('type',1);?>>Фирменный магазин</option>
+					<option value="2" <?=set_select('type',2);?>>Сетевой магазин</option>
+				</select>
+			</div>
+		</div>
 	</fieldset>
 	<div class="form-actions">
 		<button class="btn btn-success" type="submit" id="send" name="submit" value="send">Сохранить</button>

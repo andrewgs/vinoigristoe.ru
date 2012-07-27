@@ -31,7 +31,8 @@ class Mdcity extends CI_Model{
 	}
 	
 	function read_records($table){
-		
+	
+		$this->db->order_by('country');
 		$query = $this->db->get($table);
 		$data = $query->result_array();
 		if(count($data)) return $data;

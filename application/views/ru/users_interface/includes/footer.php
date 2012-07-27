@@ -1,9 +1,8 @@
 <footer>
 	<div class="container" class="cf">
 		<section class="cf">
-			<div class="social-widget">
+			<!--<div class="social-widget">
 				<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?49"></script>
-				<!-- VK Widget -->
 				<div id="vk_groups"></div>
 				<script type="text/javascript">
 					VK.Widgets.Group("vk_groups", {mode : 0,width : "218",height : "215"}, 20003922);
@@ -22,15 +21,15 @@
 					}(document, 'script', 'facebook-jssdk'));
 				</script>
 				<div class="fb-like-box" data-href="http://www.facebook.com/platform" data-width="218" data-height="215" data-show-faces="true" data-stream="false" data-header="false"></div>
-			</div>
+			</div>-->
 			<nav>
 				<ul>
 					<li><?=anchor('','Главная страница');?></li>
-					<li><?=anchor('','О компании');?></li>
+					<li><?=anchor('company','О компании');?></li>
 					<li><?=anchor('','Партнерам');?></li>
-					<li><?=anchor('','Выставки и события');?></li>
-					<li><?=anchor('','Продукция');?></li>
-					<li><?=anchor('','Контактные данные');?></li>
+					<li><?=anchor('events','Выставки и события');?></li>
+					<li><?=anchor('production','Продукция');?></li>
+					<li><?=anchor('contacts','Контактные данные');?></li>
 				</ul>
 			</nav>
 			<div class="copyright">

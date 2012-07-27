@@ -97,12 +97,79 @@ class Users_interface extends CI_Controller{
 			'loginstatus'	=> $this->loginstatus,
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
+			'countries'		=> $this->mdcountry->read_records($this->language.'_country'),
+			'cities'		=> $this->mdcity->read_records($this->language.'_city'),
+			'firms_shops'	=> array(),
+			'chain_shops'	=> array(),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('country',' ','required|trim');
+			$this->form_validation->set_rules('city',' ','required|trim');
+			if(!$this->form_validation->run()):
+				return FALSE;
+			else:
+				redirect('where/'.$this->mdcountry->read_field($_POST['country'],'translit',$this->language.'_country').'/'.$this->mdcountry->read_field($_POST['city'],'translit',$this->language.'_city'));
+			endif;
+		endif;
+		
+		$pagevar['firms_shops'] = $this->mdmagazines->read_shops(1,$pagevar['countries'][0]['id'],$pagevar['cities'][0]['id'],$this->language.'_magazines');
+		$pagevar['chain_shops'] = $this->mdmagazines->read_shops(2,$pagevar['countries'][0]['id'],$pagevar['cities'][0]['id'],$this->language.'_magazines');
+		
+		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
+		$this->load->view($pagevar['language']."/users_interface/where",$pagevar);
+	}
+	
+	public function where_filtr(){
+		
+		$country = $this->mdcountry->read_field_translit($this->uri->segment(2),'id',$this->language.'_country');
+		$city = $this->mdcity->read_field_translit($this->uri->segment(3),'id',$this->language.'_city');
+		
+		if(!$country || !$city):
+			redirect('where');
+		endif;
+		
+		$pagevar = array(
+			'title'			=> 'Цимлянские вина | Где купить',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl' 		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'countries'		=> $this->mdcountry->read_records($this->language.'_country'),
+			'cities'		=> $this->mdcity->read_records($this->language.'_city'),
+			'tcountry'		=> '',
+			'tcity'			=> '',
+			'firms_shops'	=> array(),
+			'chain_shops'	=> array(),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('country',' ','required|trim');
+			$this->form_validation->set_rules('city',' ','required|trim');
+			if(!$this->form_validation->run()):
+				return FALSE;
+			else:
+				redirect('where/'.$this->mdcountry->read_field($_POST['country'],'translit',$this->language.'_country').'/'.$this->mdcountry->read_field($_POST['city'],'translit',$this->language.'_city'));
+			endif;
+		endif;
+		
+		$pagevar['firms_shops'] = $this->mdmagazines->read_shops(1,$country,$city,$this->language.'_magazines');
+		$pagevar['chain_shops'] = $this->mdmagazines->read_shops(2,$country,$city,$this->language.'_magazines');
+		$pagevar['tcountry'] = $this->mdcountry->read_field($country,'title',$this->language.'_country');
+		$pagevar['tcity'] = $this->mdcity->read_field($city,'title',$this->language.'_city');
+		$pagevar['title'] .= ' | '.$pagevar['tcountry']. ' | '.$pagevar['tcity'];
 		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
 		$this->load->view($pagevar['language']."/users_interface/where",$pagevar);
 	}

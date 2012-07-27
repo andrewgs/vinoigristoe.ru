@@ -40,13 +40,13 @@
 									<img src="<?=$baseurl;?>product/viewimage/<?=$product['id'];?>" alt="<?=$product['title'];?>" title="<?=$product['title'];?>" style="" />
 								</div>
 								<img src="<?=$baseurl;?>images/where_to_buy_small.png" alt="Где купить Цимлянское?" />
-								<?=anchor('#','Где купить это вино?',array('class'=>'where-to-buy-small'));?>
+								<?=anchor('where','Где купить это вино?',array('class'=>'where-to-buy-small'));?>
 								<?php $this->load->view($language."/users_interface/includes/social-likes");?>
 							</div>
 							<div class="column left">
 								<ul class="breadcrumb">
 									<li><?=anchor('production','Продукция');?> <span class="divider">/</span></li>
-									<li><?=anchor('#',$product['stitle']);?> <span class="divider">/</span></li>
+									<li><?=anchor($this->uri->uri_string(),$product['stitle'],array('class'=>'none'));?> <span class="divider">/</span></li>
 									<li><?=anchor($this->uri->uri_string(),$product['title']);?></li>
 								</ul>
 								<h1><?=$product['title']?></h1>

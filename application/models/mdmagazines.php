@@ -9,6 +9,7 @@ class Mdmagazines extends CI_Model{
 	var $phones		= '';
 	var $country	= 0;
 	var $city		= 0;
+	var $type		= 1;
 	
 	function __construct(){
 		parent::__construct();
@@ -22,6 +23,7 @@ class Mdmagazines extends CI_Model{
 		$this->translit	= $translit;
 		$this->country	= $country;
 		$this->city		= $city;
+		$this->type		= $data['type'];
 		
 		$this->db->insert($table,$this);
 		return $this->db->insert_id();
@@ -35,6 +37,7 @@ class Mdmagazines extends CI_Model{
 		$this->db->set('translit',$translit);
 		$this->db->set('country',$country);
 		$this->db->set('city',$city);
+		$this->db->set('type',$data['type']);
 		$this->db->where('id',$id);
 		$this->db->update($table);
 		return $this->db->affected_rows();
@@ -101,5 +104,20 @@ class Mdmagazines extends CI_Model{
 		$this->db->where('city',$city);
 		$this->db->delete($table);
 		return $this->db->affected_rows();
+	}
+
+	function read_shops($type,$country,$city,$table){
+		
+		if($country):
+			$this->db->where('country',$country);
+		endif;
+		if($city):
+			$this->db->where('city',$city);
+		endif;
+		$this->db->where('type',$type);
+		$query = $this->db->get($table);
+		$data = $query->result_array();
+		if(count($data)) return $data;
+		return NULL;
 	}
 }

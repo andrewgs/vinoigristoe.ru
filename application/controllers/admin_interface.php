@@ -44,6 +44,12 @@ class Admin_interface extends CI_Controller{
 		else:
 			redirect('');
 		endif;
+		
+		if($this->session->userdata('language')):
+			$this->language = $this->session->userdata('language');
+		else:
+			$this->language = 'ru';
+		endif;
 	}
 	
 	public function admin_panel(){

@@ -2,8 +2,8 @@
 	<section id="navigation" class="cf">
 		<aside id="translation">
 			<ul>
-				<li class="ru"><?=anchor('','Ru');?></li>
-				<li class="en"><?=anchor('','En');?></li>
+				<li class="ru"><?=anchor('change-language/ru','Ru');?></li>
+				<li class="en"><?=anchor('change-language/en','En');?></li>
 			</ul>
 		</aside>
 		<nav role="main">

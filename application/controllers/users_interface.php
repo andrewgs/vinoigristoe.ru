@@ -40,6 +40,23 @@ class Users_interface extends CI_Controller{
 				$this->user = array();
 			endif;
 		endif;
+		if($this->uri->segment(1) != 'change-language'):
+			if($this->session->userdata('language')):
+				$this->language = $this->session->userdata('language');
+			else:
+				$this->language = 'ru';
+			endif;
+		endif;
+	}
+	
+	public function change_language(){
+	
+		switch($this->uri->segment(2)):
+			case 'ru' : $this->session->set_userdata('language','ru');break;
+			case 'en' :  $this->session->set_userdata('language','en');break;
+			default : $this->session->set_userdata('language','ru');break;
+		endswitch;
+		redirect('/');
 	}
 	
 	public function index(){

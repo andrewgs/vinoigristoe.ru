@@ -3,6 +3,7 @@
 		<section class="cf">
 			<div class="social-widget">
 				<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?49"></script>
+				<!-- VK Widget -->
 				<div id="vk_groups"></div>
 				<script type="text/javascript">
 					VK.Widgets.Group("vk_groups", {mode : 0,width : "218",height : "215"}, 20003922);
@@ -25,11 +26,11 @@
 			<nav>
 				<ul>
 					<li><?=anchor('','Главная страница');?></li>
-					<li><?=anchor('company','О компании');?></li>
+					<li><?=anchor('','О компании');?></li>
 					<li><?=anchor('','Партнерам');?></li>
-					<li><?=anchor('events','Выставки и события');?></li>
-					<li><?=anchor('production','Продукция');?></li>
-					<li><?=anchor('contacts','Контактные данные');?></li>
+					<li><?=anchor('','Выставки и события');?></li>
+					<li><?=anchor('','Продукция');?></li>
+					<li><?=anchor('','Контактные данные');?></li>
 				</ul>
 			</nav>
 			<div class="copyright">

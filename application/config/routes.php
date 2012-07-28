@@ -5,6 +5,10 @@ $route['404_override'] = '';
 
 /***************************************************	USERS INTRERFACE	***********************************************/
 $route[''] 			= "users_interface/index";
+
+$route['change-language/ru'] = "users_interface/change_language";
+$route['change-language/en'] = "users_interface/change_language";
+
 $route['admin'] 	= "users_interface/admin_login";
 $route['company']	= "users_interface/company";
 $route['where']		= "users_interface/where";

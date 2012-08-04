@@ -120,6 +120,44 @@ class Users_interface extends CI_Controller{
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
+		if($this->input->post('submit')):
+			$_POST['submit'] = NULL;
+			$this->form_validation->set_rules('name',' ','required|trim');
+			$this->form_validation->set_rules('email',' ','required|valid_email|trim');
+			$this->form_validation->set_rules('phone',' ','required|trim');
+			$this->form_validation->set_rules('text',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Ошибка. Повторите ввод.');
+			else:
+				ob_start();
+				?>
+				<p>Сообщение от <?=$_POST['name'];?></p>
+				<p>Email <?=$_POST['email'];?></p>
+				<p>Телефон <?=$_POST['phone'];?></p>
+				<p>
+					<?=$_POST['text'];?>
+				</p>
+				<?
+				$mailtext = ob_get_clean();
+				
+				$this->email->clear(TRUE);
+				$config['smtp_host'] = 'localhost';
+				$config['charset'] = 'utf-8';
+				$config['wordwrap'] = TRUE;
+				$config['mailtype'] = 'html';
+				
+				$this->email->initialize($config);
+				$this->email->to('info@vinoigristoe.ru');
+				$this->email->from($_POST['email'],$_POST['name']);
+				$this->email->bcc('');
+				$this->email->subject('Форма обратной связи Цимлянские вина');
+				$this->email->message($mailtext);	
+				$this->email->send();
+				$this->session->set_userdata('msgs','Сообщение отправлено');
+			endif;
+			redirect($this->uri->uri_string());
+		endif;
+		
 		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
 		$this->load->view($pagevar['language']."/users_interface/contacts",$pagevar);
 	}

@@ -104,6 +104,26 @@ class Users_interface extends CI_Controller{
 		$this->load->view($pagevar['language']."/users_interface/company",$pagevar);
 	}
 	
+	public function contacts(){
+		
+		$pagevar = array(
+			'title'			=> 'Цимлянские вина | Контакты',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl' 		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
+		$this->load->view($pagevar['language']."/users_interface/contacts",$pagevar);
+	}
+	
 	public function where(){
 		
 		$pagevar = array(

@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url'] = "http://dev.realitygroup.ru/vinoigristoe.ru/";
+$config['base_url'] = "http://wino/";
 
 /*
 |--------------------------------------------------------------------------

@@ -46,7 +46,7 @@
 							<div class="column left">
 								<ul class="breadcrumb">
 									<li><?=anchor('production','Продукция');?> <span class="divider">/</span></li>
-									<li><?=anchor($this->uri->uri_string(),$product['stitle'],array('class'=>'none'));?> <span class="divider">/</span></li>
+									<li><?=anchor('production/category/'.$product['ctranslit'],$product['ctitle']);?> <span class="divider">/</span></li>
 									<li><?=anchor($this->uri->uri_string(),$product['title']);?></li>
 								</ul>
 								<h1><?=$product['title']?></h1>

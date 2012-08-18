@@ -73,7 +73,17 @@ class Mdproducts extends CI_Model{
 	
 	function count_records($table){
 		
-		return $this->db->count_all($table);;
+		return $this->db->count_all($table);
+	}
+	
+	function count_filtr_records($parameter,$field,$table){
+		
+		$this->db->select('COUNT(*) AS cnt');
+		$this->db->where($field,$parameter);
+		$query = $this->db->get($table);
+		$data = $query->result_array();
+		if(count($data)) return $data[0]['cnt'];
+		return 0;
 	}
 	
 	function read_record($id,$table){

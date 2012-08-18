@@ -403,7 +403,7 @@ class Users_interface extends CI_Controller{
 			'userinfo'		=> $this->user,
 			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
 			'series'		=> $this->mdunion->groupby_series($this->language),
-			'products'		=> $this->mdunion->products_catalog_limit($this->language,8,$from),
+			'products'		=> $this->mdunion->products_catalog_limit($this->language,9,$from),
 			'pages'			=> array(),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
@@ -414,7 +414,7 @@ class Users_interface extends CI_Controller{
 		$config['base_url'] 		= $pagevar['baseurl'].'production/from/';
 		$config['uri_segment'] 		= 3;
 		$config['total_rows'] 		= $this->mdproducts->count_records($this->language.'_products');
-		$config['per_page'] 		= 8;
+		$config['per_page'] 		= 9;
 		$config['num_links'] 		= 12;
 		$config['first_link']		= '<img src="'.$pagevar['baseurl'].'images/arrow-left.png">';
 		$config['last_link'] 		= '<img src="'.$pagevar['baseurl'].'images/arrow-right.png">';
@@ -452,7 +452,7 @@ class Users_interface extends CI_Controller{
 		if(!$category):
 			redirect($this->session->userdata('backpath'));
 		endif;
-		$from = intval($this->uri->segment(3));
+		$from = intval($this->uri->segment(5));
 		$pagevar = array(
 			'title'			=> 'Цимлянские вина | '.$this->mdcategory->read_field($category,'title',$this->language.'_category'),
 			'description'	=> 'Игристые вина',
@@ -462,7 +462,7 @@ class Users_interface extends CI_Controller{
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
 			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
-			'products'		=> $this->mdunion->products_filtr_limit($category,'category',$this->language,8,$from),
+			'products'		=> $this->mdunion->products_filtr_limit($category,'category',$this->language,9,$from),
 			'pages'			=> array(),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
@@ -470,10 +470,10 @@ class Users_interface extends CI_Controller{
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
-		$config['base_url'] 		= $pagevar['baseurl'].'production/from/';
-		$config['uri_segment'] 		= 3;
-		$config['total_rows'] 		= $this->mdproducts->count_records($this->language.'_products');
-		$config['per_page'] 		= 8;
+		$config['base_url'] 		= $pagevar['baseurl'].'production/category/'.$this->uri->segment(3).'/from/';
+		$config['uri_segment'] 		= 5;
+		$config['total_rows'] 		= $this->mdproducts->count_filtr_records($category,'category',$this->language.'_products');
+		$config['per_page'] 		= 9;
 		$config['num_links'] 		= 12;
 		$config['first_link']		= '<img src="'.$pagevar['baseurl'].'images/arrow-left.png">';
 		$config['last_link'] 		= '<img src="'.$pagevar['baseurl'].'images/arrow-right.png">';
@@ -492,7 +492,7 @@ class Users_interface extends CI_Controller{
 	public function product(){
 		
 		$category = $this->mdcategory->read_field_translit($this->uri->segment(3),'id',$this->language.'_category');
-		$series = $this->mdseries->read_field_translit($this->uri->segment(5),'id',$this->language.'_series');
+		$series = $this->mdseries->read_field_translit($category,$this->uri->segment(5),'id',$this->language.'_series');
 		$product = $this->mdproducts->read_field_translit($category,$series,$this->uri->segment(7),'id',$this->language.'_products');
 		if(!$product):
 			redirect($this->session->userdata('backpath'));
@@ -508,7 +508,7 @@ class Users_interface extends CI_Controller{
 			'product'		=> $this->mdunion->product_catalog($product,$this->language),
 			'news'			=> $this->mdevents->read_records_limit(array('1'),$this->language.'_events',5,0),
 			'medals'		=> $this->mdmedals->read_records($product,$this->language.'_medals'),
-			'readproducts'	=> $this->mdunion->products_random_without_limit($product,$this->language,3),
+			'readproducts'	=> $this->mdunion->products_random_without_limit($category,$product,$this->language,3),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);

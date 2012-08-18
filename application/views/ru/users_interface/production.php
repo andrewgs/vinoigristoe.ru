@@ -54,15 +54,41 @@
 							<li><?=anchor('production/category/'.$category[5]['translit'],'<span class="type brandy"></span>'.$category[5]['title']);?></li>
 						</ul>
 						<div class="spline"></div>
+					<?php $categoryid = 0;?>
+				<?php for($c=0;$c<count($category);$c++):
+					$viewcategory = FALSE;
+					for($p=0;$p<count($products);$p++):
+						if($category[$c]['id'] == $products[$p]['category']):
+							$viewcategory = TRUE;
+						endif;
+					endfor;?>
+					<?php if($viewcategory):?>
+						<div class="categories-sep cf">
+							<div class="left"></div>
+							<div class="center"><?=$category[$c]['title'];?></div>
+							<div class="right"></div>
+						</div>
+					<?php else:?>
+						<?php continue;?>
+					<?php endif;?>
 					<?php for($i=0;$i<count($series);$i++):?>
+						<?php $viewseries = FALSE;
+						for($p=0;$p<count($products);$p++):
+							if(($series[$i]['id'] == $products[$p]['series']) && $series[$i]['category'] == $category[$c]['id']):
+//								$viewseries = TRUE;
+							endif;
+						endfor;?>
+						<?php if($series[$i]['default'] && $viewseries):?>
 						<div class="categories-sep cf">
 							<div class="left"></div>
 							<div class="center"><?=$series[$i]['title'];?></div>
 							<div class="right"></div>
 						</div>
+						<?php endif;?>
+						
 						<div class="items-list">
 					<?php for($j=0;$j<count($products);$j++):?>
-						<?php if($series[$i]['id'] == $products[$j]['series']):?>
+						<?php if(($series[$i]['id'] == $products[$j]['series']) && $category[$c]['id'] == $products[$j]['category']):?>
 							<div class="category-item">
 								<img src="<?=$baseurl;?>product/viewimage/<?=$products[$j]['id'];?>" alt="<?=$products[$j]['title'];?>" title="<?=$products[$j]['title'];?>" style="" />
 								<p class="category-name"><?=$products[$j]['ctitle'];?></p>
@@ -72,6 +98,7 @@
 					<?php endfor;?>
 						</div>
 					<?php endfor;?>
+				<?php endfor;?>
 						<div class="spline"></div>
 						<?php if($pages): ?>
 						<div class="pagination">

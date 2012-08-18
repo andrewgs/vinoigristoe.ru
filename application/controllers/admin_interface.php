@@ -263,6 +263,7 @@ class Admin_interface extends CI_Controller{
 				$translit = $this->translite($_POST['title']);
 				$result = $this->mdseries->insert_record($_POST['title'],$translit,$_POST['cid'],$this->language.'_series');
 				if($result):
+					$this->mdseries->update_field($result,'default',1,$this->language.'_series');
 					$this->session->set_userdata('msgs','Запись создана успешно.');
 				endif;
 				redirect($this->uri->uri_string());
@@ -305,7 +306,7 @@ class Admin_interface extends CI_Controller{
 				$translit = $this->translite($_POST['title']);
 				$cid = $this->mdcategory->insert_record($_POST,$translit,$this->language.'_category');
 				if($cid):
-					$this->mdseries->insert_record('Категория по умолчанию','default',$cid,$this->language.'_series');
+					$this->mdseries->insert_record('Без серии','bez-serii',$cid,$this->language.'_series');
 					$this->session->set_userdata('msgs','Запись создана успешно.');
 				endif;
 				redirect($this->uri->uri_string());
@@ -1095,12 +1096,15 @@ class Admin_interface extends CI_Controller{
 	/******************************************************** functions ******************************************************/	
 	
 	public function translite($string){
-	
+		
 		$rus = array("1","2","3","4","5","6","7","8","9","0","ё","й","ю","ь","ч","щ","ц","у","к","е","н","г","ш","з","х","ъ","ф","ы","в","а","п","р","о","л","д","ж","э","я","с","м","и","т","б","Ё","Й","Ю","Ч","Ь","Щ","Ц","У","К","Е","Н","Г","Ш","З","Х","Ъ","Ф","Ы","В","А","П","Р","О","Л","Д","Ж","Э","Я","С","М","И","Т","Б"," ");
 		$eng = array("1","2","3","4","5","6","7","8","9","0","yo","iy","yu","","ch","sh","c","u","k","e","n","g","sh","z","h","","f","y","v","a","p","r","o","l","d","j","е","ya","s","m","i","t","b","Yo","Iy","Yu","CH","","SH","C","U","K","E","N","G","SH","Z","H","","F","Y","V","A","P","R","O","L","D","J","E","YA","S","M","I","T","B","-");
 		$string = str_replace($rus,$eng,$string);
 		if(!empty($string)):
-			return preg_replace('/[^a-z,-]/','',strtolower($string));
+			$string = preg_replace('/[^a-z,-]/','',strtolower($string));
+			$string = preg_replace('/[-]+/','-',$string);
+			$string = preg_replace('/[\.\?\!\)\(\,\:\;]/','',$string);
+			return $string;
 		else:
 			return FALSE;
 		endif;

@@ -16,7 +16,7 @@
 				<table class="table table-striped table-bordered">
 					<thead>
 						<tr>
-							<th class="w50"><center>Фото</center></th>
+							<!--<th class="w50"><center>Фото</center></th>-->
 							<th class="w600"><center>Название</center></th>
 							<th class="w50">&nbsp;</th>
 						</tr>
@@ -24,7 +24,7 @@
 					<tbody>
 					<?php for($i=0;$i<count($category);$i++):?>
 						<tr class="align-center">
-							<td class="w50"><img src="<?=$baseurl;?>category/viewimage/<?=$category[$i]['id'];?>" alt="" /></td>
+							<!--<td class="w50"><img src="<?=$baseurl;?>category/viewimage/<?=$category[$i]['id'];?>" alt="" /></td>-->
 							<td class="w500">
 								<i><b><?=$category[$i]['title'];?></b></i>
 								<ol>

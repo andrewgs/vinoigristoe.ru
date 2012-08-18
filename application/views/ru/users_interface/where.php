@@ -28,7 +28,7 @@
 					<div class="spline"></div>
 					<div class="where-to-buy">
 						<img src="<?=$baseurl;?>images/tourism.png" alt="Туры на виноградники Цилянских вин!" />
-						<h2><?=anchor($this->uri->uri_string(),'Туры на виноградники<br/> Цилянских вин!',array('class'=>'none'));?></h2>
+						<h2><?=anchor('tourism','Туры на виноградники<br/> Цилянских вин!');?></h2>
 					</div>
 					<div class="spline"></div>
 					<?php $this->load->view($language."/users_interface/includes/social-likes");?>
@@ -38,8 +38,8 @@
 				<div id="main" role="main" class="cf">
 					<div class="wine-flag news-updates">
 						Самое<br />свежее:<br />
-						<?=anchor('#','<img src="'.$baseurl.'images/vk-icon.png" alt="Вконтакте" />');?>
-						<?=anchor('#','<img src="'.$baseurl.'images/fb-icon.png" alt="Facebook" />');?>
+						<?=anchor('http://vk.com/vinoigristoe','<img src="'.$baseurl.'images/vk-icon.png" alt="Вконтакте" />');?>
+						<?=anchor('https://www.facebook.com/vinoigristoe','<img src="'.$baseurl.'images/fb-icon.png" alt="Facebook" />');?>
 					</div>
 					<div class="inside">
 						<img src="<?=$baseurl;?>images/news_promo.png" alt="Каталог продукции" />
@@ -60,7 +60,7 @@
 							<?php endfor;?>
 							</select>
 							<button id="chPlace" type="submit" name="submit" value="submit">ОК</button>
-							<a href="<?=$this->uri->uri_string();?>" class="hide none"><img src="<?=$baseurl;?>images/close.png" alt="Закрыть" /></a>
+							<!-- <a href="<?=$this->uri->uri_string();?>" class="hide none"><img src="<?=$baseurl;?>images/close.png" alt="Закрыть" /></a> -->
 						<?= form_close(); ?>
 						</div>
 						<div class="spline"></div>

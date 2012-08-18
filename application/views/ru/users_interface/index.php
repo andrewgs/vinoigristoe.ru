@@ -15,19 +15,19 @@
 			<section class="main-directions cf">
 				<div class="column">
 					<img src="<?$baseurl;?>images/traditions.png" alt="" />
-					<h2>Традиции</h2>
+					<h2><?=anchor('tradition','Наследие');?></h2>
 					<p>Виноградники ведут еще<br/>с XVIII века, когда донские<br/>казаки  производили<br/>вино для императора.</p>
 				</div>
 				<div class="column-sep"></div>
 				<div class="column">
 					<img src="<?$baseurl;?>images/events.png" alt="" />
-					<h2>Искусство</h2>
+					<h2><?=anchor('eco','Производство');?></h2>
 					<p>Вино это не просто<br/>продукт — это целая<br/>культура и мы это<br/>понимаем!</p>
 				</div>
 				<div class="column-sep"></div>
 				<div class="column">
 					<img src="<?$baseurl;?>images/eco.png" alt="" />
-					<h2>Экологичность</h2>
+					<h2><?=anchor('tourism','Виноградники');?></h2>
 					<p>Наши вина неоднократно<br/>отмечались на конкурсах<br/>вин, как в России,<br/>так и за её пределами.<br/></p>
 				</div>
 			</section>
@@ -39,7 +39,7 @@
 							<img src="<?$baseurl;?>images/left-page.jpg" alt="Информация о левой странице" />
 						</div>
 					</div>
-					<p><?=anchor('#','Перейти в полный каталог продукции');?></p>
+					<p><?=anchor('production','Перейти в полный каталог продукции');?></p>
 				</div>
 				<div class="column">
 					<h3>Выставка и акции</h3>
@@ -48,7 +48,7 @@
 							<img src="<?$baseurl;?>images/right-page.jpg" alt="Информация о правой странице" />
 						</div>
 					</div>
-					<p><?=anchor('','Смотреть все выставки и акции');?></p>
+					<p><?=anchor('events','Смотреть все выставки и акции');?></p>
 				</div>
 			</section>
 			<section class="news cf">
@@ -70,7 +70,7 @@
 					винодельню, и испробовать самые лучшие<br/>
 					вина прямо на месте.
 				</p>
-				<?=anchor('','Подробнее о винных турах');?>
+				<?=anchor('tourism','Подробнее о винных турах');?>
 			</section>
 		</div>
 	</div>

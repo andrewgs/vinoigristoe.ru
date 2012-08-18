@@ -36,8 +36,8 @@
 			<div id="main" role="main" class="cf">
 				<div class="wine-flag news-updates">
 					Самое<br />свежее:<br />
-					<?=anchor('#','<img src="'.$baseurl.'images/vk-icon.png" alt="Вконтакте" />');?>
-					<?=anchor('#','<img src="'.$baseurl.'images/fb-icon.png" alt="Facebook" />');?>
+					<?=anchor('http://vk.com/vinoigristoe','<img src="'.$baseurl.'images/vk-icon.png" alt="Вконтакте" />');?>
+					<?=anchor('https://www.facebook.com/vinoigristoe','<img src="'.$baseurl.'images/fb-icon.png" alt="Facebook" />');?>
 				</div>
 				<div class="inside">
 					<img src="<?=$baseurl;?>images/news_promo.png" alt="Каталог продукции" />

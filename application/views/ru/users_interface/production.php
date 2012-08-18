@@ -39,7 +39,7 @@
 				</aside>
 				<div id="main" role="main" class="cf">
 					<div class="wine-flag">
-						<?=anchor('#','Хотите <br />в винный <br />тур?');?>
+						<?=anchor('tourism','Хотите <br />в винный <br />тур?');?>
 					</div>
 					<div class="inside">
 						<img src="<?=$baseurl;?>images/caralog_promo.png" alt="Каталог продукции" />

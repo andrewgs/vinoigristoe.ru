@@ -30,16 +30,16 @@
 								<ol>
 							<?php for($j=0;$j<count($series);$j++):?>
 								<?php if($series[$j]['category'] == $category[$i]['id']):?>
-									<li><?=$series[$j]['title'];?> (<?=anchor('admin-panel/actions/category/categoryid/'.$category[$i]['id'].'/seriesid/'.$series[$j]['id'].'/edit','<i class="icon-edit"></i>');?>)</li>
+									<li><?=$series[$j]['title'];?> (<?=anchor('admin-panel/actions/category/categoryid/'.$category[$i]['id'].'/seriesid/'.$series[$j]['id'].'/edit','Изменить');?>)</li>
 								<?php endif;?>
 							<?php endfor;?>
 								</ol>
 							</td>
 							<td class="w50">
 								<div id="params<?=$i;?>" style="display:none" data-cid="<?=$category[$i]['id'];?>"></div>
-								<?=anchor('admin-panel/actions/category/edit/'.$category[$i]['translit'],'<nobr>&nbsp;&nbsp;<i class="icon-edit icon-white"></i>&nbsp;&nbsp;</nobr>',array('class'=>'btn btn-success','title'=>'Редактировать'));?>
-								<a class="btn btn-info addSeries" data-param="<?=$i;?>" data-toggle="modal" href="#addSeries" title="Добавить серию"><nobr>&nbsp;&nbsp;<i class="icon-plus icon-white"></i>&nbsp;&nbsp;</nobr></a>
-								<a class="btn btn-danger deleteCategory" data-param="<?=$i;?>" data-toggle="modal" href="#deleteCategory" title="Удалить"><nobr>&nbsp;&nbsp;<i class="icon-trash icon-white"></i>&nbsp;&nbsp;</nobr></a>
+								<?=anchor('admin-panel/actions/category/edit/'.$category[$i]['translit'],'Редактировать',array('title'=>'Редактировать'));?>
+								<a class="addSeries" data-param="<?=$i;?>" data-toggle="modal" href="#addSeries" title="Добавить серию">Добавить</a>
+								<a class="deleteCategory" data-param="<?=$i;?>" data-toggle="modal" href="#deleteCategory" title="Удалить">Удалить</a>
 							</td>
 						</tr>
 					<?php endfor; ?>

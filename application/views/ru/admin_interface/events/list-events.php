@@ -30,13 +30,15 @@
 						<tr class="align-center">
 							<td class="w85"><nobr><?=$events[$i]['tptitle'];?><br/><?=$events[$i]['date'];?></nobr></td>
 							<td class="w500">
-								<i><b><?=$events[$i]['title'];?></b></i>
-								<p><?=$events[$i]['content'];?></p>
+								<p>
+									<b><?=$events[$i]['title'];?></b> <br />
+									<?=$events[$i]['content'];?>
+								</p>
 							</td>
 							<td class="w50">
 								<div id="params<?=$i;?>" style="display:none" data-nid="<?=$events[$i]['id'];?>"></div>
-								<?=anchor('admin-panel/actions/events/edit/'.$events[$i]['translit'],'<nobr>&nbsp;&nbsp;<i class="icon-edit icon-white"></i>&nbsp;&nbsp;</nobr>',array('class'=>'btn btn-success','title'=>'Редактировать'));?>
-								<a class="btn btn-danger deleteNews" data-param="<?=$i;?>" data-toggle="modal" href="#deleteNews" title="Удалить"><nobr>&nbsp;&nbsp;<i class="icon-trash icon-white"></i>&nbsp;&nbsp;</nobr></a>
+								<?=anchor('admin-panel/actions/events/edit/'.$events[$i]['translit'],'Редактировать',array('title'=>'Редактировать'));?>
+								<a class="deleteNews" data-param="<?=$i;?>" data-toggle="modal" href="#deleteNews" title="Удалить">Удалить</a>
 							</td>
 						</tr>
 					<?php endfor; ?>

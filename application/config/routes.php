@@ -15,6 +15,8 @@ $route['where']		= "users_interface/where";
 
 $route['where/:any/:any']	= "users_interface/where_filtr";
 
+$route['tradition']	= "users_interface/tradition";
+$route['eco']	= "users_interface/eco";
 $route['tourism']	= "users_interface/tourism";
 $route['contacts']	= "users_interface/contacts";
 $route['news']		= "users_interface/events";

@@ -13,8 +13,8 @@
 				<section id="navigation" class="cf">
 					<aside id="translation">
 						<ul>
-							<li class="ru"><a href="#">Ru</a></li>
-							<li class="en"><a href="#">En</a></li>
+							<li class="ru"><?=anchor('change-language/ru','Ru');?></li>
+							<li class="en"><?=anchor('change-language/en','En');?></li>
 						</ul>
 					</aside>
 					<nav role="main">

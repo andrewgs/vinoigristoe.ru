@@ -15,19 +15,19 @@
 			<section class="main-directions cf">
 				<div class="column">
 					<img src="<?$baseurl;?>images/traditions.png" alt="" />
-					<h2>Традиции</h2>
+					<h2><?=anchor('tradition','Традиция');?></h2>
 					<p>Виноградники ведут еще<br/>с XVIII века, когда донские<br/>казаки  производили<br/>вино для императора.</p>
 				</div>
 				<div class="column-sep"></div>
 				<div class="column">
 					<img src="<?$baseurl;?>images/events.png" alt="" />
-					<h2>Искусство</h2>
+					<h2><?=anchor('events','Искусство');?></h2>
 					<p>Вино это не просто<br/>продукт — это целая<br/>культура и мы это<br/>понимаем!</p>
 				</div>
 				<div class="column-sep"></div>
 				<div class="column">
 					<img src="<?$baseurl;?>images/eco.png" alt="" />
-					<h2>Экологичность</h2>
+					<h2><?=anchor('eco','Виноградники');?></h2>
 					<p>Наши вина неоднократно<br/>отмечались на конкурсах<br/>вин, как в России,<br/>так и за её пределами.<br/></p>
 				</div>
 			</section>
@@ -70,7 +70,7 @@
 					винодельню, и испробовать самые лучшие<br/>
 					вина прямо на месте.
 				</p>
-				<?=anchor('','Подробнее о винных турах');?>
+				<?=anchor('tourism','Подробнее о винных турах');?>
 			</section>
 		</div>
 	</div>

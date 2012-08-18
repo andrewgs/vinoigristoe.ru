@@ -13,6 +13,7 @@
 		
 			<article class="cf">
 				<aside>
+					<a class="aside-logo purple">Цимлянские вина</a>
 					<div class="quote">
 						<img src="<?=$baseurl;?>images/pushkin.jpg" alt="Пушкин А.С." />
 						<blockquote>Шампанского всем!<br />Как какого?<br /> Конечно, цимлянского!</blockquote>

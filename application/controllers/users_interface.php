@@ -124,6 +124,46 @@ class Users_interface extends CI_Controller{
 		$this->load->view($pagevar['language']."/users_interface/tradition",$pagevar);
 	}
 	
+	public function proizvodstvo(){
+		
+		$pagevar = array(
+			'title'			=> 'Цимлянские вина | Производство',
+			'description'	=> 'Производство Цимлянских вин',
+			'author'		=> '',
+			'baseurl' 		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
+		$this->load->view($pagevar['language']."/users_interface/proizvodstvo",$pagevar);
+	}
+	
+	public function vinogradniki(){
+		
+		$pagevar = array(
+			'title'			=> 'Цимлянские вина | Виноградники',
+			'description'	=> 'Виноградники Цимлянских вин',
+			'author'		=> '',
+			'baseurl' 		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
+		$this->load->view($pagevar['language']."/users_interface/vinogradniki",$pagevar);
+	}
+	
 	public function eco(){
 		
 		$pagevar = array(

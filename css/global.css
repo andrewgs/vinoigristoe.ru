@@ -138,7 +138,7 @@ header nav li.contacts.active a { color: #c4cbcd; }
 
 #navigation { height: 5em; }
 #promo-section { }
-#logo { background: url('../images/sprites.png') 0 -42px no-repeat transparent; width: 87px; height: 189px; display: block; text-indent: -9999px; margin: 0 0 0 4em; }
+#logo { background: url('../images/sprites.png') 0 -42px no-repeat transparent; width: 87px; height: 189px; display: block; text-indent: -9999px; margin: 0 0 0 4.625em; }
 p.caption { text-transform: uppercase; font-size: 1.5em; line-height: 3.5em; text-align: center; margin: 1em 0 0; color: #1f1c1d; }
 .social { height: 86px; position: relative; }
 .social .spline { background: url('../images/spline.png') no-repeat; width: 219px; height: 3px; position: absolute; left: 0; }
@@ -152,7 +152,7 @@ p.caption { text-transform: uppercase; font-size: 1.5em; line-height: 3.5em; tex
 .promo-slide { border: 1px solid #ccc; padding: 0.5em; width: 42em; background: #fff; float: left; margin: -0.75em 0 0; /* width: 40em; height: 24.25em;  */ }
 .promo-inside { border: 1px solid #ccc; height: 23.7em; }
 
-.main-directions { margin: 2.5em 0 0; background: url('../images/book-top.png') center bottom no-repeat; padding-bottom: 7em; }
+.main-directions { margin: 2.5em 0 0; background: url('../images/book-top.png') center bottom no-repeat; padding-bottom: 12em; }
 .main-directions .column { float: left; width: 12em; margin: 0 3.1em; text-align: center; }
 .main-directions .column h2 { text-transform: uppercase; font-size: 1.5em; text-align: center; margin: 0.5em 0 0.7em; color: #1f1c1d; text-decoration: underline; }
 .main-directions .column h2 a { color: #1F1C1D; }
@@ -178,7 +178,7 @@ p.caption { text-transform: uppercase; font-size: 1.5em; line-height: 3.5em; tex
 
 .tourism-promo { background: url('../images/tourism-promo.png') center top no-repeat; height: 23.75em; margin-bottom: 1em;}
 .tourism-promo h2 { text-transform: uppercase; font-size: 2.25em; color: #000; padding: 1.4em 1em 0.1em; }
-.tourism-promo p { line-height: 1.2em; color: #221e1f; padding-left: 2.25em; margin-bottom: 1em; }
+.tourism-promo p { line-height: 1.2em; color: #221e1f; padding-left: 2.25em; margin-bottom: 1em; width: 19em; }
 .tourism-promo a { display: inline-block; background: #78cccc; padding: 0.05em 1em 0.2em; border-radius: 20px; color: #221e1f; margin-left: 2.25em; }
 
 footer { background: url('../images/footer_bg.png') repeat-x; height: 16.375em; padding-top: 2em; }
@@ -192,7 +192,7 @@ footer .stats a { display: inline-block; margin: 0.5em 0.25em 1em 0;  }
 
 /* Catalog */
 article aside { padding: 0 1em; width: 13em; float: left; }
-.aside-logo { background: url('../images/sprites.png') -195px -42px no-repeat transparent; width: 87px; height: 189px; display: block; text-indent: -9999px; margin: 0 0 3em 4em; }
+.aside-logo { background: url('../images/sprites.png') -195px -42px no-repeat transparent; width: 87px; height: 189px; display: block; text-indent: -9999px; margin: 0 0 3em 4.625em; }
 .aside-logo.purple { background-position: 0 -42px; }
 .aside-logo.grey { background-position: -437px -42px; }
 .quote { text-align: center; background: url('../images/quote_bg.png') center bottom no-repeat; padding-bottom: 0.75em; margin-bottom: 1.75em; }
@@ -235,6 +235,7 @@ article #main .inside h1 { color: #201c1d; font-size: 2.5em; margin: 0.5em 0 0.6
 #main .spline { background: url('../images/spline.png') repeat-x; width: auto; height: 3px; margin: 0.5em 1em; }
 .inside .categories { margin: 1em; padding: 0; max-width: 45em; text-align: center; }
 .inside .categories li { display: inline; }
+.inside .categories li.ml1em { margin-left: 1.75em; }
 .inside .categories a { display: inline-block; color: #000; font-size: 1.1em; margin: 0.3em 2em 0.45em 0; position: relative; padding-left: 1.85em; }
 .inside .categories a .type { width: 26px; height: 26px; background: url('../images/sprites.png') 0 0 no-repeat transparent; position: absolute; top: 0; left: 0; display: inline-block; }
 .inside .categories a .type.white { background-position: -402px 0; }
@@ -245,15 +246,15 @@ article #main .inside h1 { color: #201c1d; font-size: 2.5em; margin: 0.5em 0 0.6
 .inside .categories a .type.brandy { background-position: -402px -147px; }
 
 .inside .categories-sep { margin: 2em 0 0; }
-.inside .categories-sep .left { margin: 1.5em 0; background: url('../images/left-border-series.png') right top no-repeat; height: 2.5em; width: 12em; float: left; } 
-.inside .categories-sep .center { text-align: center; margin: 1.2em 0; background: #fff; height: 1.9em; border-top: 1px solid #666; border-bottom: 1px solid #666; color: #201C1D;text-transform: uppercase; font-size: 1.25em; letter-spacing: 1px; line-height: 1.9em; width: 14.3em; float: left; }
-.inside .categories-sep .right { margin: 1.5em 0; background: url('../images/right-border-series.png') left top no-repeat; height: 2.5em; width: 12em; float: left; }
+.inside .categories-sep .left { margin: 1.5em 0; background: url('../images/left-border-series.png') right top no-repeat; height: 2.5em; width: 9.5em; float: left; } 
+.inside .categories-sep .center { text-align: center; margin: 1.2em 0; background: #fff; height: 1.9em; border-top: 1px solid #666; border-bottom: 1px solid #666; color: #201C1D;text-transform: uppercase; font-size: 1.25em; letter-spacing: 1px; line-height: 1.9em; width: 18.3em; float: left; }
+.inside .categories-sep .right { margin: 1.5em 0; background: url('../images/right-border-series.png') left top no-repeat; height: 2.5em; width: 9.5em; float: left; }
 .inside .items-list { text-align: center; }
 .inside .items-list .category-item { width: 13.75em; text-align: center; display: inline-block; height: 20em; margin: 2em 0 0; }
 .inside .items-list .category-item .category-name { font-family: Arial, Helvetica, sans-serif; font-size: 0.8em; color: #666; margin: 1.5em 0 0; }
 .inside .items-list .category-item .item-name { color: #221e1f; text-decoration: underline; font-size: 1.1em; margin-bottom: 0; }
 .inside .items-list .category-item .item-name a { color: #221E1F !important; }
-.inside .items-list .category-item img { max-width: 3.875em; max-height: 12.85em; }
+.inside .items-list .category-item img { /*max-width: 3.875em;*/ max-height: 12.85em; }
 .inside .pagination { text-align: center; margin: 2em 0 0; }
 .inside .pagination a { color: #717171; display: inline-block; padding: 0.5em 0.75em; font-family: Arial, Helvetica, sans-serif; font-weight: bold; background: #f7f7f7; border: 1px solid #b9b9b9; line-height: 1em; font-size: 0.75em; text-decoration: none; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; box-shadow: 0 2px 10px #ccc; }
 .inside .pagination a.three-dots { border: 0 none; box-shadow: none; }
@@ -268,6 +269,7 @@ article #main .inside h1 { color: #201c1d; font-size: 2.5em; margin: 0.5em 0 0.6
 
 article #main .inside .news-header { margin: 0 1.5em; }
 article #main .inside .news-body { margin: 0 1.5em; }
+article #main .inside h2 { color: #333;  font-size: 1.4em; font-style: italic; font-weight: normal; }
 article #main .inside .news-header h1 { text-align: left; margin: 0.55em 0 0.3em; }
 article #main .inside .news-header .date { color: #666; font-family: Arial, Helvetica, sans-serif; font-size: 0.75em; margin-bottom: 1.2em; }
 article #main .inside .news-body p { font-size: 0.8em; color: #666; font-family: Arial, Helvetica, sans-serif; max-width: 45em; margin: 1.5em 0;  }
@@ -310,11 +312,12 @@ article #main .column .spline { margin: 0.75em 0; }
 /* company / tradicion / eco */
 #main .company-page h2 { color: #201c1d; font-size: 2.5em; margin: 1.5em 0 1.1em; font-style: italic; text-align: center; line-height: 1.1em; }
 #main .company-page h3 { color: #201c1d; font-size: 2em; margin: 0 0 1.1em; font-style: italic; text-align: left; line-height: 1.1em; }
-#main .company-page .column { float: left; width: 30em; text-align: center; }
+#main .company-page .column { float: left; margin-right: 2em; text-align: center; width: 28em; }
 #main .company-page .column h2 { color: #201c1d; font-size: 2em; margin: 1.5em 0 0.75em; font-style: italic; line-height: 1.2em; text-align: left; }
 #main .company-page p { font-size: 1.25em; margin-bottom: 1.2em; line-height: 1.25em; color: #333; text-align: center; }
 #main .company-page .column p { text-align: left; }
 #main .company-page p.purple-italic { color: #774090; font-style: italic; padding-bottom: 3.25em; }
+#main .company-page.bg p.purple-italic { padding-bottom: 0.25em; }
 #main .company-page p.solid { font-size: 1.5em; font-style: italic; color: #000; }
 #main .ornament-sep { background: url('../images/ornament.png') center top no-repeat; width: 40px; height: 40px; margin: 0 auto; }
 #main .shampane-to-all .ornament-sep, #main .shampane-production .ornament-sep { margin-bottom: 2.75em; }

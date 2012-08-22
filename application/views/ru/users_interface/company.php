@@ -21,7 +21,7 @@
 						<ul>
 							<li class="home"><?=anchor('','Главная');?></li>
 							<li class="production"><?=anchor('production','Продукция');?></li>
-							<li class="events"><?=anchor('events','События');?></li>
+							<li class="events"><?=anchor('#','События');?></li>
 							<li class="company"><?=anchor('company','Компания');?></li>
 							<li class="where"><?=anchor('where','Где купить');?></li>
 							<li class="tourism"><?=anchor('tourism','Туризм');?></li>

@@ -99,7 +99,7 @@ class Mdunion extends CI_Model{
 		$category = $prefix.'_category';
 		$series = $prefix.'_series';
 		
-		$query = "SELECT $products.id,$products.title,$products.translit,$products.type,$products.category,$products.series,$category.title AS ctitle,$category.id AS cid,$category.translit AS ctranslit,$series.title AS stitle,$series.translit AS stranslit, $series.default AS sdefault FROM $products INNER JOIN $category ON $products.category = $category.id INNER JOIN $series ON $products.series = $series.id ORDER BY $products.category,$products.series,$products.title LIMIT $from,$count";
+		$query = "SELECT $products.id,$products.title,$products.translit,$products.type,$products.category,$products.series,$category.title AS ctitle,$category.id AS cid,$category.translit AS ctranslit,$series.title AS stitle,$series.translit AS stranslit, $series.default AS sdefault FROM $products INNER JOIN $category ON $products.category = $category.id INNER JOIN $series ON $products.series = $series.id WHERE $products.showitem = 1 ORDER BY $products.category,$products.series,$products.title LIMIT $from,$count";
 		$query = $this->db->query($query);
 		$data = $query->result_array();
 		if(count($data)) return $data;
@@ -112,7 +112,7 @@ class Mdunion extends CI_Model{
 		$category = $prefix.'_category';
 		$series = $prefix.'_series';
 		
-		$query = "SELECT $products.id,$products.title,$products.translit,$products.type,$products.category,$products.series,$category.title AS ctitle,$category.translit AS ctranslit,$series.title AS stitle,$series.translit AS stranslit FROM $products INNER JOIN $category ON $products.category = $category.id INNER JOIN $series ON $products.series = $series.id WHERE $products.id != $product AND $products.category = $cid ORDER BY RAND() LIMIT $count";
+		$query = "SELECT $products.id,$products.title,$products.translit,$products.type,$products.category,$products.series,$category.title AS ctitle,$category.translit AS ctranslit,$series.title AS stitle,$series.translit AS stranslit FROM $products INNER JOIN $category ON $products.category = $category.id INNER JOIN $series ON $products.series = $series.id WHERE $products.id != $product AND $products.category = $cid AND $products.showitem = 1 ORDER BY RAND() LIMIT $count";
 		$query = $this->db->query($query);
 		$data = $query->result_array();
 		if(count($data)) return $data;
@@ -125,7 +125,7 @@ class Mdunion extends CI_Model{
 		$category = $prefix.'_category';
 		$series = $prefix.'_series';
 		
-		$query = "SELECT $products.id,$products.title,$products.translit,$products.content,$products.type,$products.category,$products.series,$products.alcohol,$products.sugar,$category.title AS ctitle,$category.translit AS ctranslit,$series.title AS stitle,$series.translit AS stranslit FROM $products INNER JOIN $category ON $products.category = $category.id INNER JOIN $series ON $products.series = $series.id WHERE $products.id = $product ";
+		$query = "SELECT $products.id,$products.title,$products.translit,$products.content,$products.type,$products.category,$products.series,$products.alcohol,$products.sugar,$category.title AS ctitle,$category.translit AS ctranslit,$series.title AS stitle,$series.translit AS stranslit FROM $products INNER JOIN $category ON $products.category = $category.id INNER JOIN $series ON $products.series = $series.id WHERE $products.id = $product AND $products.showitem = 1";
 		$query = $this->db->query($query);
 		$data = $query->result_array();
 		if(isset($data[0])) return $data[0];
@@ -150,7 +150,7 @@ class Mdunion extends CI_Model{
 		$category = $prefix.'_category';
 		$series = $prefix.'_series';
 		
-		$query = "SELECT $products.id,$products.title,$products.translit,$products.type,$products.category,$products.series,$category.title AS ctitle,$category.translit AS ctranslit,$series.title AS stitle,$series.translit AS stranslit FROM $products INNER JOIN $category ON $products.category = $category.id INNER JOIN $series ON $products.series = $series.id WHERE $products.$filtr_field = $filtr ORDER BY $products.category,$products.series,$products.title LIMIT $from,$count";
+		$query = "SELECT $products.id,$products.title,$products.translit,$products.type,$products.category,$products.series,$category.title AS ctitle,$category.translit AS ctranslit,$series.title AS stitle,$series.translit AS stranslit FROM $products INNER JOIN $category ON $products.category = $category.id INNER JOIN $series ON $products.series = $series.id WHERE $products.$filtr_field = $filtr AND $products.showitem = 1 ORDER BY $products.category,$products.series,$products.title LIMIT $from,$count";
 		$query = $this->db->query($query);
 		$data = $query->result_array();
 		if(count($data)) return $data;

@@ -5,6 +5,7 @@ class Mdproducts extends CI_Model{
 	var $id			= 0;
 	var $title		= '';
 	var $translit	= '';
+	var $showitem	= '';
 	var $content	= '';
 	var $image		= '';
 	var $type		= '';
@@ -40,6 +41,7 @@ class Mdproducts extends CI_Model{
 		if(isset($data['image'])):
 			$this->db->set('image',$data['image']);
 		endif;
+		$this->db->set('showitem',$data['showitem']);
 		$this->db->set('type',$data['type']);
 		$this->db->set('alcohol',$data['alcohol']);
 		$this->db->set('sugar',$data['sugar']);
@@ -53,6 +55,7 @@ class Mdproducts extends CI_Model{
 	
 	function read_records($table){
 		
+		$this->db->where('showitem',1);
 		$query = $this->db->get($table);
 		$data = $query->result_array();
 		if(count($data)) return $data;
@@ -61,7 +64,20 @@ class Mdproducts extends CI_Model{
 	
 	function read_limit_records($table,$count,$from){
 		
-		$this->db->select('id,title,translit,content,type,alcohol,sugar,category,series');
+		$this->db->select('id,title,translit,content,type,alcohol,sugar,category,series,showitem');
+		$this->db->limit($count,$from);
+		$this->db->where('showitem',1);
+		$this->db->order_by('category');
+		$this->db->order_by('series');
+		$query = $this->db->get($table);
+		$data = $query->result_array();
+		if(count($data)) return $data;
+		return NULL;
+	}
+	
+	function read_admin_limit_records($table,$count,$from){
+		
+		$this->db->select('id,title,translit,content,type,alcohol,sugar,category,series,showitem');
 		$this->db->limit($count,$from);
 		$this->db->order_by('category');
 		$this->db->order_by('series');
@@ -73,13 +89,19 @@ class Mdproducts extends CI_Model{
 	
 	function count_records($table){
 		
-		return $this->db->count_all($table);
+		$this->db->select('COUNT(*) AS cnt');
+		$this->db->where('showitem',1);
+		$query = $this->db->get($table,1);
+		$data = $query->result_array();
+		if(isset($data[0])) return $data[0]['cnt'];
+		return 0;
 	}
 	
 	function count_filtr_records($parameter,$field,$table){
 		
 		$this->db->select('COUNT(*) AS cnt');
 		$this->db->where($field,$parameter);
+		$this->db->where('showitem',1);
 		$query = $this->db->get($table);
 		$data = $query->result_array();
 		if(count($data)) return $data[0]['cnt'];
@@ -88,7 +110,18 @@ class Mdproducts extends CI_Model{
 	
 	function read_record($id,$table){
 		
-		$this->db->select('id,title,translit,content,type,alcohol,sugar,category,series');
+		$this->db->select('id,title,translit,content,type,alcohol,sugar,category,series,showitem');
+		$this->db->where('id',$id);
+		$this->db->where('showitem',1);
+		$query = $this->db->get($table,1);
+		$data = $query->result_array();
+		if(isset($data[0])) return $data[0];
+		return NULL;
+	}
+	
+	function read_admin_record($id,$table){
+		
+		$this->db->select('id,title,translit,content,type,alcohol,sugar,category,series,showitem');
 		$this->db->where('id',$id);
 		$query = $this->db->get($table,1);
 		$data = $query->result_array();

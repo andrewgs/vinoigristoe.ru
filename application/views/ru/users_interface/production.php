@@ -48,12 +48,11 @@
 						<h1>Цимлянские вина</h1>
 						<div class="spline"></div>
 						<ul class="categories cf">
-							<li><?=anchor('production/category/'.$category[1]['translit'],'<span class="type red"></span>'.$category[1]['title']);?></li>
-							<li><?=anchor('production/category/'.$category[2]['translit'],'<span class="type shampane"></span>'.$category[2]['title'],array('class'=>'no-margin'));?></li>
-							<li class="ml1em"><?=anchor('production/category/'.$category[0]['translit'],'<span class="type white"></span>'.$category[0]['title']);?></li>
+							<li><?=anchor('production/category/'.$category[0]['translit'],'<span class="type red"></span>'.$category[0]['title']);?></li>
+							<li><?=anchor('production/category/'.$category[1]['translit'],'<span class="type shampane"></span>'.$category[1]['title']);?></li>
+							<li><?=anchor('production/category/'.$category[2]['translit'],'<span class="type white"></span>'.$category[2]['title']);?></li>
 							<li><?=anchor('production/category/'.$category[3]['translit'],'<span class="type dinner"></span>'.$category[3]['title']);?></li>
-							<!--<li><?=anchor('production/category/'.$category[4]['translit'],'<span class="type sort"></span>'.$category[4]['title']);?></li>-->
-							<li><?=anchor('production/category/'.$category[5]['translit'],'<span class="type brandy"></span>'.$category[5]['title']);?></li>
+							<li><?=anchor('production/category/'.$category[4]['translit'],'<span class="type brandy"></span>'.$category[4]['title']);?></li>
 						</ul>
 						<div class="spline"></div>
 					<?php $categoryid = 0;?>

@@ -451,7 +451,7 @@ class Admin_interface extends CI_Controller{
 			'userinfo'		=> $this->user,
 			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
 			'series'		=> $this->mdseries->read_records($this->language.'_series'),
-			'products'		=> $this->mdproducts->read_limit_records($this->language.'_products',7,$from),
+			'products'		=> $this->mdproducts->read_admin_limit_records($this->language.'_products',7,$from),
 			'pages'			=> array(),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
@@ -552,7 +552,7 @@ class Admin_interface extends CI_Controller{
 			'loginstatus'	=> $this->loginstatus,
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
-			'product'		=> $this->mdproducts->read_record($pid,$this->language.'_products'),
+			'product'		=> $this->mdproducts->read_admin_record($pid,$this->language.'_products'),
 			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
 			'series'		=> $this->mdseries->read_records($this->language.'_series'),
 			'msgs'			=> $this->session->userdata('msgs'),
@@ -564,6 +564,7 @@ class Admin_interface extends CI_Controller{
 		if($this->input->post('submit')):
 			unset($_POST['submit']);
 			$this->form_validation->set_rules('title',' ','required|trim');
+			$this->form_validation->set_rules('showitem',' ','trim');
 			$this->form_validation->set_rules('type',' ','required|trim');
 			$this->form_validation->set_rules('alcohol',' ','required|trim');
 			$this->form_validation->set_rules('sugar',' ','required|trim');
@@ -576,6 +577,9 @@ class Admin_interface extends CI_Controller{
 			else:
 				if($_FILES['image']['error'] != 4):
 					$_POST['image'] = file_get_contents($_FILES['image']['tmp_name']);
+				endif;
+				if(!isset($_POST['showitem'])):
+					$_POST['showitem'] = 0;
 				endif;
 				$translit = $this->translite($_POST['title']);
 				$category = $this->mdseries->read_field($_POST['series'],'category',$this->language.'_series');

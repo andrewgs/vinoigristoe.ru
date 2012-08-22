@@ -50,6 +50,9 @@
 								<div id="params<?=$i;?>" style="display:none" data-pid="<?=$products[$i]['id'];?>"></div>
 								<?=anchor('admin-panel/actions/products/category/'.$products[$i]['category'].'/series/'.$products[$i]['series'].'/edit/'.$products[$i]['translit'],'Редактировать',array('title'=>'Редактировать'));?>
 								<a class="deleteProduct" data-param="<?=$i;?>" data-toggle="modal" href="#deleteProduct" title="Удалить">Удалить</a>
+								<?php if(!$products[$i]['showitem']):?>
+									<i class="icon-eye-close"></i>
+								<?php endif;?>
 							</td>
 						</tr>
 					<?php endfor; ?>

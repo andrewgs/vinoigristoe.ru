@@ -443,7 +443,7 @@ class Users_interface extends CI_Controller{
 			'userinfo'		=> $this->user,
 			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
 			'series'		=> $this->mdunion->groupby_series($this->language),
-			'products'		=> $this->mdunion->products_catalog_limit($this->language,9,$from),
+			'products'		=> $this->mdunion->products_catalog_limit($this->language,12,$from),
 			'pages'			=> array(),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
@@ -454,7 +454,7 @@ class Users_interface extends CI_Controller{
 		$config['base_url'] 		= $pagevar['baseurl'].'production/from/';
 		$config['uri_segment'] 		= 3;
 		$config['total_rows'] 		= $this->mdproducts->count_records($this->language.'_products');
-		$config['per_page'] 		= 9;
+		$config['per_page'] 		= 12;
 		$config['num_links'] 		= 12;
 		$config['first_link']		= '<img src="'.$pagevar['baseurl'].'images/arrow-left.png">';
 		$config['last_link'] 		= '<img src="'.$pagevar['baseurl'].'images/arrow-right.png">';
@@ -554,6 +554,10 @@ class Users_interface extends CI_Controller{
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
+		
+		if(!$pagevar['product']):
+			redirect($this->session->userdata('backpath'));
+		endif;
 		
 		for($i=0;$i<count($pagevar['news']);$i++):
 			$pagevar['news'][$i]['date'] = $this->operation_dot_date($pagevar['news'][$i]['date']);

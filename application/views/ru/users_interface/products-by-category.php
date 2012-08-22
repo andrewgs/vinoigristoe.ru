@@ -66,8 +66,8 @@
 							<p class="item-name">Извините но список пуст :(</p>
 						<?php endif;?>
 						</div>
-						<div class="spline"></div>
 						<?php if($pages): ?>
+						<div class="spline"></div>
 						<div class="pagination">
 							<?=$pages;?>
 						</div>

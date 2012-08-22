@@ -321,7 +321,7 @@ class Users_interface extends CI_Controller{
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
 			'pages'			=> array(),
-			'events'		=> $this->mdevents->read_records_limit(array(1),$this->language.'_events',3,$from),
+			'events'		=> $this->mdevents->read_records_limit(array(1,2,3,4),$this->language.'_events',3,$from),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);
@@ -341,7 +341,7 @@ class Users_interface extends CI_Controller{
 		
 		$config['base_url'] 		= $pagevar['baseurl'].'events/from/';
 		$config['uri_segment'] 		= 3;
-		$config['total_rows'] 		= $this->mdevents->count_records(array(1),$this->language.'_events');
+		$config['total_rows'] 		= $this->mdevents->count_records(array(1,2,3,4),$this->language.'_events');
 		$config['per_page'] 		= 3;
 		$config['num_links'] 		= 12;
 		$config['first_link']		= '<img src="'.$pagevar['baseurl'].'images/arrow-left.png">';

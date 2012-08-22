@@ -85,7 +85,6 @@
 							<div class="right"></div>
 						</div>
 						<?php endif;?>
-						
 						<div class="items-list">
 					<?php for($j=0;$j<count($products);$j++):?>
 						<?php if(($series[$i]['id'] == $products[$j]['series']) && $category[$c]['id'] == $products[$j]['category']):?>
@@ -99,8 +98,8 @@
 						</div>
 					<?php endfor;?>
 				<?php endfor;?>
-						<div class="spline"></div>
 						<?php if($pages): ?>
+						<div class="spline"></div>
 						<div class="pagination">
 							<?=$pages;?>
 						</div>

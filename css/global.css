@@ -152,7 +152,7 @@ p.caption { text-transform: uppercase; font-size: 1.5em; line-height: 3.5em; tex
 .promo-slide { border: 1px solid #ccc; padding: 0.5em; width: 42em; background: #fff; float: left; margin: -0.75em 0 0; /* width: 40em; height: 24.25em;  */ }
 .promo-inside { border: 1px solid #ccc; height: 23.7em; }
 
-.main-directions { margin: 2.5em 0 0; background: url('../images/book-top.png') center bottom no-repeat; padding-bottom: 12em; }
+.main-directions { margin: 2.5em 0 0; background: url('../images/book-top.png') center bottom no-repeat; padding-bottom: 10em; }
 .main-directions .column { float: left; width: 12em; margin: 0 3.1em; text-align: center; }
 .main-directions .column h2 { text-transform: uppercase; font-size: 1.5em; text-align: center; margin: 0.5em 0 0.7em; color: #1f1c1d; text-decoration: underline; }
 .main-directions .column h2 a { color: #1F1C1D; }

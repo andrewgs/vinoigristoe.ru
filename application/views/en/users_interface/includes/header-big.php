@@ -8,13 +8,13 @@
 		</aside>
 		<nav role="main">
 			<ul>
-				<li class="home"><?=anchor('','Main');?></li>
-				<li class="production"><?=anchor('production','Production');?></li>
-				<li class="events"><?=anchor('events','Events');?></li>
-				<li class="company"><?=anchor('company','Company');?></li>
-				<li class="where"><?=anchor('where','Where');?></li>
-				<li class="tourism"><?=anchor('tourism','Tourism');?></li>
-				<li class="contacts"><?=anchor('contacts','Contacts');?></li>
+				<li class="home"><?=anchor('','Главная');?></li>
+				<li class="production"><?=anchor('production','Продукция');?></li>
+				<li class="events"><?=anchor('#','События');?></li>
+				<li class="company"><?=anchor('tradition','Компания');?></li>
+				<li class="where"><?=anchor('where','Где купить');?></li>
+				<li class="tourism"><?=anchor('tourism','Туризм');?></li>
+				<li class="contacts"><?=anchor('contacts','Контакты');?></li>
 			</ul>
 		</nav>
 	</section>
@@ -26,15 +26,15 @@
 				<div class="spline top"></div>
 				<p>Мы в социальных сетях:</p>
 				<ul>
-					<li><?=anchor('','<span class="vk">&nbsp;</span>Вконтакте');?></li>
-					<li><?=anchor('','<span class="fb">&nbsp;</span>Facebook');?></li>
+					<li><?=anchor('http://vk.com/vinoigristoe','<span class="vk">&nbsp;</span>Вконтакте');?></li>
+					<li><?=anchor('https://www.facebook.com/vinoigristoe','<span class="fb">&nbsp;</span>Facebook');?></li>
 				</ul>
 				<div class="spline bottom"></div>
 			</div>
 		</aside>
 		<div class="promo-slide">
 			<div class="promo-inside">
-				<img src="<?$baseurl;?>images/index_promo.png" alt="" />
+				<img src="<?$baseurl;?>images/main-promo.jpg" alt="" />
 			</div>
 		</div>
 	</section>

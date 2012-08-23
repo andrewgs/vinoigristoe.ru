@@ -1,5 +1,9 @@
 <header>
-	<section style="margin: 40px 0 40px 400px">
-		Панель администрирования
-	</section>
+	<div class="container">
+		<div class="row">
+			<h1 class="admin-header">
+				Панель администрирования
+			</h1>			
+		</div>
+	</div>
 </header>

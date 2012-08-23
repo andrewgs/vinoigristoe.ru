@@ -20,7 +20,7 @@
 						<p class="author"><?=$quote['name'];?></p>
 					</div>
 					<div class="spline"></div>
-					<?=anchor('#','<img src="'.$baseurl.'images/pdf.png" alt="pdf" />Скачать каталог',array('class'=>'download'));?>
+					<?=anchor('vinoigristoe_catalog.pdf','<img src="'.$baseurl.'images/pdf.png" alt="pdf" />Скачать каталог',array('class'=>'download'));?>
 					<!--
 					<div class="spline"></div>
 					<p class="text">

@@ -33,20 +33,26 @@
 						<tr class="align-center">
 							<td class="w30"><img src="<?=$baseurl;?>product/viewimage/<?=$products[$i]['id'];?>" alt="" style="width:30px;" /></td>
 							<td class="w100">
-								<i><b><?=$products[$i]['title'];?></b></i><br/>
+								<b><?=$products[$i]['title'];?></b><br/>
 								<nobr><?=$products[$i]['type'];?><br/>спирт: <?=$products[$i]['alcohol'];?><br/>сахар: <?=$products[$i]['sugar'];?></nobr>
 							</td>
 							<td class="w400">
-								<?=$products[$i]['content'];?>
-								<br/>
-								<?=anchor('admin-panel/actions/products/category/'.$products[$i]['category'].'/series/'.$products[$i]['series'].'/product/'.$products[$i]['id'].'/medals','Награды');?>
-								<span class="divider">/</span>
-								<?=anchor('admin-panel/actions/products/category/'.$products[$i]['category'].'/series/'.$products[$i]['series'].'/product/'.$products[$i]['id'].'/whereby','Где купить');?>
+								<p>
+									<?=$products[$i]['content'];?>
+								</p>
+								<p>
+									<?=anchor('admin-panel/actions/products/category/'.$products[$i]['category'].'/series/'.$products[$i]['series'].'/product/'.$products[$i]['id'].'/medals','Награды');?>
+									<span class="divider"> / </span>
+									<?=anchor('admin-panel/actions/products/category/'.$products[$i]['category'].'/series/'.$products[$i]['series'].'/product/'.$products[$i]['id'].'/whereby','Где купить');?>
+								</p>
 							</td>
-							<td class="w50" style="text-align:center; vertical-align:middle;">
+							<td class="w50">
 								<div id="params<?=$i;?>" style="display:none" data-pid="<?=$products[$i]['id'];?>"></div>
-								<?=anchor('admin-panel/actions/products/category/'.$products[$i]['category'].'/series/'.$products[$i]['series'].'/edit/'.$products[$i]['translit'],'<nobr>&nbsp;&nbsp;<i class="icon-edit icon-white"></i>&nbsp;&nbsp;</nobr>',array('class'=>'btn btn-success','title'=>'Редактировать'));?>
-								<a class="btn btn-danger deleteProduct" data-param="<?=$i;?>" data-toggle="modal" href="#deleteProduct" title="Удалить"><nobr>&nbsp;&nbsp;<i class="icon-trash icon-white"></i>&nbsp;&nbsp;</nobr></a>
+								<?=anchor('admin-panel/actions/products/category/'.$products[$i]['category'].'/series/'.$products[$i]['series'].'/edit/'.$products[$i]['translit'],'Редактировать',array('title'=>'Редактировать'));?>
+								<a class="deleteProduct" data-param="<?=$i;?>" data-toggle="modal" href="#deleteProduct" title="Удалить">Удалить</a>
+								<?php if(!$products[$i]['showitem']):?>
+									<i class="icon-eye-close"></i>
+								<?php endif;?>
 							</td>
 						</tr>
 					<?php endfor; ?>

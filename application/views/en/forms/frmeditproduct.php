@@ -61,6 +61,16 @@
 				</select>
 			</div>
 		</div>
+		<hr/>
+		<div class="control-group">
+			<label for="ShowItem" class="control-label">Отображать товар</label>
+			<div class="controls">
+				<label class="checkbox">
+					<input type="checkbox" value="1" id="ShowItem" name="showitem" <?=($product['showitem'])? 'checked="chacked"':'';?>>
+					(Снимите если нужно скрыть товар)
+				</label>
+			</div>
+		</div>
 	</fieldset>
 	<div class="form-actions">
 		<button class="btn btn-success" type="submit" id="send" name="submit" value="send">Сохранить</button>

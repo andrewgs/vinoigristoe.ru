@@ -14,20 +14,23 @@
 		<article class="cf">
 			<aside>
 				<a class="aside-logo purple">Цимлянские вина</a>
-				<div class="quote">
-					<img src="<?=$baseurl;?>images/pushkin.jpg" alt="Пушкин А.С." />
-					<blockquote>Шампанского всем!<br />Как какого?<br /> Конечно, цимлянского!</blockquote>
-					<p class="author">А.С. Пушкин</p>
-				</div>
+				<!--				
 				<div class="spline"></div>
 				<p class="text">
 					ОАО «Цимлянские вина» является<br/>одним из крупнейших предприятий<br/>на Дону. Так же это постоянно<br/>развивающееся предприятие,<br/>
 					на счету которого уже не один<br/>десяток наград за высокое качество<br/>производимой продукции.<br/>На заводе выпускается 51<br/>
 					наименование продукции, в число<br/>которых входят, игристые,<br/>шампанские и столовые вина.</p>
 				<div class="spline"></div>
+				-->
 				<div class="where-to-buy">
 					<img src="<?=$baseurl;?>images/tourism.png" alt="Туры на виноградники Цилянских вин!" />
 					<h2><?=anchor('#','Туры на виноградники<br/> Цилянских вин!');?></h2>
+				</div>
+				<div class="spline"></div>
+				<div class="quote">
+					<img src="<?=$baseurl;?>quote/viewimage/<?=$quote['id'];?>" alt="<?=$quote['name'];?>"/>
+					<blockquote><?=$quote['text'];?></blockquote>
+					<p class="author"><?=$quote['name'];?></p>
 				</div>
 				<div class="spline"></div>
 				<?php $this->load->view($language."/users_interface/includes/social-likes");?>
@@ -36,8 +39,8 @@
 			<div id="main" role="main" class="cf">
 				<div class="wine-flag news-updates">
 					Самое<br />свежее:<br />
-					<?=anchor('#','<img src="'.$baseurl.'images/vk-icon.png" alt="Вконтакте" />');?>
-					<?=anchor('#','<img src="'.$baseurl.'images/fb-icon.png" alt="Facebook" />');?>
+					<?=anchor('http://vk.com/vinoigristoe','<img src="'.$baseurl.'images/vk-icon.png" alt="Вконтакте" />');?>
+					<?=anchor('https://www.facebook.com/vinoigristoe','<img src="'.$baseurl.'images/fb-icon.png" alt="Facebook" />');?>
 				</div>
 				<div class="inside">
 					<img src="<?=$baseurl;?>images/news_promo.png" alt="Каталог продукции" />

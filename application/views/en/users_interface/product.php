@@ -15,9 +15,9 @@
 				<aside>
 					<a class="aside-logo purple">Цимлянские вина</a>
 					<div class="quote">
-						<img src="<?=$baseurl;?>images/pushkin.jpg" alt="Пушкин А.С." />
-						<blockquote>Шампанского всем!<br />Как какого?<br /> Конечно, цимлянского!</blockquote>
-						<p class="author">А.С. Пушкин</p>
+						<img src="<?=$baseurl;?>quote/viewimage/<?=$quote['id'];?>" alt="<?=$quote['name'];?>"/>
+						<blockquote><?=$quote['text'];?></blockquote>
+						<p class="author"><?=$quote['name'];?></p>
 					</div>
 					<h2>Наши новости</h2>
 					<div class="news-list cf">
@@ -46,7 +46,7 @@
 							<div class="column left">
 								<ul class="breadcrumb">
 									<li><?=anchor('production','Продукция');?> <span class="divider">/</span></li>
-									<li><?=anchor($this->uri->uri_string(),$product['stitle'],array('class'=>'none'));?> <span class="divider">/</span></li>
+									<li><?=anchor('production/category/'.$product['ctranslit'],$product['ctitle']);?> <span class="divider">/</span></li>
 									<li><?=anchor($this->uri->uri_string(),$product['title']);?></li>
 								</ul>
 								<h1><?=$product['title']?></h1>

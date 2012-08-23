@@ -7,7 +7,9 @@
 			<li num="products"><?=anchor('admin-panel/actions/products','Продукты');?></li>
 			<li num="country"><?=anchor('admin-panel/actions/country','Страны и города');?></li>
 			<li num="shops"><?=anchor('admin-panel/actions/shops','Магазины');?></li>
+			<li num="quote"><?=anchor('admin-panel/actions/quote','Цытаты');?></li>
 			<li class="nav-header">Действия</li>
+			<li><?=anchor('admin-panel/actions/control','Дополнительно');?></li>
 			<li><?=anchor('admin-panel/actions/logoff','Завершить сеанс');?></li>
 		</ul>
 	</div>

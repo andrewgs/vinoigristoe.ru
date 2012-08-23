@@ -5,7 +5,7 @@
 				<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?49"></script>
 				<div id="vk_groups"></div>
 				<script type="text/javascript">
-					VK.Widgets.Group("vk_groups", {mode : 0,width : "218",height : "215"}, 20003922);
+					VK.Widgets.Group("vk_groups", {mode : 0,width : "218",height : "215"}, 38970572);
 				</script>
 			</div>
 			<div class="social-widget">
@@ -20,13 +20,13 @@
 						fjs.parentNode.insertBefore(js, fjs);
 					}(document, 'script', 'facebook-jssdk'));
 				</script>
-				<div class="fb-like-box" data-href="http://www.facebook.com/platform" data-width="218" data-height="215" data-show-faces="true" data-stream="false" data-header="false"></div>
+				<div class="fb-like-box" data-href="http://www.facebook.com/vinoigristoe" data-width="218" data-height="215" data-show-faces="true" data-stream="false" data-header="false"></div>
 			</div>
 			<nav>
 				<ul>
 					<li><?=anchor('','Главная страница');?></li>
 					<li><?=anchor('company','О компании');?></li>
-					<li><?=anchor('','Партнерам');?></li>
+					<li><?=anchor('tourism','Винный туризм');?></li>
 					<li><?=anchor('events','Выставки и события');?></li>
 					<li><?=anchor('production','Продукция');?></li>
 					<li><?=anchor('contacts','Контактные данные');?></li>

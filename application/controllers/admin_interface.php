@@ -79,9 +79,10 @@ class Admin_interface extends CI_Controller{
 				$this->session->set_userdata('msgr','Ошибка при загрузке документа. Не указан файл.');
 				redirect($this->uri->uri_string());
 			endif;
+			
 			$_FILES['document']['name'] = preg_replace('/.+(.)(\.)+/','vinoigristoe_catalog'."\$2", $_FILES['document']['name']);
 			$config['upload_path'] 		= getcwd();
-			$config['allowed_types'] 	= 'xls';
+			$config['allowed_types'] 	= 'pdf';
 			$config['remove_spaces'] 	= TRUE;
 			$config['overwrite'] 		= TRUE;
 			$this->load->library('upload',$config);
@@ -109,9 +110,20 @@ class Admin_interface extends CI_Controller{
 			$config['remove_spaces'] 	= TRUE;
 			$config['overwrite'] 		= TRUE;
 			$this->load->library('upload',$config);
+			
 			if(!$this->upload->do_upload('phnews')):
 				$this->session->set_userdata('msgr','Ошибка при загрузке файла.');
 				redirect($this->uri->uri_string());
+			endif;
+			$info = $this->upload->data();
+			if($info):
+				if($info['image_width'] != 442 || $info['image_height'] != 574):
+					if(file_exists($info['full_path'])):
+						unlink($info['full_path']);
+						$this->session->set_userdata('msgr','Ошибка при загрузке файла. Не верный размер файла.');
+						redirect($this->uri->uri_string());
+					endif;
+				endif;
 			endif;
 			$this->session->set_userdata('msgs','Картинка загружена успешно.');
 			redirect($this->uri->uri_string());
@@ -136,6 +148,16 @@ class Admin_interface extends CI_Controller{
 			if(!$this->upload->do_upload('phevent')):
 				$this->session->set_userdata('msgr','Ошибка при загрузке документа.');
 				redirect($this->uri->uri_string());
+			endif;
+			$info = $this->upload->data();
+			if($info):
+				if($info['image_width'] != 442 || $info['image_height'] != 574):
+					if(file_exists($info['full_path'])):
+						unlink($info['full_path']);
+						$this->session->set_userdata('msgr','Ошибка при загрузке файла. Не верный размер файла.');
+						redirect($this->uri->uri_string());
+					endif;
+				endif;
 			endif;
 			$this->session->set_userdata('msgs','Каталог продуктов загружен успешно.');
 			redirect($this->uri->uri_string());

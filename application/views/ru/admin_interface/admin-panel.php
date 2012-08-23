@@ -23,7 +23,7 @@
 								<input type="file" id="DocumentFile" class="input-file linput" name="document" size="64"><br/>
 								<div style="float:left; margin-top:10px;">
 									<strong><em>Документ заменит старый</em></strong><br/>
-									<i><u>Документ должен быть книгой MS Excel 2003</u></i>
+									<i><u>Файл должен быть PDF-документом</u></i>
 								</div>
 								<div style="float:right; margin-top:10px;">
 									<button class="btn btn-success" type="submit" id="catproducts" name="catproducts" value="catproducts">Загрузить</button>
@@ -39,7 +39,7 @@
 								<input type="file" id="PhotoFile1" class="input-file linput" name="phnews" size="64"><br/>
 								<div style="float:left; margin-top:10px;">
 									<strong><em>Файл заменит старый</em></strong><br/>
-									<i><u>Поддерживаемый формат: JPG</u></i>
+									<i><u>Поддерживаемый формат: JPG. Размер: 442x574</u></i>
 								</div>
 								<div style="float:right; margin-top:10px;">
 									<button class="btn btn-success" type="submit" id="phnews" name="sphnews" value="phnews">Загрузить</button>
@@ -55,7 +55,7 @@
 								<input type="file" id="PhotoFile2" class="input-file linput" name="phevent" size="64"><br/>
 								<div style="float:left; margin-top:10px;">
 									<strong><em>Файл заменит старый</em></strong><br/>
-									<i><u>Поддерживаемый формат: JPG</u></i>
+									<i><u>Поддерживаемый формат: JPG. Размер: 442x574</u></i>
 								</div>
 								<div style="float:right; margin-top:10px;">
 									<button class="btn btn-success" type="submit" id="phevent" name="sphevent" value="phevent">Загрузить</button>

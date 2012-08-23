@@ -76,7 +76,7 @@
 						<?php $viewseries = FALSE;
 						for($p=0;$p<count($products);$p++):
 							if(($series[$i]['id'] == $products[$p]['series']) && $series[$i]['category'] == $category[$c]['id']):
-//								$viewseries = TRUE;
+								$viewseries = TRUE;
 							endif;
 						endfor;?>
 						<?php if($series[$i]['default'] && $viewseries):?>

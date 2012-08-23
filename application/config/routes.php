@@ -41,6 +41,7 @@ $route['events/viewimage/:num']		= "users_interface/viewimage";
 $route['category/viewimage/:num']	= "users_interface/viewimage";
 $route['product/viewimage/:num']	= "users_interface/viewimage";
 $route['medals/viewimage/:num']		= "users_interface/viewimage";
+$route['quote/viewimage/:num']		= "users_interface/viewimage";
 
 $route['events/:any'] 	= "users_interface/view_events";
 
@@ -49,6 +50,14 @@ $route['events/:any'] 	= "users_interface/view_events";
 $route['admin-panel/actions/logoff']	= "admin_interface/admin_logoff";
 
 $route['admin-panel/actions/control']	= "admin_interface/admin_panel";
+
+$route['admin-panel/actions/quote']						= "admin_interface/control_quote";
+$route['admin-panel/actions/quote/from']				= "admin_interface/control_quote";
+$route['admin-panel/actions/quote/from/:num']			= "admin_interface/control_quote";
+
+$route['admin-panel/actions/quote/add']					= "admin_interface/control_add_quote";
+$route['admin-panel/actions/quote/edit/:num']			= "admin_interface/control_edit_quote";
+$route['admin-panel/actions/qoute/delete/quoteid/:num']	= "admin_interface/control_delete_quote";
 
 $route['admin-panel/actions/events']		= "admin_interface/control_events";
 $route['admin-panel/actions/events/from']	= "admin_interface/control_events";
@@ -95,4 +104,5 @@ $route['admin-panel/actions/events/delete/eventsid/:num']= "admin_interface/cont
 
 $route['admin-panel/actions/category/categoryid/:num/seriesid/:num/edit'] = "admin_interface/control_edit_series";
 
-$route['admin-panel/actions/cabinet']	= "admin_interface/admin_cabinet";
+$route['admin-panel/actions/cabinet']			= "admin_interface/admin_cabinet";
+$route['admin-panel/actions/download-catalog']	= "admin_interface/download_catalog";

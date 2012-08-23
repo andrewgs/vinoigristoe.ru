@@ -22,6 +22,7 @@ class Admin_interface extends CI_Controller{
 		$this->load->model('mdcity');
 		$this->load->model('mdcountry');
 		$this->load->model('mdwhereby');
+		$this->load->model('mdquote');
 		
 		$cookieuid = $this->session->userdata('logon');
 		if(isset($cookieuid) and !empty($cookieuid)):
@@ -67,6 +68,79 @@ class Admin_interface extends CI_Controller{
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('catproducts')):
+			$_POST['catproducts'] = NULL;
+			if($_FILES['document']['error'] == 1):
+				$this->session->set_userdata('msgr','Ошибка при загрузке документа. Размер принятого файла превысил максимально допустимый размер.');
+				redirect($this->uri->uri_string());
+			endif;
+			if($_FILES['document']['error'] == 4):
+				$this->session->set_userdata('msgr','Ошибка при загрузке документа. Не указан файл.');
+				redirect($this->uri->uri_string());
+			endif;
+			$_FILES['document']['name'] = preg_replace('/.+(.)(\.)+/','vinoigristoe_catalog'."\$2", $_FILES['document']['name']);
+			$config['upload_path'] 		= getcwd();
+			$config['allowed_types'] 	= 'xls';
+			$config['remove_spaces'] 	= TRUE;
+			$config['overwrite'] 		= TRUE;
+			$this->load->library('upload',$config);
+			if(!$this->upload->do_upload('document')):
+				$this->session->set_userdata('msgr','Ошибка при загрузке документа.');
+				redirect($this->uri->uri_string());
+			endif;
+			$this->session->set_userdata('msgs','Каталог продуктов загружен успешно.');
+			redirect($this->uri->uri_string());
+		endif;
+		
+		if($this->input->post('sphnews')):
+			$_POST['sphnews'] = NULL;
+			if($_FILES['phnews']['error'] == 1):
+				$this->session->set_userdata('msgr','Ошибка при загрузке файла. Размер принятого файла превысил максимально допустимый размер.');
+				redirect($this->uri->uri_string());
+			endif;
+			if($_FILES['phnews']['error'] == 4):
+				$this->session->set_userdata('msgr','Ошибка при загрузке файла. Не указан файл.');
+				redirect($this->uri->uri_string());
+			endif;
+			$_FILES['phnews']['name'] = preg_replace('/.+(.)(\.)+/','left-page'."\$2", $_FILES['phnews']['name']);
+			$config['upload_path'] 		= getcwd().'/images/';
+			$config['allowed_types'] 	= 'jpg';
+			$config['remove_spaces'] 	= TRUE;
+			$config['overwrite'] 		= TRUE;
+			$this->load->library('upload',$config);
+			if(!$this->upload->do_upload('phnews')):
+				$this->session->set_userdata('msgr','Ошибка при загрузке файла.');
+				redirect($this->uri->uri_string());
+			endif;
+			$this->session->set_userdata('msgs','Картинка загружена успешно.');
+			redirect($this->uri->uri_string());
+		endif;
+		
+		if($this->input->post('sphevent')):
+			$_POST['sphevent'] = NULL;
+			if($_FILES['phevent']['error'] == 1):
+				$this->session->set_userdata('msgr','Ошибка при загрузке файла. Размер принятого файла превысил максимально допустимый размер.');
+				redirect($this->uri->uri_string());
+			endif;
+			if($_FILES['phevent']['error'] == 4):
+				$this->session->set_userdata('msgr','Ошибка при загрузке файла. Не указан файл.');
+				redirect($this->uri->uri_string());
+			endif;
+			$_FILES['phevent']['name'] = preg_replace('/.+(.)(\.)+/','right-page'."\$2", $_FILES['phevent']['name']);
+			$config['upload_path'] 		= getcwd().'/images/';
+			$config['allowed_types'] 	= 'jpg';
+			$config['remove_spaces'] 	= TRUE;
+			$config['overwrite'] 		= TRUE;
+			$this->load->library('upload',$config);
+			if(!$this->upload->do_upload('phevent')):
+				$this->session->set_userdata('msgr','Ошибка при загрузке документа.');
+				redirect($this->uri->uri_string());
+			endif;
+			$this->session->set_userdata('msgs','Каталог продуктов загружен успешно.');
+			redirect($this->uri->uri_string());
+		endif;
+		
 		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
 		$this->load->view($pagevar['language']."/admin_interface/admin-panel",$pagevar);
 	}
@@ -77,6 +151,142 @@ class Admin_interface extends CI_Controller{
 			redirect('');
 	}
 	
+	/******************************************************* quote ************************************************************/
+	
+	public function control_quote(){
+		
+		$from = intval($this->uri->segment(5));
+		$pagevar = array(
+			'title'			=> 'Панель администрирования | Цитаты',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl'		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'quote'			=> $this->mdquote->read_records($this->language.'_quote',7,$from),
+			'pages'			=> array(),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		$config['base_url'] 		= $pagevar['baseurl'].'admin-panel/actions/quote/from/';
+		$config['uri_segment'] 		= 5;
+		$config['total_rows'] 		= $this->mdquote->count_records($this->language.'_quote');
+		$config['per_page'] 		= 7;
+		$config['num_links'] 		= 4;
+		$config['first_link']		= 'В начало';
+		$config['last_link'] 		= 'В конец';
+		$config['next_link'] 		= 'Далее &raquo;';
+		$config['prev_link'] 		= '&laquo; Назад';
+		$config['cur_tag_open']		= '<span class="actpage">';
+		$config['cur_tag_close'] 	= '</span>';
+		
+		$this->pagination->initialize($config);
+		$pagevar['pages'] = $this->pagination->create_links();
+		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
+		$this->load->view($pagevar['language']."/admin_interface/quote/quote",$pagevar);
+	}
+	
+	public function control_add_quote(){
+		
+		$pagevar = array(
+			'title'			=> 'Панель администрирования | Добавление цитаты',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl'		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('name',' ','required|trim');
+			$this->form_validation->set_rules('text',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+				$this->control_add_quote();
+				return FALSE;
+			else:
+				if($_FILES['image']['error'] != 4):
+					$_POST['image'] = file_get_contents($_FILES['image']['tmp_name']);
+				else:
+					$_POST['image'] = file_get_contents(base_url().'images/noimages/no_icon.jpg');
+				endif;
+				$qid = $this->mdquote->insert_record($_POST,$this->language.'_quote');
+				if($qid):
+					$this->session->set_userdata('msgs','Цитата создана успешно.');
+				endif;
+				redirect($this->uri->uri_string());
+			endif;
+		endif;
+		
+		$this->load->view($pagevar['language']."/admin_interface/quote/add-quote",$pagevar);
+	}
+	
+	public function control_edit_quote(){
+		
+		$pagevar = array(
+			'title'			=> 'Панель администрирования | Редактирование магазина',
+			'description'	=> 'Игристые вина',
+			'author'		=> '',
+			'baseurl'		=> base_url(),
+			'loginstatus'	=> $this->loginstatus,
+			'language'		=> $this->language,
+			'userinfo'		=> $this->user,
+			'quote'			=> $this->mdquote->read_record($this->uri->segment(5),$this->language.'_quote'),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr'),
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('name',' ','required|trim');
+			$this->form_validation->set_rules('text',' ','trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
+				$this->control_edit_product();
+				return FALSE;
+			else:
+				if($_FILES['image']['error'] != 4):
+					$_POST['image'] = file_get_contents($_FILES['image']['tmp_name']);
+				endif;
+				$result = $this->mdquote->update_record($this->uri->segment(5),$_POST,$this->language.'_quote');
+				if($result):
+					$this->session->set_userdata('msgs','Цитат сохранена успешно.');
+				endif;
+				redirect($this->session->userdata('backpath'));
+			endif;
+		endif;
+		
+		$this->load->view($pagevar['language']."/admin_interface/quote/edit-quote",$pagevar);
+	}
+	
+	public function control_delete_quote(){
+		
+		$qid = $this->uri->segment(6);
+		if($qid):
+			$result = $this->mdquote->delete_record($qid,$this->language.'_quote');
+			if($result):
+				$this->session->set_userdata('msgs','Цитата удалена успешно.');
+			else:
+				$this->session->set_userdata('msgr','Цитата не удалена.');
+			endif;
+			redirect($this->session->userdata('backpath'));
+		else:
+			show_404();
+		endif;
+	}
+
 	/******************************************************* events ************************************************************/
 	
 	public function control_events(){

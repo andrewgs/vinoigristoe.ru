@@ -15,9 +15,9 @@
 				<aside>
 					<a class="aside-logo">Цимлянские вина</a>
 					<div class="quote">
-						<img src="<?=$baseurl;?>images/pushkin.jpg" alt="Пушкин А.С." />
-						<blockquote>Игристого всем!<br />Как какого?<br /> Конечно, цимлянского!</blockquote>
-						<p class="author">А.С. Пушкин</p>
+						<img src="<?=$baseurl;?>quote/viewimage/<?=$quote['id'];?>" alt="<?=$quote['name'];?>"/>
+						<blockquote><?=$quote['text'];?></blockquote>
+						<p class="author"><?=$quote['name'];?></p>
 					</div>
 					<div class="spline"></div>
 					<?=anchor('#','<img src="'.$baseurl.'images/pdf.png" alt="pdf" />Скачать каталог',array('class'=>'download'));?>

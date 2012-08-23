@@ -22,6 +22,7 @@ class Users_interface extends CI_Controller{
 		$this->load->model('mdcity');
 		$this->load->model('mdcountry');
 		$this->load->model('mdwhereby');
+		$this->load->model('mdquote');
 		
 		$cookieuid = $this->session->userdata('logon');
 		if(isset($cookieuid) and !empty($cookieuid)):
@@ -214,6 +215,7 @@ class Users_interface extends CI_Controller{
 			'loginstatus'	=> $this->loginstatus,
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
+			'quote'			=> $this->mdquote->read_random_record($this->language.'_quote',1),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);
@@ -274,6 +276,7 @@ class Users_interface extends CI_Controller{
 			'userinfo'		=> $this->user,
 			'countries'		=> $this->mdcountry->read_records($this->language.'_country'),
 			'cities'		=> $this->mdcity->read_records($this->language.'_city'),
+			'quote'			=> $this->mdquote->read_random_record($this->language.'_quote',1),
 			'firms_shops'	=> array(),
 			'chain_shops'	=> array(),
 			'msgs'			=> $this->session->userdata('msgs'),
@@ -319,6 +322,7 @@ class Users_interface extends CI_Controller{
 			'userinfo'		=> $this->user,
 			'countries'		=> $this->mdcountry->read_records($this->language.'_country'),
 			'cities'		=> $this->mdcity->read_records($this->language.'_city'),
+			'quote'			=> $this->mdquote->read_random_record($this->language.'_quote',1),
 			'tcountry'		=> '',
 			'tcity'			=> '',
 			'firms_shops'	=> array(),
@@ -362,6 +366,7 @@ class Users_interface extends CI_Controller{
 			'userinfo'		=> $this->user,
 			'pages'			=> array(),
 			'events'		=> $this->mdevents->read_records_limit(array(1,2,3,4),$this->language.'_events',3,$from),
+			'quote'			=> $this->mdquote->read_random_record($this->language.'_quote',1),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);
@@ -444,6 +449,7 @@ class Users_interface extends CI_Controller{
 			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
 			'series'		=> $this->mdunion->groupby_series($this->language),
 			'products'		=> $this->mdunion->products_catalog_limit($this->language,12,$from),
+			'quote'			=> $this->mdquote->read_random_record($this->language.'_quote',1),
 			'pages'			=> array(),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
@@ -503,6 +509,7 @@ class Users_interface extends CI_Controller{
 			'userinfo'		=> $this->user,
 			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
 			'products'		=> $this->mdunion->products_filtr_limit($category,'category',$this->language,9,$from),
+			'quote'			=> $this->mdquote->read_random_record($this->language.'_quote',1),
 			'pages'			=> array(),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
@@ -549,6 +556,7 @@ class Users_interface extends CI_Controller{
 			'news'			=> $this->mdevents->read_records_limit(array('1'),$this->language.'_events',5,0),
 			'medals'		=> $this->mdmedals->read_records($product,$this->language.'_medals'),
 			'readproducts'	=> $this->mdunion->products_random_without_limit($category,$product,$this->language,3),
+			'quote'			=> $this->mdquote->read_random_record($this->language.'_quote',1),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);
@@ -613,6 +621,7 @@ class Users_interface extends CI_Controller{
 			case 'category' : $image = $this->mdcategory->get_image($id,$this->language.'_category'); break;
 			case 'product' 	: $image = $this->mdproducts->get_image($id,$this->language.'_products'); break;
 			case 'medals' 	: $image = $this->mdmedals->get_image($id,$this->language.'_medals'); break;
+			case 'quote' 	: $image = $this->mdquote->get_image($id,$this->language.'_quote'); break;
 		endswitch;
 		header('Content-type: image/gif');
 		echo $image;

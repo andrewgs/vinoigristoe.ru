@@ -28,9 +28,9 @@
 				</div>
 				<div class="spline"></div>
 				<div class="quote">
-					<img src="<?=$baseurl;?>images/pushkin.jpg" alt="Пушкин А.С." />
-					<blockquote>Игристого всем!<br />Как какого?<br /> Конечно, цимлянского!</blockquote>
-					<p class="author">А.С. Пушкин</p>
+					<img src="<?=$baseurl;?>quote/viewimage/<?=$quote['id'];?>" alt="<?=$quote['name'];?>"/>
+					<blockquote><?=$quote['text'];?></blockquote>
+					<p class="author"><?=$quote['name'];?></p>
 				</div>
 				<div class="spline"></div>
 				<?php $this->load->view($language."/users_interface/includes/social-likes");?>

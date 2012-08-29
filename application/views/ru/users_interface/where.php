@@ -52,14 +52,18 @@
 							<label for="country">Страна:</label>
 							<select name="country" id="country">
 							<?php for($i=0;$i<count($countries);$i++):?>
-								<option value="<?=$countries[$i]['id'];?>"><?=$countries[$i]['title'];?></option>
+								<option value="<?=$countries[$i]['id'];?>" <?=($this->uri->segment(2) == $countries[$i]['translit'])? 'selected':'';?>><?=$countries[$i]['title'];?></option>
 							<?php endfor;?>
 							</select>
 							<label for="city">Город:</label>
 							<select name="city" id="city">
-							<?php for($i=0;$i<count($cities);$i++):?>
-								<option value="<?=$cities[$i]['id'];?>" data-country="<?=$cities[$i]['country']?>"><?=$cities[$i]['title'];?></option>
-							<?php endfor;?>
+						<?php for($i=0;$i<count($cities);$i++):?>
+							<?php if($this->uri->segment(3) == $cities[$i]['translit']):?>
+								<option value="<?=$cities[$i]['id'];?>" data-country="<?=$cities[$i]['country']?>" selected="selected"><?=$cities[$i]['title'];?></option>
+							<?php else:?>
+								<option value="<?=$cities[$i]['id'];?>"data-country="<?=$cities[$i]['country']?>"><?=$cities[$i]['title'];?></option>
+							<?php endif;?>
+						<?php endfor;?>
 							</select>
 							<button id="chPlace" type="submit" name="submit" value="submit">ОК</button>
 							<!-- <a href="<?=$this->uri->uri_string();?>" class="hide none"><img src="<?=$baseurl;?>images/close.png" alt="Закрыть" /></a> -->
@@ -143,7 +147,6 @@
 	<?php $this->load->view($language."/users_interface/includes/scripts");?>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("#country").val(1);$("#city").val(1);
 			var cur_country = $("#country option:selected").val();
 			$("#city option[data-country != "+cur_country+"]").hide();
 			$(".show-all").click(function(){$(".block-show-all").fadeIn('slow'); $(this).remove();});

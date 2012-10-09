@@ -13,53 +13,50 @@
 		
 			<article class="cf">
 				<aside>
-					<a class="aside-logo grey">Цимлянские вина</a>
+					<a class="aside-logo grey">Tsymlyansy wines</a>
+					<!--
 					<div class="quote">
 						<img src="<?=$baseurl;?>quote/viewimage/<?=$quote['id'];?>" alt="<?=$quote['name'];?>"/>
 						<blockquote><?=$quote['text'];?></blockquote>
 						<p class="author"><?=$quote['name'];?></p>
 					</div>
-					<!--
 					<div class="spline"></div>
-					<p class="text">
-						ОАО «Цимлянские вина» является<br/>одним из крупнейших предприятий<br/>на Дону. Так же это постоянно<br/>развивающееся предприятие,<br/>
-						на счету которого уже не один<br/>десяток наград за высокое качество<br/>производимой продукции.<br/>На заводе выпускается 51<br/>
-						наименование продукции, в число<br/>которых входят, игристые,<br/>шампанские и столовые вина.
-					</p>
 					-->
-					<div class="spline"></div>
 					<div class="where-to-buy">
-						<img src="<?=$baseurl;?>images/tourism.png" alt="Туры на виноградники Цилянских вин!" />
-						<h2><?=anchor('tourism','Туры на виноградники<br/> Цилянских вин!');?></h2>
+						<img src="<?=$baseurl;?>images/tourism.png" alt="Tours to Tsymlyansky vineyards!" />
+						<h2><?=anchor('#','Tours to <br />Tsymlyansky wines vineyards!');?></h2>
 					</div>
 					<div class="spline"></div>
 					<?php $this->load->view($language."/users_interface/includes/social-likes");?>
-					
 					<div class="spline"></div>
 				</aside>
 				<div id="main" role="main" class="cf">
 					<div class="wine-flag news-updates">
-						Самое<br />свежее:<br />
+						The most<br />recent:<br />
 						<?=anchor('http://vk.com/vinoigristoe','<img src="'.$baseurl.'images/vk-icon.png" alt="Вконтакте" />');?>
 						<?=anchor('https://www.facebook.com/vinoigristoe','<img src="'.$baseurl.'images/fb-icon.png" alt="Facebook" />');?>
 					</div>
 					<div class="inside">
 						<img src="<?=$baseurl;?>images/news_promo.png" alt="Каталог продукции" />
-						<h1>Где купить «Цимлянские вина»?</h1>
+						<h1>Where to buy «Tsymlansky wines»?</h1>
 						<div class="spline"></div>
 						<div class="search-widget">
 						<?=form_open($this->uri->uri_string()); ?>
-							<label for="country">Страна:</label>
+							<label for="country">Country:</label>
 							<select name="country" id="country">
 							<?php for($i=0;$i<count($countries);$i++):?>
-								<option value="<?=$countries[$i]['id'];?>"><?=$countries[$i]['title'];?></option>
+								<option value="<?=$countries[$i]['id'];?>" <?=($this->uri->segment(2) == $countries[$i]['translit'])? 'selected':'';?>><?=$countries[$i]['title'];?></option>
 							<?php endfor;?>
 							</select>
-							<label for="city">Город:</label>
+							<label for="city">City:</label>
 							<select name="city" id="city">
-							<?php for($i=0;$i<count($cities);$i++):?>
-								<option value="<?=$cities[$i]['id'];?>" data-country="<?=$cities[$i]['country']?>"><?=$cities[$i]['title'];?></option>
-							<?php endfor;?>
+						<?php for($i=0;$i<count($cities);$i++):?>
+							<?php if($this->uri->segment(3) == $cities[$i]['translit']):?>
+								<option value="<?=$cities[$i]['id'];?>" data-country="<?=$cities[$i]['country']?>" selected="selected"><?=$cities[$i]['title'];?></option>
+							<?php else:?>
+								<option value="<?=$cities[$i]['id'];?>"data-country="<?=$cities[$i]['country']?>"><?=$cities[$i]['title'];?></option>
+							<?php endif;?>
+						<?php endfor;?>
 							</select>
 							<button id="chPlace" type="submit" name="submit" value="submit">ОК</button>
 							<!-- <a href="<?=$this->uri->uri_string();?>" class="hide none"><img src="<?=$baseurl;?>images/close.png" alt="Закрыть" /></a> -->
@@ -74,13 +71,13 @@
 						<div class="spline"></div>
 						<div class="delivery cf">
 							<img src="<?=$baseurl;?>images/delivery.jpg" alt="" />
-							<h2>Доставка Цимлянских вин по Москве</h2>
-							<span class="phone">Телефон:+7(499) 755-80-30</span>
+							<h2>Tsimlyansky wines delivery in Moscow</h2>
+							<span class="phone">Phone: +7(499) 755-80-30</span>
 						</div>
 						<div class="spline"></div>
 						<div class="shops cf">
 							<div class="column">
-								<h3>Фирменные магазины:</h3>
+								<h3>Company Stores:</h3>
 							<?php 
 								$cntfs = count($firms_shops);
 								$cntcs = count($chain_shops);
@@ -110,7 +107,7 @@
 							<?php endif;?>
 							</div>
 							<div class="column">
-								<h3>Сетевые магазины:</h3>
+								<h3>Chain Stores:</h3>
 								<?php for($i=0;$i<$cntcs;$i++):?>
 								<div class="shop-item">
 									<div class="title"><?=$chain_shops[$i]['title'];?></div>
@@ -132,7 +129,7 @@
 							</div>
 							<div class="cf"> </div>
 						<?php if($show):?>
-							<?=anchor('#','Показать еще',array('class'=>'show-all none'));?>
+							<?=anchor('#','Show more',array('class'=>'show-all none'));?>
 						<?php endif;?>
 						</div>
 					</div>
@@ -143,7 +140,6 @@
 	<?php $this->load->view($language."/users_interface/includes/scripts");?>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("#country").val(1);$("#city").val(1);
 			var cur_country = $("#country option:selected").val();
 			$("#city option[data-country != "+cur_country+"]").hide();
 			$(".show-all").click(function(){$(".block-show-all").fadeIn('slow'); $(this).remove();});

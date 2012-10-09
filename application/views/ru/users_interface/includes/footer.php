@@ -25,7 +25,7 @@
 			<nav>
 				<ul>
 					<li><?=anchor('','Главная страница');?></li>
-					<li><?=anchor('company','О компании');?></li>
+					<li><?=anchor('tradition','О компании');?></li>
 					<li><?=anchor('tourism','Винный туризм');?></li>
 					<li><?=anchor('events','Выставки и события');?></li>
 					<li><?=anchor('production','Продукция');?></li>

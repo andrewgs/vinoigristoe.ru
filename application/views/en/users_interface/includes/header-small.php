@@ -8,13 +8,13 @@
 		</aside>
 		<nav role="main">
 			<ul>
-				<li class="home"><?=anchor('','Главная');?></li>
-				<li class="production"><?=anchor('production','Продукция');?></li>
-				<li class="events"><?=anchor('#','События');?></li>
-				<li class="company"><?=anchor('tradition','Компания');?></li>
-				<li class="where"><?=anchor('where','Где купить');?></li>
-				<li class="tourism"><?=anchor('tourism','Туризм');?></li>
-				<li class="contacts"><?=anchor('contacts','Контакты');?></li>
+				<li class="home"><?=anchor('','Main');?></li>
+				<li class="production"><?=anchor('production','Products');?></li>
+				<li class="events"><?=anchor('#','Events');?></li>
+				<li class="company"><?=anchor('tradition','Company');?></li>
+				<li class="where"><?=anchor('where','Where to Buy');?></li>
+				<li class="tourism"><?=anchor('tourism','Tourism');?></li>
+				<li class="contacts"><?=anchor('contacts','Contacts');?></li>
 			</ul>
 		</nav>
 	</section>

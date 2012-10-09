@@ -24,12 +24,12 @@
 			</div>
 			<nav>
 				<ul>
-					<li><?=anchor('','Главная страница');?></li>
-					<li><?=anchor('company','О компании');?></li>
-					<li><?=anchor('tourism','Винный туризм');?></li>
-					<li><?=anchor('events','Выставки и события');?></li>
-					<li><?=anchor('production','Продукция');?></li>
-					<li><?=anchor('contacts','Контактные данные');?></li>
+					<li><?=anchor('','Main page');?></li>
+					<li><?=anchor('tradition','About');?></li>
+					<li><?=anchor('tourism','Wine tourism');?></li>
+					<li><?=anchor('events','Exhibitions and events');?></li>
+					<li><?=anchor('production','Production');?></li>
+					<li><?=anchor('contacts','Contacts');?></li>
 				</ul>
 			</nav>
 			<div class="copyright">
@@ -37,8 +37,8 @@
 					<?=anchor('','<img src="'.$baseurl.'images/logger.png" alt="" />');?>
 					<?=anchor('','<img src="'.$baseurl.'images/rambler.png" alt="" />');?>
 				</div>
-				<p>© 1995–2012<br/>ОАО «ЦИМЛЯНСКИЕ ВИНА»</p>
-				<p>При копировании материалов<br/>сайта ссылка на источник<br/>обязательна!</p>
+				<p>© 1995–2012<br/>JSC «Tsimlyansk Wines»</p>
+				<p>When copying materials from <br/>this site link is required</p> 
 			</div>
 		</section>
 	</div>

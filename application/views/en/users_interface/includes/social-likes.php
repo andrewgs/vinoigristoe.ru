@@ -1,5 +1,5 @@
 <div class="social-likes">
-	<p>Нравятся цимлянские вина?<br/>Расскажите о нем друзьям!</p>
+	<p>Like Tsimlyansky wines?<br/>Tell friends about us!</p>
 	<div class="like">
 		<!--<div id="vk_like"></div>-->
 		<img src="<?=$baseurl;?>images/vk.png" alt="" />

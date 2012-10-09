@@ -13,27 +13,20 @@
 		
 			<article class="cf">
 				<aside>
-					<a class="aside-logo">Цимлянские вина</a>
+					<a class="aside-logo">Tsymlyansky wines</a>
+					<!--
 					<div class="quote">
 						<img src="<?=$baseurl;?>quote/viewimage/<?=$quote['id'];?>" alt="<?=$quote['name'];?>"/>
 						<blockquote><?=$quote['text'];?></blockquote>
 						<p class="author"><?=$quote['name'];?></p>
 					</div>
 					<div class="spline"></div>
-					<?=anchor('vinoigristoe_catalog.pdf','<img src="'.$baseurl.'images/pdf.png" alt="pdf" />Скачать каталог',array('class'=>'download'));?>
-					<!--
-					<div class="spline"></div>
-					<p class="text">
-						ОАО «Цимлянские вина» является<br/>одним из крупнейших предприятий<br/>на Дону. Так же это постоянно<br/>
-						развивающееся предприятие,<br/>на счету которого уже не один<br/>десяток наград за высокое качество<br/> 
-						производимой продукции.<br/>На заводе выпускается 51<br/>наименование продукции, в число<br/>
-						которых входят, игристые,<br/>шампанские и столовые вина.
-					</p>
 					-->
+					<?=anchor('vinoigristoe_catalog.pdf','<img src="'.$baseurl.'images/pdf.png" alt="pdf" />Download catalog',array('class'=>'download'));?>
 					<div class="spline"></div>
 					<div class="where-to-buy">
-						<img src="<?=$baseurl;?>images/where_to_buy.png" alt="Где купить Цимлянские вина?" />
-						<h2><?=anchor('where','Где купить<br/> Цимлянские вина?');?></h2>
+						<img src="<?=$baseurl;?>images/where_to_buy.png" alt="Where to buy Tsimlyansky Wines?" />
+						<h2><?=anchor('where','Where to buy<br/> Tsimlyansky Wines?');?></h2>
 					</div>
 					<div class="spline"></div>
 					<?php $this->load->view($language."/users_interface/includes/social-likes");?>
@@ -41,11 +34,11 @@
 				</aside>
 				<div id="main" role="main" class="cf">
 					<div class="wine-flag">
-						<?=anchor('tourism','Хотите <br />в винный <br />тур?');?>
+						<?=anchor('tourism','Want <br />to wine <br />tour?');?>
 					</div>
 					<div class="inside">
-						<img src="<?=$baseurl;?>images/caralog_promo.png" alt="Каталог продукции" />
-						<h1>Цимлянские вина</h1>
+						<img src="<?=$baseurl;?>images/caralog_promo.png" alt="The product catalog" />
+						<h1>Tsimlyansky Wines</h1>
 						<div class="spline"></div>
 						<ul class="categories cf">
 							<li><?=anchor('production/category/'.$category[0]['translit'],'<span class="type red"></span>'.$category[0]['title']);?></li>
@@ -94,7 +87,7 @@
 								<p class="category-name"><?=$products[$j]['ctitle'];?></p>
 								<p class="item-name">
 									<?=anchor('production/category/'.$products[$j]['ctranslit'].'/series/'.$products[$j]['stranslit'].'/product/'.$products[$j]['translit'],$products[$j]['title']);?>
-									<? if (strlen($products[$j]['title']) < 50) : ?>
+									<? if ( (mb_strlen($products[$j]['title']) < 42 and str_word_count($products[$j]['title']) > 4) or (mb_strlen($products[$j]['title']) < 37) ) : ?>
 									<br /><br />
 									<? endif; ?>	
 								</p>

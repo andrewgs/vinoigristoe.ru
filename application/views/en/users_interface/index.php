@@ -15,40 +15,40 @@
 			<section class="main-directions cf">
 				<div class="column">
 					<img src="<?$baseurl;?>images/traditions.png" alt="" />
-					<h2><?=anchor('tradition','Наследие');?></h2>
+					<h2><?=anchor('tradition','Heritage');?></h2>
 					<!--<p>Цимлянская зона виноделия одна из древнейших в России, уже в XVII веке Цимлянские вина были известны за пределами России.</p>-->
 				</div>
 				<div class="column-sep"></div>
 				<div class="column">
 					<img src="<?$baseurl;?>images/events.png" alt="" />
-					<h2><?=anchor('proizvodstvo','Производство');?></h2>
+					<h2><?=anchor('proizvodstvo','Production');?></h2>
 					<!--<p>Мы учитываем опыт прежних поколений и используем как традиционные, так и инновационные технологии производства.</p>-->
 				</div>
 				<div class="column-sep"></div>
 				<div class="column">
 					<img src="<?$baseurl;?>images/eco.png" alt="" />
-					<h2><?=anchor('vinogradniki','Виноградники');?></h2>
+					<h2><?=anchor('vinogradniki','Vineyards');?></h2>
 					<!--<p>Наши виноградники растут в уникальных климатических условиях долины Дона.</p>-->
 				</div>
 			</section>
 			<section class="book cf">
 				<div class="column first">
-					<h3>Наша новинка!</h3>
+					<h3>Our new wine!</h3>
 					<div class="page">
 						<div class="page-inside">
 							<img src="<?$baseurl;?>images/left-page.jpg" alt="Информация о левой странице" />
 						</div>
 					</div>
-					<p><?=anchor('production','Перейти в полный каталог продукции');?></p>
+					<p><?=anchor('production','Go to the product catalog');?></p>
 				</div>
 				<div class="column">
-					<h3>Выставка и акции</h3>
+					<h3>Exhibitions and events</h3>
 					<div class="page">
 						<div class="page-inside">
 							<img src="<?$baseurl;?>images/right-page.jpg" alt="Информация о правой странице" />
 						</div>
 					</div>
-					<p><?=anchor('events','Смотреть все выставки и акции');?></p>
+					<p><?=anchor('events','See all exhibitions and events');?></p>
 				</div>
 			</section>
 			<section class="news cf">
@@ -60,15 +60,12 @@
 			<?php endfor; ?>
 			</section>
 			<section class="tourism-promo cf">
-				<h2>Винный<br/>туризм</h2>
+				<h2>Wine<br/>tourism</h2>
 				<!-- -->
 				<p>
-					Винный туризм – это уникальная возможность 
-					проникнуться местом, атмосферой и процессом 
-					создания нашего вина. Вы сможете посетить
-					Цимлянские виноградники и увидеть процесс 
-					превращения винограда в древний благородный 
-					напиток. 
+					Enotours or wine tourism is a unique opportunity to experience the place, 
+					the atmosphere and the process of our winemaking. You can visit the Tsimlyansky 
+					vineyards to learn firsthand how grapes turn into a fine ancient beverage. 
 				</p>
 				<!--
 				<p>
@@ -81,7 +78,7 @@
 					вина прямо на месте.
 				</p>
 				-->
-				<?=anchor('tourism','Подробнее о винных турах');?>
+				<?=anchor('tourism','More about wine tours');?>
 			</section>
 		</div>
 	</div>

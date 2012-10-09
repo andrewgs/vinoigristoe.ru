@@ -135,6 +135,7 @@ header nav li.contacts.active a { color: #c4cbcd; }
 #translation ul { margin: 0 0 0 4.25em; padding: 0; }
 #translation li a { float: left; display: block; color: #333; }
 #translation li.ru a { background: url('../images/sprites.png') 0 0 no-repeat; width: 29px; height: 32px; text-indent: -9999px; margin-right: 1.5em; }
+/* #translation { visibility: hidden; } */
 
 #navigation { height: 5em; }
 #promo-section { }
@@ -165,7 +166,7 @@ p.caption { text-transform: uppercase; font-size: 1.5em; line-height: 3.5em; tex
 .book .column.first { margin-right: 1.75em; }
 .book .column.first h3 { color: #399; }
 .book .page { border: 1px solid #ccc; padding: 0.5em; background: #fff; } 
-.book .page-inside { border: 1px solid #ccc; height: 34.7em; }
+.book .page-inside { border: 1px solid #ccc; height: 34.75em; }
 .book p { text-align: center; }
 .book p a { color: #221e1f; text-decoration: underline; padding: 0.05em 1em; background: #efefef; display: inline-block; border-radius: 20px; margin: 1.5em 0; }
 
@@ -236,7 +237,7 @@ article #main .inside h1 { color: #201c1d; font-size: 2.5em; margin: 0.5em 0 0.6
 .inside .categories { margin: 1em; padding: 0; max-width: 45em; text-align: center; }
 .inside .categories li { display: inline; }
 .inside .categories li.ml1em { margin-left: 1.75em; }
-.inside .categories a { display: inline-block; color: #000; font-size: 1.1em; margin: 0.3em 2em 0.45em 0; position: relative; padding-left: 1.85em; }
+.inside .categories a { display: inline-block; color: #000; font-size: 1.05em; margin: 0.3em 2em 0.45em 0; position: relative; padding-left: 1.85em; font-family: Georgia, serif; }
 .inside .categories a .type { width: 26px; height: 26px; background: url('../images/sprites.png') 0 0 no-repeat transparent; position: absolute; top: 0; left: 0; display: inline-block; }
 .inside .categories a .type.white { background-position: -402px 0; }
 .inside .categories a .type.red { background-position: -402px -29px; }
@@ -252,8 +253,8 @@ article #main .inside h1 { color: #201c1d; font-size: 2.5em; margin: 0.5em 0 0.6
 .inside .items-list { text-align: center; }
 .inside .items-list .category-item { width: 13.75em; text-align: center; display: inline-block; height: 20em; margin: 2em 0 0; }
 .inside .items-list .category-item .category-name { font-family: Arial, Helvetica, sans-serif; font-size: 0.8em; color: #666; margin: 1.5em 0 0; }
-.inside .items-list .category-item .item-name { color: #221e1f; text-decoration: underline; font-size: 1.1em; margin-bottom: 0; }
-.inside .items-list .category-item .item-name a { color: #221E1F !important; }
+.inside .items-list .category-item .item-name { color: #221E1F; font-family: georgia,serif; font-size: 0.95em; margin-bottom: 0; }
+.inside .items-list .category-item .item-name a { border-bottom: 1px solid; color: #221E1F !important; text-decoration: none; }
 .inside .items-list .category-item img { /*max-width: 3.875em;*/ max-height: 12.85em; }
 .inside .pagination { text-align: center; margin: 2em 0 0; }
 .inside .pagination a { color: #717171; display: inline-block; padding: 0.5em 0.75em; font-family: Arial, Helvetica, sans-serif; font-weight: bold; background: #f7f7f7; border: 1px solid #b9b9b9; line-height: 1em; font-size: 0.75em; text-decoration: none; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; box-shadow: 0 2px 10px #ccc; }
@@ -376,8 +377,6 @@ article #main .column .spline { margin: 0.75em 0; }
 #main .contact { padding: 1em 1.618em; }
 #main #contacts-form legend { color: #201c1d; font-size: 2em; margin: 0 0 0.9em; font-style: italic; text-align: left; line-height: 1.1em; }
 #main #contacts-form label { display: block; font-family: helvetica,arial,sans-serif; font-size: 0.8em; margin: 0.5em 0 0.25em; font-style: normal; }
-
-#translation { visibility: hidden; }
 
 /* 6. CUSTOM LAYOUT & TYPOGRAPHY (Baby bear)
 ----------------------------------------------------------------------------------------*/

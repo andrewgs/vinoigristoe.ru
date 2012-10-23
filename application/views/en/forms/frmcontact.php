@@ -1,5 +1,5 @@
 <?=form_open($this->uri->uri_string(),array('id'=>'contacts-form','name'=>'contacts-form')); ?>
-	<legend>Форма обратной связи</legend>
+	<legend>Feedback Form</legend>
 	<div class="control-group">
 		<label for="name">Представьтесь пожалуйста</label>
 		<input type="text" class="inpval" name="name" id="name" value="">

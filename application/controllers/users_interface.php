@@ -692,6 +692,7 @@ class Users_interface extends CI_Controller{
 	}
 	
 	public function set_21age(){
+	
 		$statusval = array('status'=>TRUE);
 		$age = trim($this->input->post('age'));
 		if(!$age):

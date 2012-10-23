@@ -50,14 +50,14 @@
 							<img src="<?$baseurl;?>images/right-page.jpg" alt="Информация о правой странице" />
 						</div>
 					</div>
-					<p><?=anchor('events','Смотреть все выставки и акции');?></p>
+					<p><?=anchor('events','Смотреть все выставки и акции',array('class'=>'none'));?></p>
 				</div>
 			</section>
 			<section class="news cf">
 			<?php for($i=0;$i<count($news);$i++):?>
 				<div class="column">
 					<div class="date"><?=$news[$i]['date'];?></div>
-					<?=anchor('news/'.$news[$i]['translit'],$news[$i]['title']);?>
+					<?=anchor('news/'.$news[$i]['translit'],$news[$i]['title'],array('class'=>'none'));?>
 				</div>
 			<?php endfor; ?>
 			</section>

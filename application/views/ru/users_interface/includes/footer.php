@@ -1,5 +1,5 @@
 <footer>
-	<div class="container" class="cf">
+	<div class="container cf">
 		<section class="cf">
 			<div class="social-widget">
 				<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?49"></script>
@@ -27,7 +27,7 @@
 					<li><?=anchor('','Главная страница');?></li>
 					<li><?=anchor('tradition','О компании');?></li>
 					<li><?=anchor('tourism','Винный туризм');?></li>
-					<li><?=anchor('events','Выставки и события');?></li>
+					<li><?=anchor('events','Выставки и события',array('class'=>'none'));?></li>
 					<li><?=anchor('production','Продукция');?></li>
 					<li><?=anchor('contacts','Контактные данные');?></li>
 				</ul>

@@ -13,13 +13,13 @@
 		
 			<article class="cf">
 				<aside>
-					<a class="aside-logo purple">Цимлянские вина</a>
+					<a class="aside-logo purple">Tsymlyansky Wines</a>
 					<div class="quote">
 						<img src="<?=$baseurl;?>quote/viewimage/<?=$quote['id'];?>" alt="<?=$quote['name'];?>"/>
 						<blockquote><?=$quote['text'];?></blockquote>
 						<p class="author"><?=$quote['name'];?></p>
 					</div>
-					<h2>Наши новости</h2>
+					<h2>Our news</h2>
 					<div class="news-list cf">
 					<?php for($i=0;$i<count($news);$i++):?>
 						<div class="news-item">
@@ -33,27 +33,27 @@
 				</aside>
 				<div id="main" role="main" class="cf">
 					<div class="inside">
-						<img src="<?=$baseurl;?>images/product_promo.png" alt="Каталог продукции" />
+						<img src="<?=$baseurl;?>images/product_promo.png" alt="Production catalog" />
 						<div class="product-info cf">
 							<div class="column center">
 								<div class="product-view">
 									<img src="<?=$baseurl;?>product/viewimage/<?=$product['id'];?>" alt="<?=$product['title'];?>" title="<?=$product['title'];?>" style="" />
 								</div>
-								<img src="<?=$baseurl;?>images/where_to_buy_small.png" alt="Где купить Цимлянское?" />
-								<?=anchor('where','Где купить это вино?',array('class'=>'where-to-buy-small'));?>
+								<img src="<?=$baseurl;?>images/where_to_buy_small.png" alt="Where to buy Tsymlyanskoe?" />
+								<?=anchor('where','Where to buy this wine?',array('class'=>'where-to-buy-small'));?>
 								<?php $this->load->view($language."/users_interface/includes/social-likes");?>
 							</div>
 							<div class="column left">
 								<ul class="breadcrumb">
-									<li><?=anchor('production','Продукция');?> <span class="divider">/</span></li>
+									<li><?=anchor('production','Production');?> <span class="divider">/</span></li>
 									<li><?=anchor('production/category/'.$product['ctranslit'],$product['ctitle']);?> <span class="divider">/</span></li>
 									<li><?=anchor($this->uri->uri_string(),$product['title']);?></li>
 								</ul>
 								<h1><?=$product['title']?></h1>
 								<div class="spline"></div>
 								<p><?=$product['type']?></p>
-								<p>Спирт: <?=$product['alcohol'];?></p>
-								<p>Сахар: <?=$product['sugar'];?></p>
+								<p>Alcohol: <?=$product['alcohol'];?></p>
+								<p>Sugar: <?=$product['sugar'];?></p>
 								<div class="spline"></div>
 							<?php if(count($medals)):?>
 								<p class="medals">
@@ -72,7 +72,12 @@
 							<div class="category-item">	
 								<img src="<?=$baseurl;?>product/viewimage/<?=$readproducts[$i]['id'];?>" alt="<?=$readproducts[$i]['title'];?>" title="<?=$readproducts[$i]['title'];?>" style="" />
 								<p class="category-name"><?=$readproducts[$i]['ctitle'];?></p>
-								<p class="item-name"><?=anchor('production/category/'.$readproducts[$i]['ctranslit'].'/series/'.$readproducts[$i]['stranslit'].'/product/'.$readproducts[$i]['translit'],$readproducts[$i]['title']);?>	</p>
+								<p class="item-name">
+									<?=anchor('production/category/'.$readproducts[$i]['ctranslit'].'/series/'.$readproducts[$i]['stranslit'].'/product/'.$readproducts[$i]['translit'],$readproducts[$i]['title']);?>
+									<? if ( (mb_strlen($readproducts[$i]['title']) < 42 and str_word_count($readproducts[$i]['title']) > 4) or (mb_strlen($readproducts[$i]['title']) < 37) ) : ?>
+									<br /><br />
+									<? endif; ?>	
+								</p>
 							</div>
 						<?php endfor;?>
 						</div>

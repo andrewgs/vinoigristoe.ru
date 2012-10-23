@@ -9,70 +9,28 @@
 	
 <body>
 	<div class="container" class="cf">
-			<header>
-				<section id="navigation" class="cf">
-					<aside id="translation">
-						<ul>
-							<li class="ru"><?=anchor('change-language/ru','Ru');?></li>
-							<li class="en"><?=anchor('change-language/en','En');?></li>
-						</ul>
-					</aside>
-					<nav role="main">
-						<ul>
-							<li class="home"><?=anchor('','Главная');?></li>
-							<li class="production"><?=anchor('production','Продукция');?></li>
-							<li class="events"><?=anchor('#','События');?></li>
-							<li class="company"><?=anchor('tradition','Компания');?></li>
-							<li class="where"><?=anchor('where','Где купить');?></li>
-							<li class="tourism"><?=anchor('tourism','Туризм');?></li>
-							<li class="contacts"><?=anchor('contacts','Контакты');?></li>
-						</ul>
-					</nav>
-				</section>
-				<section id="promo-section" class="cf">
-					<aside>
-						<a id="logo">Цимлянские вина</a>
-						<p class="caption">
-							Цимлянское
-						</p>
-						<div class="social cf">
-							<div class="spline top"></div>
-							<p>Мы в социальных сетях:</p>
-							<ul>
-								<li><a href="#"><span class="vk">&nbsp;</span>Вконтакте</a></li>
-								<li><a href="#"><span class="fb">&nbsp;</span>Facebook</a></li>
-							</ul>
-							<div class="spline bottom"></div>
-						</div>
-					</aside>
-					<div class="promo-slide">
-						<div class="promo-inside">
-							<img src="<?=$baseurl;?>images/eco-promo.jpg" alt="" />
-						</div>
-					</div>
-				</section>
-			</header>
+			<?php $this->load->view($language."/users_interface/includes/header-big");?>
+			
 			<div id="main" role="main">
 				<section class="art company-page bg cf">
 					<h2>
-						Увлекательный день с посещением производства и виноградников компании «Цимлянские вина»
+						An exciting day with a visit to the <br/>Tsimlyansky wines vineyards and produce
 					</h2>
 					<div class="ornament-sep"> </div>
 					<div class="column">
 						<p class="pt1em">
-							Винный туризм – это уникальная возможность проникнуться местом, атмосферой и процессом создания нашего вина. 
-							Вы сможете посетить виноградники, расположенные на берегу Цимлянского водохранилища и увидеть, процесс превращения 
-							винограда в древний благородный напиток, воочию увидеть все этапы производства, от поступления бутылки на конвейер, 
-							до розлива и нанесения этикетки. Так же вы сможете увидеть выдержку вина в дубовых бочках и процесс бутылочной 
-							шампанизации нашей премиальной линейки игристых вин.
+							Enotourism or wine tourism is a unique opportunity to experience the place, the atmosphere and the process of our 
+							winemaking. You can visit our vineyards along the shores of the Tsimlyansk Reservoir to learn firsthand how grapes 
+							turn into a fine ancient beverage, to see all the stages of production all the way to bottling and labeling. Also, 
+							you can observe the oak barrel wine aging and bottle champagnization techniques for our premium line of sparkling wines. 
+
 						</p>
 						<p>
-							Компания «Цимлянские вина» совместно с туристической компанией Орион предлагают 
-							Вам провести увлекательный день на нашем производстве
-							и виноградниках, а также продегустировать нашу продукцию.
+							The Tsimlyansky Wine company and Orion tour agency invite you to spend an exciting day exploring the vineyards and 
+							production facilities as well as wine tasting. 
 						</p>
 						<p class="purple-italic">
-							Для больших групп и корпоративных мероприятий возможна индивидуальная программа.
+							Large groups and corporate events may request a special program.
 						</p>
 					</div>					
 					<div class="column">
@@ -84,28 +42,26 @@
 				<div class="spline"> </div>
 				<section class="tourism company-page cf">
 					<div class="column">
-						<h3>Экускурсии на производство и виноградники</h3>
+						<h3>Excursions to produce and vineyards</h3>
 						<p>
-							Экскурсия по заводу без дегустации. <br /> 
-							Группа от 2 человек &ndash; 250 рублей.
+							Factory tour without wine tasting. <br /> 
+							Groups of 2 people and more &ndash; 350 rubles per person.
 						</p>
 						<p>	
-							Экскурсия по заводу + дегустация. На дегустации будут представлены 7 базовых вин. <br />
-							Группа от 5 человек &ndash; 500 рублей.
+							Factory tour + wine tasting. Standard wine tasting features six basic varieties. <br />
+							Groups of 5 people and more &ndash; 500 rubles per person.
 						</p>
 						<p>	
-							Экскурсии по заводу с расширенной дегустацией. На дегустации будут представлены 7 премиальных вин. <br /> 
-							Группа от 5 человек &ndash; 750 рублей.
+							Factory tour with an expanded wine tasting. Expanded wine tasting featuring six premium wines. <br /> 
+							Groups of 5 people and more &ndash; 750 rubles per person.
 						</p>
 						<p>
-							Экскурсия на виноградники. <br />
-							Группа от 5 человек &ndash; 300 рублей.
-						</p>
-						<p>
-							Стоимость экскурсии указана за 1 посетителя.
+							Guided tour of the vineyards and the Right Bank of Tsimlyansky Settlement through 
+							the Tsimlyansky village for a photo shoot. <br />
+							Groups of 5 people and more &ndash; 350 rubles per person.
 						</p>
 						<p class="solid">
-							Контактный телефон турагентства Орион +7 (918) 520-43-88
+							For arrangements, please, contact Orion travel agency +7 (918) 520-43-88
 						</p>						
 					</div>
 					<div class="column">

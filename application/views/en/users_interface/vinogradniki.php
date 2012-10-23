@@ -13,73 +13,65 @@
 		
 			<article class="cf">
 				<aside>
-					<a class="aside-logo purple">Цимлянские вина</a>
+					<a class="aside-logo purple">The Tsymlyansky Wines</a>
 					<div class="where-to-buy">
-						<img src="<?=$baseurl;?>images/where_to_buy.png" alt="Где купить Цимлянские вина?" />
-						<h2><?=anchor('where','Где купить<br/> Цимлянские вина?');?></h2>
-					</div>
-					<div class="spline"></div>
-					<div class="quote">
-						<img src="<?=$baseurl;?>images/pushkin.jpg" alt="Пушкин А.С." />
-						<blockquote>Игристого всем!<br />Как какого?<br /> Конечно, цимлянского!</blockquote>
-						<p class="author">А.С. Пушкин</p>
+						<img src="<?=$baseurl;?>images/where_to_buy.png" alt="Where to buy Tsymlyansky wines?" />
+						<h2><?=anchor('where','Where to buy<br/> Tsymlyansky wines?');?></h2>
 					</div>
 				</aside>
 				<div id="main" role="main" class="cf">
 					<div class="wine-flag news-updates">
-						Самое<br />свежее:<br />
-						<?=anchor('#','<img src="'.$baseurl.'images/vk-icon.png" alt="Вконтакте" />');?>
+						The most<br />recent:<br />
+						<?=anchor('#','<img src="'.$baseurl.'images/vk-icon.png" alt="Vkontakte" />');?>
 						<?=anchor('#','<img src="'.$baseurl.'images/fb-icon.png" alt="Facebook" />');?>
 					</div>
 					<div class="inside no-padding">
 						<img src="<?=$baseurl;?>images/news_promo_new.png" alt="Каталог продукции" />
 						<div class="news-header">
-							<h1>Цимлянская зона виноделия, одна из старейших в России</h1>
+							<h1>Tsimlyanskaya winemaking area is one of the oldest in Russia</h1>
 						</div>
 						<div class="spline"></div>
 						<div class="news-body">
 							<p>
-								До затопления, Цимлянские виноградники росли преимущественно на склонах реки Дон и пассажиры, 
-								проплывавшие по реке, в том месте, где Дон прижимался к коренному берегу, а на самом верху было 
-								городище Саркел, видели сорокаметровую изумрудную стену. Бесчисленными фиолетовыми вкраплениями в ней 
-								мерцали зреющие грозди винограда. При взгляде сбоку виноградные шпалеры сливались в сплошную массу. 
-								Она казалась совершенно вертикальной̆, и все представлялось фантастической декорацией.
+								Before the completion of the Reservoir, Tsimlyansk vineyards climbed the steep slopes 
+								of the Don river up to the remains of the Sarkel fortress. To the boat and ferry passengers 
+								gazing skywards, the vines appeared as a solid 40 meter emerald wall with scattered glistening 
+								jewels of ripening grapes. 
 							</p>
 							<p>
 								<img src="<?=$baseurl;?>images/vinogradniki-1.jpg" alt="" />
 								<img src="<?=$baseurl;?>images/vinogradniki-2.jpg" alt="" />
 							</p>
 							<p>
-								В 1952 году началось заполнение Цимлянского водохранилища, старые казачьи виноградники попали в зону затопления.
-								Чтобы их спасти - пришлось пересаживать кусты вручную и при помощи машин на плато. 
+								When the Tsimlyansk Reservoir began to be filled with water in 1952, 
+								the Cossack vineyards happened to be in the flood zone. They were carefully replanted to higher 
+								ground in order to save these varieties.
 							</p>
 							<p>
 								<img src="<?=$baseurl;?>images/vinogradniki-4.jpg" alt="" />
 								<img src="<?=$baseurl;?>images/vinogradniki-5.jpg" alt="" />
 							</p>
 							<p>
-								Теперь наши виноградники 
-								занимают пощадь более 1000 гектар. И среди них спасённые из зоны затопления уникальные аборигенные сорта 
-								Цимлянский чёрный, Плечистик и Красностоп золотовский, не имеющие генетического родства с известными 
-								европейскими техническими сортами.
+								Now our vineyards stretch over an area of 1,000 hectares (or nearly 2500 acres). Among the preserved and 
+								cultivated varieties are Tsimlyansk Black, Plechistik and Krasnostopzolotovsky. They are indigenous to Don with 
+								no genetic relationship to known European grape varieties.
 							</p>
 							<p>
 								<img src="<?=$baseurl;?>images/vinogradniki-3.jpg" alt="" />
 							</p>
 							<p>
-								Все Цимлянские виноградники, в силу географического положения и особенностей климата, являются укрывными и 
-								принадлежат к самой северной зоне промышленного виноградарства в России, а их уникальность заключается также 
-								в отсутствии необходимости интенсивной̆ обработки химическими веществами в период вызревания, что позволяет 
-								называть Цимлянское вино органическим.
+								Tsimlyansk vineyards mark the northernmost wine-growing frontier in Russia. Due to our geographical location 
+								all the grown varieties are covered. Another unique aspect of soil and climate conditions is no need for chemical 
+								treatment during ripening, which allows Tsimlyansk wines to be considered organic.
 							</p>
 							<p>
 								<img src="<?=$baseurl;?>images/vinogradniki-6.jpg" alt="" />
 							</p>
 							<p>
-								Донская зона виноградарства расположена на правом берегу Дона. В год выпадает от 350 до 450 мм осадков. 
-								Почвы – черноземы и темно-каштановые, но в подпочве и, особенно на склонах, известняки начинаются уже с 
-								небольшой глубины. Вегетационный период достаточен для полного созревания винограда, но опасность представляют 
-								ранние осенние заморозки, которые случаются в отдельные годы. 
+								Our viticulture is concentrated on the right bank of the Don river. Annual rainfall is 350 to 450 mm. Topsoil is 
+								rich black and dark brown, but just below, especially on the slopes, roots may hit limestone at little depth. 
+								Vegetation period is sufficient for grapes to ripe, but early frost poses a certain danger occurring sporadically 
+								over the years.
 							</p>
 							<p>
 								<img src="<?=$baseurl;?>images/vinogradniki-7.jpg" alt="" />
@@ -87,7 +79,7 @@
 							</p>
 						</div>
 						<div class="event-likes">
-							<p>Расскажите друзьям об этом!</p>
+							<p>Tell your friends about our vineyards!</p>
 							<div class="like">
 								<img src="<?=$baseurl;?>images/vk.png" alt="" />
 							</div>	

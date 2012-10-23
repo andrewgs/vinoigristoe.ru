@@ -8,25 +8,25 @@
 		</aside>
 		<nav role="main">
 			<ul>
-				<li class="home"><?=anchor('','Главная');?></li>
-				<li class="production"><?=anchor('production','Продукция');?></li>
-				<li class="events"><?=anchor('#','События');?></li>
-				<li class="company"><?=anchor('tradition','Компания');?></li>
-				<li class="where"><?=anchor('where','Где купить');?></li>
-				<li class="tourism"><?=anchor('tourism','Туризм');?></li>
-				<li class="contacts"><?=anchor('contacts','Контакты');?></li>
+				<li class="home"><?=anchor('','Main');?></li>
+				<li class="production"><?=anchor('production','Products');?></li>
+				<li class="events"><?=anchor('#','Events');?></li>
+				<li class="company"><?=anchor('tradition','Company');?></li>
+				<li class="where"><?=anchor('where','Where to Buy');?></li>
+				<li class="tourism"><?=anchor('tourism','Tourism');?></li>
+				<li class="contacts"><?=anchor('contacts','Contacts');?></li>
 			</ul>
 		</nav>
 	</section>
 	<section id="promo-section" class="cf">
 		<aside>
-			<a id="logo">Цимлянские вина</a>
-			<p class="caption">Цимлянское</p>
+			<a id="logo">Tsimlyansky Wines</a>
+			<p class="caption">Tsimlyanskoe</p>
 			<div class="social cf">
 				<div class="spline top"></div>
-				<p>Мы в социальных сетях:</p>
+				<p>Follow us on:</p>
 				<ul>
-					<li><?=anchor('http://vk.com/vinoigristoe','<span class="vk">&nbsp;</span>Вконтакте');?></li>
+					<li><?=anchor('http://vk.com/vinoigristoe','<span class="vk">&nbsp;</span>Vkontakte');?></li>
 					<li><?=anchor('https://www.facebook.com/vinoigristoe','<span class="fb">&nbsp;</span>Facebook');?></li>
 				</ul>
 				<div class="spline bottom"></div>

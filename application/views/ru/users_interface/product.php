@@ -72,7 +72,12 @@
 							<div class="category-item">	
 								<img src="<?=$baseurl;?>product/viewimage/<?=$readproducts[$i]['id'];?>" alt="<?=$readproducts[$i]['title'];?>" title="<?=$readproducts[$i]['title'];?>" style="" />
 								<p class="category-name"><?=$readproducts[$i]['ctitle'];?></p>
-								<p class="item-name"><?=anchor('production/category/'.$readproducts[$i]['ctranslit'].'/series/'.$readproducts[$i]['stranslit'].'/product/'.$readproducts[$i]['translit'],$readproducts[$i]['title']);?>	</p>
+								<p class="item-name">
+									<?=anchor('production/category/'.$readproducts[$i]['ctranslit'].'/series/'.$readproducts[$i]['stranslit'].'/product/'.$readproducts[$i]['translit'],$readproducts[$i]['title']);?>
+									<? if (strlen($readproducts[$i]['title']) < 50) : ?>
+									<br /><br />
+									<? endif; ?>	
+								</p>
 							</div>
 						<?php endfor;?>
 						</div>

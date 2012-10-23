@@ -26,6 +26,7 @@ class Mdproducts extends CI_Model{
 		$this->type		= $data['type'];
 		$this->alcohol	= $data['alcohol'];
 		$this->sugar	= $data['sugar'];
+		$this->showitem = 1;
 		$this->translit	= $translit;
 		$this->category	= $category;
 		$this->series	= $series;

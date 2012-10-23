@@ -9,69 +9,30 @@
 	
 <body>
 	<div class="container" class="cf">
-			<header>
-				<section id="navigation" class="cf">
-					<aside id="translation">
-						<ul>
-							<li class="ru"><?=anchor('change-language/ru','Ru');?></li>
-							<li class="en"><?=anchor('change-language/en','En');?></li>
-						</ul>
-					</aside>
-					<nav role="main">
-						<ul>
-							<li class="home"><?=anchor('','Главная');?></li>
-							<li class="production"><?=anchor('production','Продукция');?></li>
-							<li class="events"><?=anchor('#','События');?></li>
-							<li class="company active"><?=anchor('tradition','Компания');?></li>
-							<li class="where"><?=anchor('where','Где купить');?></li>
-							<li class="tourism"><?=anchor('tourism','Туризм');?></li>
-							<li class="contacts"><?=anchor('contacts','Контакты');?></li>
-						</ul>
-					</nav>
-				</section>
-				<section id="promo-section" class="cf">
-					<aside>
-						<a id="logo">Цимлянские вина</a>
-						<p class="caption">
-							Цимлянское
-						</p>
-						<div class="social cf">
-							<div class="spline top"></div>
-							<p>Мы в социальных сетях:</p>
-							<ul>
-								<li><a href="#"><span class="vk">&nbsp;</span>Вконтакте</a></li>
-								<li><a href="#"><span class="fb">&nbsp;</span>Facebook</a></li>
-							</ul>
-							<div class="spline bottom"></div>
-						</div>
-					</aside>
-					<div class="promo-slide">
-						<div class="promo-inside">
-							<img src="<?=$baseurl;?>images/tradicion_promo.jpg" alt="" />
-						</div>
-					</div>
-				</section>
-			</header>
+			<?php $this->load->view($language."/users_interface/includes/header-big");?>
+			
 			<div id="main" role="main">
 				<section class="art company-page cf">
 					<h2>
-						Наше производство и виноградники <br />находятся в одной из древнейших зон виноделия России
+						Our production and vineyards are <br />located in one of the oldest wine-making <br />areas of Russia
 					</h2>
 					<div class="ornament-sep"> </div>
 					<div class="column">
 						<p class="pt1em">
-							История Цимлянского виноделия началась ещё во времена хазарского каганата, ориентировочно IX век от Р.Х. 
-							Жители хазарской крепости Саркел, находящейся теперь на дне Цимлянского водохранилища, выращивали 
-							виноград и производили вино, что было подтверждено раскопками крепости до затопления.
+							The ancient history of Tsimlyansk winemaking dates back to the legendary times of Khazar Khanate, 
+							approximately ninth century A.D. According to archeological excavations of the area prior to 
+							construction of the Reservoir, residents of the Khazar fortress Sarkel, a site now submerged, 
+							cultivated grapes and made wines.
 						</p>
 						<p>
-							После захвата крепости князем Святославом и последующего разрушения её половцами, виноделие на Дону 
-							сводится к минимуму, но виноградники переживают это смутное время и виноделие продолжается уже казаками.
+							Once Prince Svyatoslav conquered the fortress and it was subsequently destroyed in the Cuman invasion, 
+							winemaking in the Don region was under threat but the vineyards survived and the Cossacks continued the 
+							fine tradition. 
 						</p>
 					</div>					
 					<div class="column">
 						<p class="pt-75em">
-							<img src="<?=$baseurl;?>images/tradicion_frames.png" alt="Фотографии виноградников Цимлянских вин" />
+							<img src="<?=$baseurl;?>images/tradicion_frames.png" alt="" />
 						</p>
 					</div>
 					<div class="cf">
@@ -84,37 +45,38 @@
 					</div>					
 					<div class="column">
 						<h3>
-							Первым известным поклонником Цимлянского был царь Петр I
+							Peter the Great is the first known admirer of Tsymlyansky wines
 						</h3>
 						<p>
-							Первое документальное упоминание о Цимлянских винах относится ко временам императора Петра I, 
-							который после посещения в Париже дома инвалидов послал в подарок ветеранам Людовика XIV 20 
-							бочек Цимлянского красного вина. 
+							The first explicit record of Tsimlyansky wine is attributed to Peter the Great, who after visiting a 
+							military nursing home in Paris requested 20 barrels Tsimlyansk Red be sent to veterans of Louis XIV 
+							troops as a gift. 
 						</p>
-						<p>
-							Царь настолько вдохновился Цимлянским виноделием, что всячески поощрял его развитие и 
-							собственноручно посадил 5 кустов винограда во дворе казака Персиянова.
+						<p> 
+							The Russian emperor was a connoisseur of Tsimlyansky wines, making various efforts 
+							to support production development. He even planted five grape plants himself in the 
+							Cossack Persiyanov’s homestead.  
 						</p>
 					</div>
 				</section>
 				<div class="spline"> </div>
 				<section class="shampane-production company-page cf">
-					<h2>Казачье игристое</h2>
+					<h2>The Cossacks Sparkling Wine</h2>
 					<div class="ornament-sep"> </div>
 					<div class="column">
 						<p>
-							В XVIII веке казаками была придумана собственная технология производства игристых вин. 
-							Первая документально зарегистрированная бутылка Цимлянского игристого относится к 1786 году. 
-							Производилось оно, как и сейчас, из аборигенных сортов винограда Цимлянский чёрный и Плечистик.
-							Ягоды после сбора подвяливались на камышовых циновках в проветриваемом помещении. После подвяливания
-							ягоды дробились, перетирались и сливались вместе с соком в усечённые сверху чаны (подрезы).
+							In the 18th century the Cossacks invented their own sparkling wines technology.
+							The first documented bottle of Tsimlyansk Sparkling Wine is dated 1786.  
+							It has always been produced from the indigenous grape varieties Tsimlyansky Black and Plechistik. 
+							Once harvested the grapes were left to dry on reed mats in a well ventilated area. The slightly dried 
+							grapes were then crushed, pressed and mixed with juice in special containers named podrez.
 						</p>
 						<p>
-							При брожении мезга не перемешивалась, кожица поднималась на поверхность, а семена уходили на дно. Брожение начаналось 
-							осенью, шло медленно из-за высокой сахаристости и по наступлению холодов останавливалось раньше срока. 
-							Весной вино разливалось в бутылки и закупоривалось пробкой, привязанной к горлу бечёвкой, и после этого 
-							заливалось смолой. После чего брожение возобновлялось уже в бутылке и, за счёт накопления при этом углекислоты, 
-							вино становилось игристым.
+							During fermentation the mash was not stirred and so skins floated up to the surface while seeds sank 
+							to the bottom. Due to high sugar levels fermentation was slow and halted by the time cold weather arrived 
+							in late autumn. In the spring wine was bottled. Cork was tied with strings to the bottleneck and then 
+							sealed with tar. Fermentation resumed within a bottle and accumulation of carbon dioxide inside made the 
+							wine sparkling.
 						</p>
 					</div>
 					<div class="column">
@@ -131,28 +93,25 @@
 						<img class="fans" src="<?=$baseurl;?>images/platov-frame.png" alt="" />
 						<div class="fans">
 							<p class="title">
-								Следующим поклонником и благодетелем Цимлянского <br/> был казачий атаман Платов
+								The next noted Tsimlyansk enthusiast and benefactor <br />was Cossack Ataman Platov.
 							</p>
 							<p>
-								Большую роль в развитии донского виноградарства и виноделия сыграл казачий атаман Платов. 
-								Цимлянское было его самым любимым вином, и Платов везде возил с собой несколько бочонков 
-								такого вина. После разгрома наполеоновской армии Платов дал приказ своим войскам собрать 
-								и вести на Дон семена и чубуки всех известных французских сортов винограда. Часть этих 
-								сортов попала и в Цимлу. Платов энергично поддерживал виноделие, выписав виноделов с Рейна, 
-								которые за счет Войска должны были по контракту выделывать вина на манер рейнских.
+								Cossack Ataman Platov played an important role in the development of viticulture and winemaking 
+								in the Don region. Tsimlyansk varieties were his favorite wine and he carried a few barrels with 
+								him through all the campaigns. After the defeat of Napoleon's army Platov ordered his troops to 
+								gather and transplant all known French grape varieties, some of which found their way to Tsimlyansk. 
+								Later Platov commissioned winemakers from the Rhine region to manufacture Rhine-style wines on Don.
 							</p>
 						</div>
 					</div>
 					<div>
 						<div class="fans">
 							<p class="title">
-								Цимлянское &ndash; вино победы
+								Tsimlyansk is the wine of the victorious
 							</p>
 							<p>
-								Именно этим вином отметили победу над Наполеоном в Париже в 1813 году 
-								фельдмаршалл Кутузов и император Александр I.
-								Так на площади Свободы в Париже было распито три тысячи бутылок 
-								Цимлянского.
+								In 1813 three thousand bottles of Tsimlyansk wine were shipped to Paris to commemorate the great 
+								Russian victory against Napoleon.
 							</p>
 						</div>
 						<img class="fans" src="<?=$baseurl;?>images/kutuzov-frame.png" alt="" />
@@ -160,20 +119,20 @@
 				</section>
 				<div class="spline"> </div>
 				<section class="shampane-production company-page cf">
-					<h2>Промышленное производство Цимлянского игристого началось с завода, построенного <br/>великим князем Константином Николаевичем</h2>
+					<h2>Industrial production of Tsimlyansky sparkling wine began with the plant built by Great Duke <br/>Konstantin Nikolayevich </h2>
 					<div class="ornament-sep"> </div>
 					<div class="column">
 						<p>
-							До революции вино делали преимущественно казаки - частники. В Цимлянской станице 
-							насчитывалось 1200 виноградников. В 1880 году великим князем Константином Николаевичем 
-							было решено построить спиртово-водочный цех в станице Цимлянской.
+							Before the revolution winemaking was primarily a private Cossack trade. There 1200 small vineyards 
+							around Tsymliansk. In 1880 the Grand Duke Konstantin Nikolayevich decided to open a spirits 
+							and vodka manufacturing workshop in Tsymliansk.
 						</p>
 					</div>
 					<div class="column">
 						<p>
-							Именно на его базе после революции был основан Цимлянский винсовхоз. Во время войны завод 
-							был разрушен. Но производство продолжалось под открытым небом до тех пор, 
-							пока не был построен современный завод Цимлянских вин. 
+							After the 1917 Revolution it was transformed into the Tsimlyansk Winemaking Collective (sovhoz). 
+							During World War II, the production lines were destroyed. Open air efforts to preserve winemaking 
+							tradition continued until the construction of our modern facility and release of its first bottle in 1966.  
 						</p>
 					</div>
 					<div class="cf">
@@ -181,17 +140,14 @@
 					</div>
 					<div class="column">
 						<p>
-							Первая бутылка была выпущена на новом 
-							заводе в 1966 году. А игристое вино, произведённое старым казачьим способом, было отмечено 
-							золотом в Румынии уже в 1968 году. В настоящие дни производственный оборот тихих и игристых 
-							вин составляет 11 миллионов бутылок в год.
+							And already in 1968 our sparkling wine made the old Cossack way was awarded gold medal at an international 
+							wine competition in Romania. Now were produce 11 million bottles of different wines a year.
 						</p>
 					</div>
 					<div class="column">
 						<p>
-							Производятся закупки нового оборудования. Постоянно 
-							расширяется ассортимент продукции. Используются как классический бутылочный, так и резервуарный 
-							методы производства игристых вин.
+							We invest in new equipment and technology and continually develop our product selection using classic in-bottle 
+							champagnization and reservoir methods of making sparkling wines.
 						</p>
 					</div>
 					<div class="cf">
@@ -200,7 +156,7 @@
 				</section>
 				<div class="spline"> </div>
 				<section class="company-page art-sample cf">
-					<h2>Продолжение следует ...</h2>
+					<h2>To be continued ...</h2>
 					<div class="ornament-sep"> </div>
 				</section>
 			</div>

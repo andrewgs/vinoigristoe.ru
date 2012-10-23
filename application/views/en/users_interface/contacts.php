@@ -13,44 +13,35 @@
 		
 			<article class="cf">
 				<aside>
-					<a class="aside-logo grey">Цимлянские вина</a>
+					<a class="aside-logo grey">Tsymlyansky wines</a>
 					<div class="quote">
 						<img src="<?=$baseurl;?>quote/viewimage/<?=$quote['id'];?>" alt="<?=$quote['name'];?>"/>
 						<blockquote><?=$quote['text'];?></blockquote>
 						<p class="author"><?=$quote['name'];?></p>
 					</div>
-					<!--
-					<div class="spline"></div>
-					<p class="text">
-						ОАО «Цимлянские вина» является<br/>одним из крупнейших предприятий<br/>на Дону. Так же это постоянно<br/>развивающееся предприятие,<br/>
-						на счету которого уже не один<br/>десяток наград за высокое качество<br/>производимой продукции.<br/>На заводе выпускается 51<br/>
-						наименование продукции, в число<br/>которых входят, игристые,<br/>шампанские и столовые вина.
-					</p>
-					-->
 					<div class="spline"></div>
 					<div class="where-to-buy">
-						<img src="<?=$baseurl;?>images/tourism.png" alt="Туры на виноградники Цилянских вин!" />
-						<h2><?=anchor($this->uri->uri_string(),'Туры на виноградники<br/> Цилянских вин!',array('class'=>'none'));?></h2>
+						<img src="<?=$baseurl;?>images/tourism.png" alt="Tours to Tsymlyansky vineyards!" />
+						<h2><?=anchor('#','Tours to <br />Tsymlyansky wines vineyards!');?></h2>
 					</div>
 					<div class="spline"></div>
 					<?php $this->load->view($language."/users_interface/includes/social-likes");?>
-					
 					<div class="spline"></div>
 				</aside>
 				<div id="main" role="main" class="cf">
 					<div class="wine-flag news-updates">
-						Самое<br />свежее:<br />
-						<?=anchor('http://vk.com/vinoigristoe','<img src="'.$baseurl.'images/vk-icon.png" alt="Вконтакте" />');?>
+						The most<br />recent:<br />
+						<?=anchor('http://vk.com/vinoigristoe','<img src="'.$baseurl.'images/vk-icon.png" alt="Vkontakte" />');?>
 						<?=anchor('https://www.facebook.com/vinoigristoe','<img src="'.$baseurl.'images/fb-icon.png" alt="Facebook" />');?>
 					</div>
 					<div class="inside">
 						<img src="<?=$baseurl;?>images/news_promo.png" alt="Каталог продукции" />
-						<h1>Контактная информация</h1>
+						<h1>Contact us</h1>
 						<div class="spline"></div>
 						<section class="contact-info">
 							<address>
-								ОАО «Цимлянские вина» <br />
-								115054, г. Москва, ул. Дубининская, д. 57, корп. 2, оф. 310 <br />
+								JSC «Tsymlyansk Wines» <br />
+								115054, Moscow, Dubininskaya street, 57, building 2, office 310 <br />
 								+7 (499) 750-01-40
 							</address>
 							<div class="contacts-map cf">
@@ -59,10 +50,10 @@
 								<script type="text/javascript" src="http://api-maps.yandex.ru/2.0/?coordorder=longlat&load=package.full&wizard=constructor&lang=ru-RU&onload=fid_134487107820731102958"></script>
 							</div>
 							<p>
-								Отдел продаж: <?= safe_mailto('sales@vinoigristoe.ru', 'sales@vinoigristoe.ru'); ?> <br />
-								Для прессы: <?= safe_mailto('pressa@vinoigristoe.ru', 'pressa@vinoigristoe.ru'); ?> <br />
-								Туризм: <?= safe_mailto('turism@vinoigristoe.ru', 'turism@vinoigristoe.ru'); ?> <br />
-								По общим вопросам: <?= safe_mailto('info@vinoigristoe.ru', 'info@vinoigristoe.ru'); ?>
+								Sales department: <?= safe_mailto('sales@vinoigristoe.ru', 'sales@vinoigristoe.ru'); ?> <br />
+								For the press: <?= safe_mailto('pressa@vinoigristoe.ru', 'pressa@vinoigristoe.ru'); ?> <br />
+								Tourism: <?= safe_mailto('turism@vinoigristoe.ru', 'turism@vinoigristoe.ru'); ?> <br />
+								General questions: <?= safe_mailto('info@vinoigristoe.ru', 'info@vinoigristoe.ru'); ?>
 							</p>
 						</section>
 						<div class="spline"></div>

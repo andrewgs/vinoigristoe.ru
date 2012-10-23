@@ -8,6 +8,9 @@
 	<?php $this->load->view($language."/users_interface/includes/head");?>
 	
 <body>
+	<?php if(!$this->session->userdata('validation_age')):?>
+	<?php $this->load->view($language."/users_interface/includes/validation-age");?>
+	<?php endif;?>
 	<div class="container" class="cf">
 			<header>
 				<section id="navigation" class="cf">
@@ -21,7 +24,7 @@
 						<ul>
 							<li class="home"><?=anchor('','Главная');?></li>
 							<li class="production"><?=anchor('production','Продукция');?></li>
-							<li class="events"><?=anchor('#','События');?></li>
+							<li class="events"><?=anchor('#','События',array("class"=>"none"));?></li>
 							<li class="company"><?=anchor('tradition','Компания');?></li>
 							<li class="where"><?=anchor('where','Где купить');?></li>
 							<li class="tourism"><?=anchor('tourism','Туризм');?></li>

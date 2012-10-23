@@ -379,7 +379,7 @@ article #main .column .spline { margin: 0.75em 0; }
 #main #contacts-form label { display: block; font-family: helvetica,arial,sans-serif; font-size: 0.8em; margin: 0.5em 0 0.25em; font-style: normal; }
 
 /* 18+ overlay */
-#overlay-18 { position: fixed; height: 100%; width: 100%; background: #fff; top: 0; left: 0; text-align: center; padding-top: 12.5em; }
+#overlay-18 { position: fixed; height: 100%; width: 100%; background: #fff; top: 0; left: 0; text-align: center; padding-top: 12.5em; z-index:2000;}
 #overlay-18 p { line-height: 1.5em; font-size: 0.9em; margin: 0 auto; }
 #overlay-18 .censor { text-transform: uppercase; display: block; font: 18px tahoma, helvetica, sans-serif; text-decoration: none; color: #333; margin: 1em 0 0; }
 #overlay-18 #censor-no { font-size: 15px; }

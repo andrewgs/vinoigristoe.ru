@@ -8,7 +8,10 @@
 	<?php $this->load->view($language."/users_interface/includes/head");?>
 	
 <body>
-	<div class="container" class="cf">
+	<?php if(!$this->session->userdata('validation_age')):?>
+	<?php $this->load->view($language."/users_interface/includes/validation-age");?>
+	<?php endif;?>
+	<div class="container cf">
 		<?php $this->load->view($language."/users_interface/includes/header-small");?>
 		
 			<article class="cf">

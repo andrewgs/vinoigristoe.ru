@@ -77,6 +77,11 @@ class Users_interface extends CI_Controller{
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | Main';
+			$pagevar['description'] = 'Sparkling wines';
+		endif;
+		
 		for($i=0;$i<count($pagevar['news']);$i++):
 			$pagevar['news'][$i]['date'] = $this->operation_dot_date($pagevar['news'][$i]['date']);
 		endfor;
@@ -101,6 +106,11 @@ class Users_interface extends CI_Controller{
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | About company';
+			$pagevar['description'] = 'Sparkling wines';
+		endif;
+		
 		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
 		$this->load->view($pagevar['language']."/users_interface/company",$pagevar);
 	}
@@ -120,6 +130,11 @@ class Users_interface extends CI_Controller{
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
+		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | Traditions';
+			$pagevar['description'] = 'Tsimlyansky wine tradition';
+		endif;
 		
 		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
 		$this->load->view($pagevar['language']."/users_interface/tradition",$pagevar);
@@ -141,6 +156,11 @@ class Users_interface extends CI_Controller{
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | Production';
+			$pagevar['description'] = 'Wine production Tsimlyansky';
+		endif;
+		
 		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
 		$this->load->view($pagevar['language']."/users_interface/proizvodstvo",$pagevar);
 	}
@@ -160,6 +180,11 @@ class Users_interface extends CI_Controller{
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
+		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | Vineyards';
+			$pagevar['description'] = 'Vineyards wines Tsimlyansky';
+		endif;
 		
 		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
 		$this->load->view($pagevar['language']."/users_interface/vinogradniki",$pagevar);
@@ -181,6 +206,11 @@ class Users_interface extends CI_Controller{
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | Sustainable production';
+			$pagevar['description'] = 'Wine production Tsimlyansky';
+		endif;
+		
 		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
 		$this->load->view($pagevar['language']."/users_interface/eco",$pagevar);
 	}
@@ -200,6 +230,11 @@ class Users_interface extends CI_Controller{
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
+		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | Wine tourism';
+			$pagevar['description'] = 'Tour of the vineyards and wine production units Tsimlyansky';
+		endif;
 		
 		$this->session->set_userdata('backpath',$pagevar['baseurl'].$this->uri->uri_string());
 		$this->load->view($pagevar['language']."/users_interface/tourism",$pagevar);
@@ -221,6 +256,11 @@ class Users_interface extends CI_Controller{
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
+		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | Contacts';
+			$pagevar['description'] = 'Sparkling wines';
+		endif;
 		
 		if($this->input->post('submit')):
 			$_POST['submit'] = NULL;
@@ -285,6 +325,11 @@ class Users_interface extends CI_Controller{
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | Where by';
+			$pagevar['description'] = 'Sparkling wines';
+		endif;
+		
 		if($this->input->post('submit')):
 			unset($_POST['submit']);
 			$this->form_validation->set_rules('country',' ','required|trim');
@@ -333,6 +378,11 @@ class Users_interface extends CI_Controller{
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | Where by';
+			$pagevar['description'] = 'Sparkling wines';
+		endif;
+		
 		if($this->input->post('submit')):
 			unset($_POST['submit']);
 			$this->form_validation->set_rules('country',' ','required|trim');
@@ -372,6 +422,11 @@ class Users_interface extends CI_Controller{
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
+		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | Our news and events';
+			$pagevar['description'] = 'Sparkling wines';
+		endif;
 		
 		for($i=0;$i<count($pagevar['events']);$i++):
 			$pagevar['events'][$i]['date'] = $this->operation_dot_date($pagevar['events'][$i]['date']);
@@ -424,6 +479,12 @@ class Users_interface extends CI_Controller{
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
+		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | Our news and events';
+			$pagevar['description'] = 'Sparkling wines';
+		endif;
+		
 		$pagevar['news']['date'] = $this->operation_dot_date($pagevar['news']['date']);
 		for($i=0;$i<count($pagevar['readnews']);$i++):
 			$pagevar['readnews'][$i]['date'] = $this->operation_dot_date($pagevar['readnews'][$i]['date']);
@@ -456,6 +517,11 @@ class Users_interface extends CI_Controller{
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
+		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | Production';
+			$pagevar['description'] = 'Sparkling wines';
+		endif;
 		
 		$config['base_url'] 		= $pagevar['baseurl'].'production/from/';
 		$config['uri_segment'] 		= 3;
@@ -517,6 +583,11 @@ class Users_interface extends CI_Controller{
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | '.$this->mdcategory->read_field($category,'title',$this->language.'_category');
+			$pagevar['description'] = 'Sparkling wines';
+		endif;
+		
 		$config['base_url'] 		= $pagevar['baseurl'].'production/category/'.$this->uri->segment(3).'/from/';
 		$config['uri_segment'] 		= 5;
 		$config['total_rows'] 		= $this->mdproducts->count_filtr_records($category,'category',$this->language.'_products');
@@ -563,6 +634,11 @@ class Users_interface extends CI_Controller{
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | '.$this->mdcategory->read_field($category,'title',$this->language.'_category');
+			$pagevar['description'] = 'Sparkling wines';
+		endif;
+		
 		if(!$pagevar['product']):
 			redirect($this->session->userdata('backpath'));
 		endif;
@@ -577,7 +653,7 @@ class Users_interface extends CI_Controller{
 	public function admin_login(){
 	
 		$pagevar = array(
-			'title'			=> 'Цимлянские вина | Главная страница',
+			'title'			=> 'Цимлянские вина | Авторизаци',
 			'description'	=> 'Игристые вина',
 			'author'		=> '',
 			'baseurl' 		=> base_url(),
@@ -589,6 +665,11 @@ class Users_interface extends CI_Controller{
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
+		
+		if($this->language == 'en'):
+			$pagevar['title'] = 'Tsimlyansky wines | Avtorization';
+			$pagevar['description'] = 'Sparkling wines';
+		endif;
 		
 		if($this->input->post('submit')):
 			$_POST['submit'] == NULL;
@@ -609,7 +690,17 @@ class Users_interface extends CI_Controller{
 		
 		$this->load->view($pagevar['language']."/admin_interface/login",$pagevar);
 	}
-
+	
+	public function set_21age(){
+		$statusval = array('status'=>TRUE);
+		$age = trim($this->input->post('age'));
+		if(!$age):
+			show_404();
+		endif;
+		$this->session->set_userdata('validation_age',TRUE);
+		echo json_encode($statusval);
+	}
+	
 	/******************************************************** functions ******************************************************/	
 	
 	public function viewimage(){

@@ -8,6 +8,9 @@
 	<?php $this->load->view($language."/users_interface/includes/head");?>
 	
 <body>
+	<?php if(!$this->session->userdata('validation_age')):?>
+	<?php $this->load->view($language."/users_interface/includes/validation-age");?>
+	<?php endif;?>
 	<div class="container" class="cf">
 			<header>
 				<section id="navigation" class="cf">

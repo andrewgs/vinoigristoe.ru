@@ -10,7 +10,7 @@
 			<ul>
 				<li class="home"><?=anchor('','Main');?></li>
 				<li class="production"><?=anchor('production','Products');?></li>
-				<li class="events"><?=anchor('#','Events');?></li>
+				<li class="events"><?=anchor('#','Events',array("class"=>"none"));?></li>
 				<li class="company"><?=anchor('tradition','Company');?></li>
 				<li class="where"><?=anchor('where','Where to Buy');?></li>
 				<li class="tourism"><?=anchor('tourism','Tourism');?></li>

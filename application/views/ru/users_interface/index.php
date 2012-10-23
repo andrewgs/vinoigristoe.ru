@@ -8,9 +8,11 @@
 	<?php $this->load->view($language."/users_interface/includes/head");?>
 	
 <body>
-	<div class="container" class="cf">
+	<?php if($this->uri->uri_string() == ''):?>
+	<?php $this->load->view($language."/users_interface/includes/validation-age");?>
+	<?php endif;?>
+	<div class="container cf">
 		<?php $this->load->view($language."/users_interface/includes/header-big");?>
-		
 		<div id="main" role="main">
 			<section class="main-directions cf">
 				<div class="column">

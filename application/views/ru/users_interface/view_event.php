@@ -18,9 +18,9 @@
 				<aside>
 					<a class="aside-logo purple">Цимлянские вина</a>
 					<div class="quote">
-						<img src="<?=$baseurl;?>images/pushkin.jpg" alt="Пушкин А.С." />
-						<blockquote>Шампанского всем!<br />Как какого?<br /> Конечно, цимлянского!</blockquote>
-						<p class="author">А.С. Пушкин</p>
+						<img src="<?=$baseurl;?>quote/viewimage/<?=$quote['id'];?>" alt="<?=$quote['name'];?>"/>
+						<blockquote><?=$quote['text'];?></blockquote>
+						<p class="author"><?=$quote['name'];?></p>
 					</div>
 					<h2 class="purple">События</h2>
 				<?php for($i=0;$i<count($events);$i++):?>

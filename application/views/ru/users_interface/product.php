@@ -30,7 +30,7 @@
 							<?=anchor('events/'.$news[$i]['translit'],$news[$i]['title']);?>
 						</div>
 					<?php endfor;?>
-						<?=anchor('events','Все новости',array('class'=>'news-link'));?>
+						<?=anchor('events','Все новости');?>
 					</div>
 					<div class="spline"></div>
 				</aside>

@@ -75,7 +75,7 @@
 							где произрастает виноград. Терруар 
 							Долины Дона уникален. 
 						</p>
-					</div>					
+					</div>
 					<div class="column">
 						<p class="pt-75em">
 							<img src="<?=$baseurl;?>images/relief.jpg" alt="Рельеф и растительный мир Дона" />

@@ -150,6 +150,7 @@ class Users_interface extends CI_Controller{
 			'loginstatus'	=> $this->loginstatus,
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
+			'quote'			=> $this->mdquote->read_random_record($this->language.'_quote',1),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);
@@ -175,6 +176,7 @@ class Users_interface extends CI_Controller{
 			'loginstatus'	=> $this->loginstatus,
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
+			'quote'			=> $this->mdquote->read_random_record($this->language.'_quote',1),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);
@@ -474,6 +476,7 @@ class Users_interface extends CI_Controller{
 			'news'			=> $this->mdevents->read_record($eid,$this->language.'_events'),
 			'readnews'		=> $this->mdunion->events_type_without_limit(array(1),$eid,$this->language,3,0),
 			'events'		=> $this->mdunion->events_type_limit(array(2,3,4),$this->language,3,0),
+			'quote'			=> $this->mdquote->read_random_record($this->language.'_quote',1),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr'),
 		);

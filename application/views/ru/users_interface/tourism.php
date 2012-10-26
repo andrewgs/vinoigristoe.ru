@@ -24,7 +24,7 @@
 						<ul>
 							<li class="home"><?=anchor('','Главная');?></li>
 							<li class="production"><?=anchor('production','Продукция');?></li>
-							<li class="events"><?=anchor('#','События',array("class"=>"none"));?></li>
+							<li class="events"><?=anchor('events','События');?></li>
 							<li class="company"><?=anchor('tradition','Компания');?></li>
 							<li class="where"><?=anchor('where','Где купить');?></li>
 							<li class="tourism"><?=anchor('tourism','Туризм');?></li>
@@ -77,7 +77,7 @@
 						<p class="purple-italic">
 							Для больших групп и корпоративных мероприятий возможна индивидуальная программа.
 						</p>
-					</div>					
+					</div>
 					<div class="column">
 						<p class="pt-75em">
 							<img src="<?=$baseurl;?>images/tradicion_frames.png" alt="Фотографии виноградников Цимлянских вин" />

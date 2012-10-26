@@ -8,7 +8,7 @@
 	$(".container").hide();
 	$("#overlay-18").show();
 	$("#censor-yes").click(function(){
-		$.post("<?=$baseurl;?>set-21age",{'age':21},
+		$.post("<?=$baseurl;?>set-21age",{'age':18},
 			function(data){
 				if(data.status){
 					$("#overlay-18").remove();

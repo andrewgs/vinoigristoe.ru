@@ -27,7 +27,7 @@
 					<li><?=anchor('','Main page');?></li>
 					<li><?=anchor('tradition','About');?></li>
 					<li><?=anchor('tourism','Wine tourism');?></li>
-					<li><?=anchor('events','Exhibitions and events',array('class'=>'none'));?></li>
+					<li><?=anchor('events','Exhibitions and events');?></li>
 					<li><?=anchor('production','Production');?></li>
 					<li><?=anchor('contacts','Contacts');?></li>
 				</ul>

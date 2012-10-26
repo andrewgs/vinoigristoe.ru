@@ -29,7 +29,7 @@
 							winemaking in the Don region was under threat but the vineyards survived and the Cossacks continued the 
 							fine tradition. 
 						</p>
-					</div>					
+					</div>
 					<div class="column">
 						<p class="pt-75em">
 							<img src="<?=$baseurl;?>images/tradicion_frames.png" alt="" />

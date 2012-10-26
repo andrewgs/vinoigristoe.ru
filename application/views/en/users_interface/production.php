@@ -14,14 +14,12 @@
 			<article class="cf">
 				<aside>
 					<a class="aside-logo">Tsymlyansky wines</a>
-					<!--
 					<div class="quote">
 						<img src="<?=$baseurl;?>quote/viewimage/<?=$quote['id'];?>" alt="<?=$quote['name'];?>"/>
 						<blockquote><?=$quote['text'];?></blockquote>
 						<p class="author"><?=$quote['name'];?></p>
 					</div>
 					<div class="spline"></div>
-					-->
 					<?=anchor('vinoigristoe_catalog.pdf','<img src="'.$baseurl.'images/pdf.png" alt="pdf" />Download catalog',array('class'=>'download'));?>
 					<div class="spline"></div>
 					<div class="where-to-buy">

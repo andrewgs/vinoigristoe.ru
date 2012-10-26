@@ -14,17 +14,15 @@
 			<article class="cf">
 				<aside>
 					<a class="aside-logo grey">Tsymlyansy wines</a>
-					<!--
 					<div class="quote">
 						<img src="<?=$baseurl;?>quote/viewimage/<?=$quote['id'];?>" alt="<?=$quote['name'];?>"/>
 						<blockquote><?=$quote['text'];?></blockquote>
 						<p class="author"><?=$quote['name'];?></p>
 					</div>
 					<div class="spline"></div>
-					-->
 					<div class="where-to-buy">
 						<img src="<?=$baseurl;?>images/tourism.png" alt="Tours to Tsymlyansky vineyards!" />
-						<h2><?=anchor('#','Tours to <br />Tsymlyansky wines vineyards!');?></h2>
+						<h2><?=anchor('tourism','Tours to <br />Tsymlyansky wines vineyards!');?></h2>
 					</div>
 					<div class="spline"></div>
 					<?php $this->load->view($language."/users_interface/includes/social-likes");?>

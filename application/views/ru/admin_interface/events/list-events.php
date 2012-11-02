@@ -59,7 +59,7 @@
 		$(document).ready(function(){
 			var nID = 0;
 			$(".deleteNews").click(function(){var Param = $(this).attr('data-param'); nID = $("div[id = params"+Param+"]").attr("data-nid");});
-			$("#DelNews").click(function(){location.href='<?=$baseurl;?>admin-panel/actions/news/delete/newsid/'+nID;});
+			$("#DelNews").click(function(){location.href='<?=$baseurl;?>admin-panel/actions/events/delete/eventsid/'+nID;});
 		});
 	</script>
 </body>

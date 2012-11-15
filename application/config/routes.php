@@ -43,6 +43,7 @@ $route['category/viewimage/:num']	= "users_interface/viewimage";
 $route['product/viewimage/:num']	= "users_interface/viewimage";
 $route['medals/viewimage/:num']		= "users_interface/viewimage";
 $route['quote/viewimage/:num']		= "users_interface/viewimage";
+$route['session-clear']				= "users_interface/session_clear";
 
 $route['events/:any'] 	= "users_interface/view_events";
 

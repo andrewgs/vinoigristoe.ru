@@ -705,6 +705,12 @@ class Users_interface extends CI_Controller{
 		echo json_encode($statusval);
 	}
 	
+	function session_clear(){
+	
+		$this->session->sess_destroy();
+		redirect('');
+	}
+	
 	/******************************************************** functions ******************************************************/	
 	
 	public function viewimage(){

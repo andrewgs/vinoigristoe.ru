@@ -170,7 +170,7 @@ class Admin_interface extends CI_Controller{
 	public function admin_logoff(){
 		
 		$this->session->sess_destroy();
-			redirect('');
+		redirect('');
 	}
 	
 	/******************************************************* quote ************************************************************/

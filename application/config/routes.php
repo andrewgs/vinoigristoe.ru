@@ -5,7 +5,7 @@ $route['404_override'] = '';
 
 /***************************************************	USERS INTRERFACE	***********************************************/
 $route[''] 			= "users_interface/index";
-$route['set-21age'] = "users_interface/set_21age";
+$route['set21age'] = "users_interface/set_21age";
 
 $route['change-language/ru'] = "users_interface/change_language";
 $route['change-language/en'] = "users_interface/change_language";

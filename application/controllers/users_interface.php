@@ -576,7 +576,9 @@ class Users_interface extends CI_Controller{
 			'loginstatus'	=> $this->loginstatus,
 			'language'		=> $this->language,
 			'userinfo'		=> $this->user,
+			'categoryid'	=> 	$category,
 			'category'		=> $this->mdcategory->read_records($this->language.'_category'),
+			'series'		=> $this->mdunion->groupby_series($this->language),
 			'products'		=> $this->mdunion->products_filtr_limit($category,'category',$this->language,9,$from),
 			'quote'			=> $this->mdquote->read_random_record($this->language.'_quote',1),
 			'pages'			=> array(),
@@ -698,10 +700,13 @@ class Users_interface extends CI_Controller{
 	
 		$statusval = array('status'=>TRUE);
 		$age = trim($this->input->post('age'));
-		if(!$age):
-			show_404();
+		if(empty($age)):
+			$statusval['status'] = FALSE;
+			$this->session->set_userdata('validation_age',FALSE);
+		else:
+			$statusval['status'] = TRUE;
+			$this->session->set_userdata('validation_age',TRUE);
 		endif;
-		$this->session->set_userdata('validation_age',TRUE);
 		echo json_encode($statusval);
 	}
 	

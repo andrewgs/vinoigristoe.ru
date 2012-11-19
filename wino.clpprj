@@ -4776,7 +4776,7 @@
 				<treenode node="baseurl;Php:Var Name;15;4;23;4;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 			</phptree>
-		</csfile><csfile name="S:\home\wino\www\application\views\ru\users_interface\includes\scripts.php" crc="759719108">
+		</csfile><csfile name="S:\home\wino\www\application\views\ru\users_interface\includes\scripts.php" crc="646763608">
 			<phptree>
 				<treenode node="baseurl;Php:Var Name;16;2;24;2;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
@@ -7067,9 +7067,9 @@
 				</treenode>
 			</jstree>
 		</csfile><csfile name="S:\home\wino\www\application\core\index.html" crc="-387993932">
-		</csfile><csfile name="S:\home\wino\www\application\controllers\users_interface.php" crc="-970514146">
+		</csfile><csfile name="S:\home\wino\www\application\controllers\users_interface.php" crc="-1881055199">
 			<phptree>
-				<treenode node="Users_interface;Php:Class Name;0;2;1;749;34;;;vCI_Controller;;c;;r;;d43,2;;b0,0;;m">
+				<treenode node="Users_interface;Php:Class Name;0;2;1;758;34;;;vCI_Controller;;c;;r;;d43,2;;b0,0;;m">
 					<treenode node="__construct;Php:Function Name;1;9;2;50;34;;;v;;r;;d23,9;;b0,0;;m">
 					</treenode>
 					<treenode node="admin_login;Php:Function Name;8;655;2;694;34;;;v;;r;;d30,655;;b1,0;;m">
@@ -7086,11 +7086,11 @@
 					</treenode>
 					<treenode node="index;Php:Function Name;8;62;2;90;34;;;v;;r;;d24,62;;b1,0;;m">
 					</treenode>
-					<treenode node="operation_date;Php:Function Name;8;724;2;731;34;;;v;;r;;d39,724;;b1,0;;mfield;;p">
+					<treenode node="operation_date;Php:Function Name;8;733;2;740;34;;;v;;r;;d39,733;;b1,0;;mfield;;p">
 					</treenode>
-					<treenode node="operation_dot_date;Php:Function Name;8;733;2;739;34;;;v;;r;;d43,733;;b1,0;;mfield;;p">
+					<treenode node="operation_dot_date;Php:Function Name;8;742;2;748;34;;;v;;r;;d43,742;;b1,0;;mfield;;p">
 					</treenode>
-					<treenode node="operation_no_year;Php:Function Name;8;741;2;747;34;;;v;;r;;d42,741;;b1,0;;mfield;;p">
+					<treenode node="operation_no_year;Php:Function Name;8;750;2;756;34;;;v;;r;;d42,750;;b1,0;;mfield;;p">
 					</treenode>
 					<treenode node="product;Php:Function Name;8;612;2;653;34;;;v;;r;;d26,612;;b1,0;;m">
 					</treenode>
@@ -7100,7 +7100,9 @@
 					</treenode>
 					<treenode node="proizvodstvo;Php:Function Name;8;142;2;166;34;;;v;;r;;d31,142;;b1,0;;m">
 					</treenode>
-					<treenode node="set_21age;Php:Function Name;8;696;2;705;34;;;v;;r;;d28,696;;b1,0;;m">
+					<treenode node="session_clear;Php:Function Name;1;710;2;714;34;;;v;;r;;d25,710;;b0,0;;m">
+					</treenode>
+					<treenode node="set_21age;Php:Function Name;8;696;2;708;34;;;v;;r;;d28,696;;b1,0;;m">
 					</treenode>
 					<treenode node="tourism;Php:Function Name;8;219;2;242;34;;;v;;r;;d26,219;;b1,0;;m">
 					</treenode>
@@ -7108,7 +7110,7 @@
 					</treenode>
 					<treenode node="view_events;Php:Function Name;8;461;2;499;34;;;v;;r;;d30,461;;b1,0;;m">
 					</treenode>
-					<treenode node="viewimage;Php:Function Name;8;709;2;722;34;;;v;;r;;d28,709;;b1,0;;m">
+					<treenode node="viewimage;Php:Function Name;8;718;2;731;34;;;v;;r;;d28,718;;b1,0;;m">
 					</treenode>
 					<treenode node="vinogradniki;Php:Function Name;8;168;2;192;34;;;v;;r;;d31,168;;b1,0;;m">
 					</treenode>
@@ -7127,7 +7129,7 @@
 				</treenode>
 			</phptree>
 		</csfile><csfile name="S:\home\wino\www\application\controllers\index.html" crc="-387993932">
-		</csfile><csfile name="S:\home\wino\www\application\controllers\admin_interface.php" crc="1035386421">
+		</csfile><csfile name="S:\home\wino\www\application\controllers\admin_interface.php" crc="1329285934">
 			<phptree>
 				<treenode node="Admin_interface;Php:Class Name;0;2;1;1364;34;;;vCI_Controller;;c;;r;;d43,2;;b0,0;;m">
 					<treenode node="__construct;Php:Function Name;1;9;2;53;34;;;v;;r;;d23,9;;b0,0;;m">
@@ -7230,7 +7232,7 @@
 				<treenode node="smileys;Php:Var Name;0;14;8;14;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 			</phptree>
-		</csfile><csfile name="S:\home\wino\www\application\config\routes.php" crc="1785027653">
+		</csfile><csfile name="S:\home\wino\www\application\config\routes.php" crc="-569556326">
 			<phptree>
 				<treenode node="route;Php:Var Name;0;2;6;2;34;;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>

@@ -44,7 +44,7 @@
 						<a href="#">Want <br />to wine <br />tour?</a>
 					</div>
 					<div class="inside">
-						<img src="<?=$baseurl;?>images/caralog_promo.png" alt="Каталог продукции" />
+						<img src="<?=$baseurl;?>images/caralog_promo.png" alt="Catalog" />
 						<h1>Tsymlyansky Wines</h1>
 						<div class="spline"></div>
 						<ul class="categories cf">
@@ -55,23 +55,40 @@
 							<li><?=anchor('production/category/'.$category[4]['translit'],'<span class="type brandy"></span>'.$category[4]['title']);?></li>
 						</ul>
 						<div class="spline"></div>
+					<?php for($s=0;$s<count($series);$s++):?>
+						<?php $viewseries = FALSE;
+						for($p=0;$p<count($products);$p++):
+							if(($series[$s]['id'] == $products[$p]['series']) && $series[$s]['category'] == $categoryid):
+								$viewseries = TRUE;
+							endif;
+						endfor;?>
+						<?php if($series[$s]['default'] && $viewseries):?>
+						<div class="categories-sep cf">
+							<div class="left"></div>
+							<div class="center"><?=$series[$s]['title'];?></div>
+							<div class="right"></div>
+						</div>
+						<?php endif;?>
 						<div class="items-list">
-						<?php for($i=0;$i<count($products);$i++):?>
+						<?php for($p=0;$p<count($products);$p++):?>
+							<?php if($series[$s]['id'] == $products[$p]['series']):?>
 							<div class="category-item">
-								<img src="<?=$baseurl;?>product/viewimage/<?=$products[$i]['id'];?>" alt="<?=$products[$i]['title'];?>" title="<?=$products[$i]['title'];?>" style="" />
-								<p class="category-name"><?=$products[$i]['ctitle'];?></p>
+								<img src="<?=$baseurl;?>product/viewimage/<?=$products[$p]['id'];?>" alt="<?=$products[$p]['title'];?>" title="<?=$products[$p]['title'];?>" style="" />
+								<p class="category-name"><?=$products[$p]['ctitle'];?></p>
 								<p class="item-name">
-									<?=anchor('production/category/'.$products[$i]['ctranslit'].'/series/'.$products[$i]['stranslit'].'/product/'.$products[$i]['translit'],$products[$i]['title']);?>
-									<? if ( (mb_strlen($products[$i]['title']) < 42 and str_word_count($products[$i]['title']) > 4) or (mb_strlen($products[$i]['title']) < 37) ) : ?>
+									<?=anchor('production/category/'.$products[$p]['ctranslit'].'/series/'.$products[$p]['stranslit'].'/product/'.$products[$p]['translit'],$products[$p]['title']);?>
+									<? if ( (mb_strlen($products[$p]['title']) < 42 and str_word_count($products[$p]['title']) > 4) or (mb_strlen($products[$p]['title']) < 37) ) : ?>
 									<br /><br />
 									<? endif; ?>
 								</p>
 							</div>
+							<?php endif;?>
 						<?php endfor;?>
 						<?php if(!count($products)):?>
 							<p class="item-name">There are no items :(</p>
 						<?php endif;?>
 						</div>
+					<?php endfor;?>
 						<?php if($pages): ?>
 						<div class="spline"></div>
 						<div class="pagination">

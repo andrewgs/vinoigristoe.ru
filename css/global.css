@@ -62,6 +62,7 @@ html {
 /* /ht Ethan Marcotte - http://front.ie/l8rJaA */
 img, embed, object, video { max-width: 100%; }
 .ie6 img.full, .ie6 object.full, .ie6 embed, .ie6 video { width: 100%; }
+img { border: 0 none; }
 
 
 /* 3. CORE TYPOGRAPHY
@@ -251,9 +252,9 @@ article #main .inside h1 { color: #201c1d; font-size: 2.5em; margin: 0.5em 0 0.6
 .inside .categories-sep .center { text-align: center; margin: 1.2em 0; background: #fff; height: 1.9em; border-top: 1px solid #666; border-bottom: 1px solid #666; color: #201C1D;text-transform: uppercase; font-size: 1.25em; letter-spacing: 1px; line-height: 1.9em; width: 18.3em; float: left; }
 .inside .categories-sep .right { margin: 1.5em 0; background: url('../images/right-border-series.png') left top no-repeat; height: 2.5em; width: 9.5em; float: left; }
 .inside .items-list { text-align: center; }
-.inside .items-list .category-item { width: 13.75em; text-align: center; display: inline-block; height: 20em; margin: 2em 0 0; }
-.inside .items-list .category-item .category-name { font-family: Arial, Helvetica, sans-serif; font-size: 0.8em; color: #666; margin: 1.5em 0 0; }
-.inside .items-list .category-item .item-name { color: #221E1F; font-family: georgia,serif; font-size: 0.95em; margin-bottom: 0; }
+.inside .items-list .category-item { width: 13.75em; text-align: center; display: inline-block; height: 18.5em; margin: 2em 0 0; position: relative; }
+.inside .items-list .category-item .category-name { font-family: Arial, Helvetica, sans-serif; font-size: 0.8em; color: #666; margin: 1.5em 0 0; position: absolute; top: 15.5em; width: 220px; }
+.inside .items-list .category-item .item-name { color: #221E1F; font-family: georgia,serif; font-size: 0.95em; margin-bottom: 0; position: absolute; top: 15.65em; width: 220px; }
 .inside .items-list .category-item .item-name a { border-bottom: 1px solid; color: #221E1F !important; text-decoration: none; }
 .inside .items-list .category-item img { /*max-width: 3.875em;*/ max-height: 12.85em; }
 .inside .pagination { text-align: center; margin: 2em 0 0; }
